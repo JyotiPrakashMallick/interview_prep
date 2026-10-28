@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgBirds" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181825"/>
+      <stop offset="100%" stop-color="#1e1e2e"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="320" rx="16" fill="url(#bgBirds)"/>
+
+  <!-- Funny Heading -->
+  <text x="400" y="38" font-family="'Comic Sans MS', cursive, sans-serif" font-size="16" font-weight="bold" fill="#f9e2af" text-anchor="middle">🦅 "Bird Census 2026: Equal Votes? The Youngest ID Wins!"</text>
+
+  <!-- Animated Flying Birds -->
+  <style>
+    @keyframes flap {
+      0%, 100% { transform: translateY(0) scaleY(1); }
+      50% { transform: translateY(-8px) scaleY(0.8); }
+    }
+    .birdFlap { animation: flap 1.2s ease-in-out infinite; }
+  </style>
+
+  <!-- 5 Bird Podiums / Bar Chart -->
+  <!-- Type 1 (Winner - 3 sightings) -->
+  <g transform="translate(100, 70)">
+    <g class="birdFlap" transform="translate(15, 0)">
+      <!-- Bird 1 body (Cute round bird) -->
+      <circle cx="25" cy="25" r="18" fill="#f38ba8"/>
+      <!-- Beak -->
+      <polygon points="40,25 52,22 40,30" fill="#fab387"/>
+      <!-- Big cartoon eye -->
+      <circle cx="32" cy="20" r="5" fill="#fff"/>
+      <circle cx="34" cy="20" r="2.5" fill="#11111b"/>
+      <!-- Wing -->
+      <ellipse cx="18" cy="26" rx="8" ry="5" fill="#eba0ac"/>
+      <!-- Crown on Type 1 (Winner!) -->
+      <polygon points="18,10 23,2 28,10 33,2 38,10" fill="#f9e2af"/>
+    </g>
+    <!-- Bar -->
+    <rect x="10" y="55" width="60" height="110" rx="8" fill="#f38ba8"/>
+    <text x="40" y="115" font-family="'Comic Sans MS', cursive, sans-serif" font-size="18" font-weight="bold" fill="#11111b" text-anchor="middle">3 👑</text>
+    <text x="40" y="185" font-family="'Comic Sans MS', cursive, sans-serif" font-size="14" font-weight="bold" fill="#f38ba8" text-anchor="middle">Type 1</text>
+    <text x="40" y="202" font-family="sans-serif" font-size="11" fill="#a6e3a1" text-anchor="middle">WINNER!</text>
+  </g>
+
+  <!-- Type 2 (0 sightings) -->
+  <g transform="translate(225, 70)">
+    <rect x="10" y="155" width="60" height="10" rx="4" fill="#45475a"/>
+    <text x="40" y="145" font-family="'Comic Sans MS', cursive, sans-serif" font-size="14" fill="#6c7086" text-anchor="middle">😴 0</text>
+    <text x="40" y="185" font-family="'Comic Sans MS', cursive, sans-serif" font-size="14" font-weight="bold" fill="#6c7086" text-anchor="middle">Type 2</text>
+    <text x="40" y="202" font-family="sans-serif" font-size="11" fill="#6c7086" text-anchor="middle">Slept in</text>
+  </g>
+
+  <!-- Type 3 (1 sighting) -->
+  <g transform="translate(350, 70)">
+    <g class="birdFlap" transform="translate(15, 70)">
+      <circle cx="25" cy="25" r="18" fill="#fab387"/>
+      <polygon points="40,25 52,22 40,30" fill="#f9e2af"/>
+      <circle cx="32" cy="20" r="5" fill="#fff"/>
+      <circle cx="34" cy="20" r="2.5" fill="#11111b"/>
+      <ellipse cx="18" cy="26" rx="8" ry="5" fill="#f5c2e7"/>
+    </g>
+    <rect x="10" y="125" width="60" height="40" rx="8" fill="#fab387"/>
+    <text x="40" y="150" font-family="'Comic Sans MS', cursive, sans-serif" font-size="16" font-weight="bold" fill="#11111b" text-anchor="middle">1</text>
+    <text x="40" y="185" font-family="'Comic Sans MS', cursive, sans-serif" font-size="14" font-weight="bold" fill="#fab387" text-anchor="middle">Type 3</text>
+  </g>
+
+  <!-- Type 4 (3 sightings - Tied with 1!) -->
+  <g transform="translate(475, 70)">
+    <g class="birdFlap" transform="translate(15, 0)">
+      <circle cx="25" cy="25" r="18" fill="#89b4fa"/>
+      <polygon points="40,25 52,22 40,30" fill="#fab387"/>
+      <circle cx="32" cy="20" r="5" fill="#fff"/>
+      <circle cx="34" cy="20" r="2.5" fill="#11111b"/>
+      <ellipse cx="18" cy="26" rx="8" ry="5" fill="#b4befe"/>
+      <!-- Sad tear -->
+      <circle cx="35" cy="30" r="2.5" fill="#89dceb"/>
+    </g>
+    <rect x="10" y="55" width="60" height="110" rx="8" fill="#89b4fa"/>
+    <text x="40" y="115" font-family="'Comic Sans MS', cursive, sans-serif" font-size="18" font-weight="bold" fill="#11111b" text-anchor="middle">3</text>
+    <text x="40" y="185" font-family="'Comic Sans MS', cursive, sans-serif" font-size="14" font-weight="bold" fill="#89b4fa" text-anchor="middle">Type 4</text>
+    <text x="40" y="202" font-family="sans-serif" font-size="11" fill="#f38ba8" text-anchor="middle">Tied but ID 4 &gt; 1 😢</text>
+  </g>
+
+  <!-- Type 5 (1 sighting) -->
+  <g transform="translate(600, 70)">
+    <g class="birdFlap" transform="translate(15, 70)">
+      <circle cx="25" cy="25" r="18" fill="#a6e3a1"/>
+      <polygon points="40,25 52,22 40,30" fill="#fab387"/>
+      <circle cx="32" cy="20" r="5" fill="#fff"/>
+      <circle cx="34" cy="20" r="2.5" fill="#11111b"/>
+      <ellipse cx="18" cy="26" rx="8" ry="5" fill="#94e2d5"/>
+    </g>
+    <rect x="10" y="125" width="60" height="40" rx="8" fill="#a6e3a1"/>
+    <text x="40" y="150" font-family="'Comic Sans MS', cursive, sans-serif" font-size="16" font-weight="bold" fill="#11111b" text-anchor="middle">1</text>
+    <text x="40" y="185" font-family="'Comic Sans MS', cursive, sans-serif" font-size="14" font-weight="bold" fill="#a6e3a1" text-anchor="middle">Type 5</text>
+  </g>
+
+  <!-- Bottom Explanatory Banner -->
+  <text x="400" y="295" font-family="'Comic Sans MS', cursive, sans-serif" font-size="14" font-weight="bold" fill="#f9e2af" text-anchor="middle">⚡ Tie-Breaker Rule: Both Type 1 and Type 4 have 3 sightings, but Type 1 &lt; Type 4 ➔ Type 1 Wins!</text>
+</svg>
+

@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgProg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181825"/>
+      <stop offset="100%" stop-color="#1e1e2e"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="320" rx="16" fill="url(#bgProg)"/>
+
+  <!-- Heading -->
+  <text x="400" y="38" font-family="'Comic Sans MS', cursive, sans-serif" font-size="16" font-weight="bold" fill="#f9e2af" text-anchor="middle">⏳ "The 256th Day Time Machine (Russia's Calendar Chaos)"</text>
+
+  <!-- 3 Timeline Portals -->
+  <!-- Era 1: Julian -->
+  <g transform="translate(60, 65)">
+    <rect width="200" height="180" rx="12" fill="#313244" stroke="#89b4fa" stroke-width="2"/>
+    <text x="100" y="30" font-family="'Comic Sans MS', cursive, sans-serif" font-size="14" font-weight="bold" fill="#89b4fa" text-anchor="middle">📜 Julian Era</text>
+    <text x="100" y="50" font-family="monospace" font-size="12" fill="#a6adc8" text-anchor="middle">(1700 - 1917)</text>
+    
+    <text x="100" y="85" font-family="sans-serif" font-size="12" fill="#cdd6f4" text-anchor="middle">Simple Rule:</text>
+    <text x="100" y="105" font-family="monospace" font-size="13" font-weight="bold" fill="#a6e3a1" text-anchor="middle">year % 4 === 0</text>
+
+    <!-- Calendar sheet -->
+    <rect x="50" y="125" width="100" height="42" rx="6" fill="#1e1e2e"/>
+    <text x="100" y="145" font-family="sans-serif" font-size="11" fill="#f38ba8" text-anchor="middle">Leap: 12.09.YYYY</text>
+    <text x="100" y="160" font-family="sans-serif" font-size="11" fill="#fab387" text-anchor="middle">Norm: 13.09.YYYY</text>
+  </g>
+
+  <!-- Era 2: 1918 GLITCH (Center) -->
+  <g transform="translate(290, 65)">
+    <style>
+      @keyframes glitch {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.03); }
+      }
+      .glitchCard { animation: glitch 1.8s infinite; }
+    </style>
+    <g class="glitchCard">
+      <rect width="220" height="180" rx="12" fill="#45475a" stroke="#f38ba8" stroke-width="3"/>
+      <text x="110" y="30" font-family="'Comic Sans MS', cursive, sans-serif" font-size="15" font-weight="bold" fill="#f38ba8" text-anchor="middle">⚡ 1918 GLITCH YEAR</text>
+      <text x="110" y="50" font-family="monospace" font-size="12" fill="#f9e2af" text-anchor="middle">13 Days Vanished into thin air!</text>
+
+      <text x="110" y="85" font-family="sans-serif" font-size="12" fill="#cdd6f4" text-anchor="middle">Jan 31 jumped straight to:</text>
+      <text x="110" y="105" font-family="sans-serif" font-size="14" font-weight="bold" fill="#eba0ac" text-anchor="middle">Feb 14 (Day 32) 😱</text>
+
+      <!-- Stamp -->
+      <rect x="40" y="125" width="140" height="42" rx="6" fill="#f38ba8"/>
+      <text x="110" y="152" font-family="'Comic Sans MS', cursive, sans-serif" font-size="16" font-weight="bold" fill="#11111b" text-anchor="middle">26.09.1918 🇷🇺</text>
+    </g>
+  </g>
+
+  <!-- Era 3: Gregorian -->
+  <g transform="translate(540, 65)">
+    <rect width="200" height="180" rx="12" fill="#313244" stroke="#a6e3a1" stroke-width="2"/>
+    <text x="100" y="30" font-family="'Comic Sans MS', cursive, sans-serif" font-size="14" font-weight="bold" fill="#a6e3a1" text-anchor="middle">🌍 Gregorian Era</text>
+    <text x="100" y="50" font-family="monospace" font-size="12" fill="#a6adc8" text-anchor="middle">(1919 - Present)</text>
+
+    <text x="100" y="82" font-family="sans-serif" font-size="12" fill="#cdd6f4" text-anchor="middle">Modern Rule:</text>
+    <text x="100" y="98" font-family="monospace" font-size="10" font-weight="bold" fill="#a6e3a1" text-anchor="middle">year % 400 === 0 ||</text>
+    <text x="100" y="112" font-family="monospace" font-size="10" font-weight="bold" fill="#a6e3a1" text-anchor="middle">(y % 4 == 0 &amp;&amp; y % 100 != 0)</text>
+
+    <rect x="50" y="125" width="100" height="42" rx="6" fill="#1e1e2e"/>
+    <text x="100" y="145" font-family="sans-serif" font-size="11" fill="#f38ba8" text-anchor="middle">Leap: 12.09.YYYY</text>
+    <text x="100" y="160" font-family="sans-serif" font-size="11" fill="#fab387" text-anchor="middle">Norm: 13.09.YYYY</text>
+  </g>
+
+  <!-- Bottom Explanatory Banner -->
+  <text x="400" y="295" font-family="'Comic Sans MS', cursive, sans-serif" font-size="14" font-weight="bold" fill="#f9e2af" text-anchor="middle">💡 In code: Check for 1918 first! Then check Leap vs Normal ➔ O(1) Time!</text>
+</svg>
+

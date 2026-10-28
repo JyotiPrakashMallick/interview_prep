@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e2e"/>
+      <stop offset="100%" stop-color="#181825"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="320" rx="16" fill="url(#bg)"/>
+
+  <!-- Track / Ground -->
+  <line x1="60" y1="230" x2="740" y2="230" stroke="#45475a" stroke-width="6" stroke-dasharray="10 8"/>
+  <circle cx="150" cy="230" r="6" fill="#f38ba8"/>
+  <circle cx="400" cy="230" r="6" fill="#a6e3a1"/>
+  <circle cx="650" cy="230" r="6" fill="#89b4fa"/>
+
+  <!-- Speech bubble when tied -->
+  <g transform="translate(300, 20)">
+    <rect width="200" height="42" rx="10" fill="#fab387" filter="url(#shadow)"/>
+    <polygon points="390,62 410,62 400,74" fill="#fab387"/>
+    <text x="100" y="26" font-family="'Comic Sans MS', cursive, sans-serif" font-size="14" font-weight="bold" fill="#11111b" text-anchor="middle">"Cats clash, I'm out! 🧀"</text>
+  </g>
+
+  <!-- Cat A (Left) -->
+  <g transform="translate(110, 120)">
+    <style>
+      @keyframes dashA {
+        0%, 100% { transform: translateX(0); }
+        50% { transform: translateX(45px); }
+      }
+      .catA { animation: dashA 2s ease-in-out infinite; }
+    </style>
+    <g class="catA">
+      <!-- Tail -->
+      <path d="M 0,60 Q -25,40 -20,20" stroke="#f38ba8" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <!-- Body -->
+      <ellipse cx="40" cy="65" rx="35" ry="24" fill="#f38ba8"/>
+      <!-- Head -->
+      <circle cx="70" cy="45" r="22" fill="#f38ba8"/>
+      <!-- Ears -->
+      <polygon points="56,30 64,10 74,28" fill="#f38ba8"/>
+      <polygon points="60,28 65,15 71,27" fill="#eba0ac"/>
+      <polygon points="76,28 86,10 94,30" fill="#f38ba8"/>
+      <polygon points="79,27 85,15 90,28" fill="#eba0ac"/>
+      <!-- Eyes (determined / racing) -->
+      <circle cx="72" cy="42" r="4" fill="#11111b"/>
+      <circle cx="84" cy="42" r="4" fill="#11111b"/>
+      <circle cx="73" cy="40" r="1.5" fill="#fff"/>
+      <circle cx="85" cy="40" r="1.5" fill="#fff"/>
+      <!-- Nose & Mouth -->
+      <polygon points="78,48 82,48 80,51" fill="#11111b"/>
+      <path d="M 76,52 Q 80,55 84,52" stroke="#11111b" stroke-width="2" fill="none"/>
+      <!-- Whiskers -->
+      <line x1="86" y1="48" x2="105" y2="45" stroke="#cdd6f4" stroke-width="2"/>
+      <line x1="86" y1="52" x2="105" y2="54" stroke="#cdd6f4" stroke-width="2"/>
+      <!-- Speed lines -->
+      <line x1="-30" y1="60" x2="-10" y2="60" stroke="#f38ba8" stroke-width="3" stroke-dasharray="6 4"/>
+      <line x1="-35" y1="70" x2="-15" y2="70" stroke="#f38ba8" stroke-width="3" stroke-dasharray="6 4"/>
+      <!-- Label -->
+      <text x="40" y="105" font-family="'Comic Sans MS', cursive, sans-serif" font-size="14" font-weight="bold" fill="#f38ba8" text-anchor="middle">Cat A (x)</text>
+    </g>
+  </g>
+
+  <!-- Mouse C (Center) -->
+  <g transform="translate(370, 140)">
+    <style>
+      @keyframes hopMouse {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-16px) rotate(5deg); }
+      }
+      .mouseC { animation: hopMouse 0.8s ease-in-out infinite; }
+    </style>
+    <g class="mouseC">
+      <!-- Tail -->
+      <path d="M 10,50 Q -10,35 -5,15" stroke="#a6e3a1" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <!-- Body -->
+      <ellipse cx="30" cy="50" rx="22" ry="16" fill="#a6e3a1"/>
+      <!-- Big Ears -->
+      <circle cx="22" cy="30" r="12" fill="#a6e3a1"/>
+      <circle cx="22" cy="30" r="7" fill="#94e2d5"/>
+      <circle cx="38" cy="30" r="12" fill="#a6e3a1"/>
+      <circle cx="38" cy="30" r="7" fill="#94e2d5"/>
+      <!-- Head -->
+      <circle cx="38" cy="46" r="14" fill="#a6e3a1"/>
+      <!-- Eyes (Wide funny cartoon eyes) -->
+      <circle cx="40" cy="42" r="5" fill="#fff"/>
+      <circle cx="48" cy="42" r="5" fill="#fff"/>
+      <circle cx="41" cy="42" r="2.5" fill="#11111b"/>
+      <circle cx="49" cy="42" r="2.5" fill="#11111b"/>
+      <!-- Cheese Wedge -->
+      <polygon points="52,48 68,40 68,56" fill="#f9e2af"/>
+      <circle cx="60" cy="47" r="1.5" fill="#fab387"/>
+      <!-- Label -->
+      <text x="30" y="85" font-family="'Comic Sans MS', cursive, sans-serif" font-size="14" font-weight="bold" fill="#a6e3a1" text-anchor="middle">Mouse C (z)</text>
+    </g>
+  </g>
+
+  <!-- Cat B (Right) -->
+  <g transform="translate(610, 120)">
+    <style>
+      @keyframes dashB {
+        0%, 100% { transform: translateX(0); }
+        50% { transform: translateX(-45px); }
+      }
+      .catB { animation: dashB 2s ease-in-out infinite; }
+    </style>
+    <g class="catB">
+      <!-- Tail -->
+      <path d="M 80,60 Q 105,40 100,20" stroke="#89b4fa" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <!-- Body -->
+      <ellipse cx="40" cy="65" rx="35" ry="24" fill="#89b4fa"/>
+      <!-- Head -->
+      <circle cx="10" cy="45" r="22" fill="#89b4fa"/>
+      <!-- Ears -->
+      <polygon points="-4,28 6,10 14,30" fill="#89b4fa"/>
+      <polygon points="-1,27 5,15 11,28" fill="#b4befe"/>
+      <polygon points="16,28 26,10 34,30" fill="#89b4fa"/>
+      <polygon points="19,27 25,15 31,28" fill="#b4befe"/>
+      <!-- Eyes -->
+      <circle cx="4" cy="42" r="4" fill="#11111b"/>
+      <circle cx="16" cy="42" r="4" fill="#11111b"/>
+      <circle cx="3" cy="40" r="1.5" fill="#fff"/>
+      <circle cx="15" cy="40" r="1.5" fill="#fff"/>
+      <!-- Whiskers -->
+      <line x1="-6" y1="48" x2="-25" y2="45" stroke="#cdd6f4" stroke-width="2"/>
+      <line x1="-6" y1="52" x2="-25" y2="54" stroke="#cdd6f4" stroke-width="2"/>
+      <!-- Speed lines -->
+      <line x1="90" y1="60" x2="110" y2="60" stroke="#89b4fa" stroke-width="3" stroke-dasharray="6 4"/>
+      <line x1="95" y1="70" x2="115" y2="70" stroke="#89b4fa" stroke-width="3" stroke-dasharray="6 4"/>
+      <!-- Label -->
+      <text x="40" y="105" font-family="'Comic Sans MS', cursive, sans-serif" font-size="14" font-weight="bold" fill="#89b4fa" text-anchor="middle">Cat B (y)</text>
+    </g>
+  </g>
+
+  <!-- Distance Arrows -->
+  <path d="M 160,255 L 390,255" stroke="#f38ba8" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="275" y="275" font-family="sans-serif" font-size="13" fill="#f38ba8" text-anchor="middle">distA = |z - x|</text>
+
+  <path d="M 410,255 L 640,255" stroke="#89b4fa" stroke-width="2"/>
+  <text x="525" y="275" font-family="sans-serif" font-size="13" fill="#89b4fa" text-anchor="middle">distB = |z - y|</text>
+  
+  <text x="400" y="305" font-family="'Comic Sans MS', cursive, sans-serif" font-size="13" font-weight="bold" fill="#f9e2af" text-anchor="middle">⚡ If distA == distB ➔ Cats collision &amp; Mouse escapes! (O(1) Time)</text>
+</svg>
+

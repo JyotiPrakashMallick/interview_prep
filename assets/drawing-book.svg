@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgBook" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181825"/>
+      <stop offset="100%" stop-color="#1e1e2e"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="320" rx="16" fill="url(#bgBook)"/>
+
+  <!-- Funny Heading -->
+  <text x="400" y="38" font-family="'Comic Sans MS', cursive, sans-serif" font-size="16" font-weight="bold" fill="#f9e2af" text-anchor="middle">📖 "Work Smart, Not Hard: Flip from the Nearest Side!"</text>
+
+  <!-- Open Book Cartoon in Center -->
+  <g transform="translate(160, 60)">
+    <!-- Book Spine -->
+    <rect x="235" y="15" width="10" height="175" fill="#45475a"/>
+
+    <!-- Left Page -->
+    <path d="M 30,25 Q 130,10 235,18 L 235,190 Q 130,182 30,195 Z" fill="#cdd6f4"/>
+    <!-- Right Page -->
+    <path d="M 245,18 Q 350,10 450,25 L 450,195 Q 350,182 245,190 Z" fill="#cdd6f4"/>
+
+    <!-- Left text lines -->
+    <line x1="55" y1="50" x2="210" y2="45" stroke="#6c7086" stroke-width="3"/>
+    <line x1="55" y1="75" x2="210" y2="70" stroke="#6c7086" stroke-width="3"/>
+    <line x1="55" y1="100" x2="210" y2="95" stroke="#6c7086" stroke-width="3"/>
+    <text x="135" y="165" font-family="'Comic Sans MS', cursive, sans-serif" font-size="28" font-weight="bold" fill="#11111b" text-anchor="middle">Page 4</text>
+
+    <!-- Right text lines -->
+    <line x1="270" y1="45" x2="425" y2="50" stroke="#6c7086" stroke-width="3"/>
+    <line x1="270" y1="70" x2="425" y2="75" stroke="#6c7086" stroke-width="3"/>
+    <line x1="270" y1="95" x2="425" y2="100" stroke="#6c7086" stroke-width="3"/>
+    <!-- Target Page Highlight -->
+    <rect x="300" y="130" width="100" height="42" rx="8" fill="#f9e2af"/>
+    <text x="350" y="162" font-family="'Comic Sans MS', cursive, sans-serif" font-size="24" font-weight="bold" fill="#11111b" text-anchor="middle">🎯 Page 5</text>
+  </g>
+
+  <!-- Front Flip Guy (Left) -->
+  <g transform="translate(40, 110)">
+    <style>
+      @keyframes flipPageL {
+        0%, 100% { transform: rotate(0deg); }
+        50% { transform: rotate(15deg); }
+      }
+      .flipperL { animation: flipPageL 1.2s ease-in-out infinite; transform-origin: 50px 80px; }
+    </style>
+    <!-- Character Head -->
+    <circle cx="50" cy="40" r="22" fill="#a6e3a1"/>
+    <!-- Eyes -->
+    <circle cx="45" cy="38" r="3" fill="#11111b"/>
+    <circle cx="58" cy="38" r="3" fill="#11111b"/>
+    <!-- Big Smile -->
+    <path d="M 46,47 Q 52,55 58,47" stroke="#11111b" stroke-width="2" fill="none"/>
+    <!-- Flipping Hand -->
+    <g class="flipperL">
+      <path d="M 50,62 Q 80,65 95,50" stroke="#a6e3a1" stroke-width="5" fill="none" stroke-linecap="round"/>
+    </g>
+    <!-- Card -->
+    <text x="50" y="105" font-family="'Comic Sans MS', cursive, sans-serif" font-size="13" font-weight="bold" fill="#a6e3a1" text-anchor="middle">From Front ⏩</text>
+    <text x="50" y="125" font-family="monospace" font-size="12" fill="#cdd6f4" text-anchor="middle">p // 2</text>
+    <text x="50" y="145" font-family="'Comic Sans MS', cursive, sans-serif" font-size="14" font-weight="bold" fill="#f9e2af" text-anchor="middle">= 2 Turns</text>
+  </g>
+
+  <!-- Back Flip Guy (Right) -->
+  <g transform="translate(680, 110)">
+    <style>
+      @keyframes flipPageR {
+        0%, 100% { transform: rotate(0deg); }
+        50% { transform: rotate(-15deg); }
+      }
+      .flipperR { animation: flipPageR 1.2s ease-in-out infinite; transform-origin: 40px 80px; }
+    </style>
+    <!-- Character Head -->
+    <circle cx="40" cy="40" r="22" fill="#89b4fa"/>
+    <!-- Eyes -->
+    <circle cx="32" cy="38" r="3" fill="#11111b"/>
+    <circle cx="45" cy="38" r="3" fill="#11111b"/>
+    <!-- Smile -->
+    <path d="M 33,47 Q 39,55 45,47" stroke="#11111b" stroke-width="2" fill="none"/>
+    <!-- Flipping Hand -->
+    <g class="flipperR">
+      <path d="M 40,62 Q 10,65 -5,50" stroke="#89b4fa" stroke-width="5" fill="none" stroke-linecap="round"/>
+    </g>
+    <!-- Card -->
+    <text x="40" y="105" font-family="'Comic Sans MS', cursive, sans-serif" font-size="13" font-weight="bold" fill="#89b4fa" text-anchor="middle">⏪ From Back</text>
+    <text x="40" y="125" font-family="monospace" font-size="12" fill="#cdd6f4" text-anchor="middle">(n - p) // 2</text>
+    <text x="40" y="145" font-family="'Comic Sans MS', cursive, sans-serif" font-size="14" font-weight="bold" fill="#f9e2af" text-anchor="middle">= 1 Turn 🏆</text>
+  </g>
+
+  <!-- Bottom Decision Formula -->
+  <text x="400" y="295" font-family="'Comic Sans MS', cursive, sans-serif" font-size="14" font-weight="bold" fill="#a6e3a1" text-anchor="middle">💡 Answer = Math.min( FrontTurns, BackTurns ) ➔ Pure O(1) Instant Math!</text>
+</svg>
+

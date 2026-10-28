@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgDiv" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e2e"/>
+      <stop offset="100%" stop-color="#11111b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="320" rx="16" fill="url(#bgDiv)"/>
+
+  <!-- Heading -->
+  <text x="400" y="38" font-family="'Comic Sans MS', cursive, sans-serif" font-size="16" font-weight="bold" fill="#f9e2af" text-anchor="middle">🎯 "Find the Divisible Soulmates: (ar[i] + ar[j]) % k == 0"</text>
+
+  <!-- Number Characters holding hands -->
+  <style>
+    @keyframes bounceChar {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .bouncePair { animation: bounceChar 1.5s ease-in-out infinite; }
+  </style>
+
+  <!-- Pair 1: Number [1] + Number [2] = 3 -->
+  <g class="bouncePair" transform="translate(140, 75)">
+    <!-- Character 1 -->
+    <circle cx="50" cy="50" r="32" fill="#89b4fa"/>
+    <text x="50" y="58" font-family="'Comic Sans MS', cursive, sans-serif" font-size="28" font-weight="bold" fill="#11111b" text-anchor="middle">1</text>
+    <!-- Eyes -->
+    <circle cx="40" cy="40" r="4" fill="#fff"/>
+    <circle cx="60" cy="40" r="4" fill="#fff"/>
+    <circle cx="42" cy="40" r="2" fill="#11111b"/>
+    <circle cx="62" cy="40" r="2" fill="#11111b"/>
+    
+    <!-- Plus symbol -->
+    <text x="105" y="58" font-family="'Comic Sans MS', cursive, sans-serif" font-size="28" font-weight="bold" fill="#f9e2af" text-anchor="middle">+</text>
+
+    <!-- Character 2 -->
+    <circle cx="160" cy="50" r="32" fill="#a6e3a1"/>
+    <text x="160" y="58" font-family="'Comic Sans MS', cursive, sans-serif" font-size="28" font-weight="bold" fill="#11111b" text-anchor="middle">2</text>
+    <!-- Eyes -->
+    <circle cx="150" cy="40" r="4" fill="#fff"/>
+    <circle cx="170" cy="40" r="4" fill="#fff"/>
+    <circle cx="152" cy="40" r="2" fill="#11111b"/>
+    <circle cx="172" cy="40" r="2" fill="#11111b"/>
+
+    <!-- Equals 3 -->
+    <text x="215" y="58" font-family="'Comic Sans MS', cursive, sans-serif" font-size="28" font-weight="bold" fill="#f9e2af" text-anchor="middle">=</text>
+
+    <!-- Sum Result Bubble -->
+    <circle cx="270" cy="50" r="36" fill="#f9e2af"/>
+    <text x="270" y="58" font-family="'Comic Sans MS', cursive, sans-serif" font-size="28" font-weight="bold" fill="#11111b" text-anchor="middle">3</text>
+    
+    <!-- Heart above -->
+    <text x="105" y="15" font-size="20">💖</text>
+  </g>
+
+  <!-- Division Check Badge -->
+  <g transform="translate(480, 85)">
+    <rect width="220" height="80" rx="12" fill="#313244" stroke="#a6e3a1" stroke-width="2"/>
+    <text x="110" y="32" font-family="'Comic Sans MS', cursive, sans-serif" font-size="14" font-weight="bold" fill="#a6e3a1" text-anchor="middle">Divisible by k = 3 ?</text>
+    <text x="110" y="58" font-family="monospace" font-size="16" font-weight="bold" fill="#f9e2af" text-anchor="middle">3 % 3 === 0  ✅ MATCH!</text>
+  </g>
+
+  <!-- Remainder Frequency Concept Cartoon -->
+  <g transform="translate(80, 195)">
+    <rect width="640" height="85" rx="12" fill="#181825" stroke="#45475a"/>
+    <text x="320" y="28" font-family="'Comic Sans MS', cursive, sans-serif" font-size="14" font-weight="bold" fill="#cba6f7" text-anchor="middle">⚡ Senior Interviewer Pro-Tip: Remainder Buckets O(n)</text>
+    <text x="320" y="55" font-family="sans-serif" font-size="13" fill="#cdd6f4" text-anchor="middle">If (ar[i] % k == r), we only need numbers where remainder is ((k - r) % k)!</text>
+    <text x="320" y="73" font-family="sans-serif" font-size="12" fill="#fab387" text-anchor="middle">No need to check everyone blindly with nested loops!</text>
+  </g>
+
+  <text x="400" y="305" font-family="'Comic Sans MS', cursive, sans-serif" font-size="13" font-weight="bold" fill="#a6e3a1" text-anchor="middle">💡 Brute Force: O(n²) | Remainder Map: O(n) Single Pass!</text>
+</svg>
+
