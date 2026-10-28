@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgBrack" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181825"/>
+      <stop offset="100%" stop-color="#1e1e2e"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="320" rx="16" fill="url(#bgBrack)"/>
+
+  <!-- Title -->
+  <text x="400" y="38" font-family="'Comic Sans MS', cursive, sans-serif" font-size="16" font-weight="bold" fill="#f9e2af" text-anchor="middle">🎋 "The Catalan Bracket Tree: Perfectly Balanced Parentheses!"</text>
+
+  <!-- Left: Animated Bracket Characters Dancing -->
+  <g transform="translate(60, 70)">
+    <style>
+      @keyframes bracketBob {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-8px) rotate(-6deg); }
+      }
+      .animBrack { animation: bracketBob 1.6s ease-in-out infinite; }
+    </style>
+    <g class="animBrack">
+      <rect width="260" height="150" rx="10" fill="#313244" stroke="#a6e3a1" stroke-width="2"/>
+      <text x="130" y="30" font-family="'Comic Sans MS', cursive, sans-serif" font-size="14" font-weight="bold" fill="#a6e3a1" text-anchor="middle">Pairs: N = 3 🎭</text>
+      
+      <!-- Big brackets -->
+      <text x="70" y="95" font-family="monospace" font-size="60" font-weight="bold" fill="#f9e2af">(</text>
+      <text x="130" y="95" font-family="monospace" font-size="60" font-weight="bold" fill="#89b4fa">()</text>
+      <text x="190" y="95" font-family="monospace" font-size="60" font-weight="bold" fill="#f9e2af">)</text>
+      <text x="130" y="130" font-family="monospace" font-size="14" fill="#cdd6f4" text-anchor="middle">Always closed &amp; valid!</text>
+    </g>
+  </g>
+
+  <!-- Right: 5 Combinations Display -->
+  <g transform="translate(350, 70)">
+    <rect width="400" height="150" rx="10" fill="#11111b" stroke="#fab387" stroke-width="2"/>
+    <text x="200" y="25" font-family="'Comic Sans MS', cursive, sans-serif" font-size="13" font-weight="bold" fill="#fab387" text-anchor="middle">C(3) = 5 Valid Configurations 🏆</text>
+
+    <!-- 5 configurations grid -->
+    <g transform="translate(30, 42)">
+      <rect x="0" y="0" width="105" height="30" rx="5" fill="#313244"/>
+      <text x="52" y="20" font-family="monospace" font-size="13" fill="#a6e3a1" text-anchor="middle">((()))</text>
+
+      <rect x="120" y="0" width="105" height="30" rx="5" fill="#313244"/>
+      <text x="172" y="20" font-family="monospace" font-size="13" fill="#a6e3a1" text-anchor="middle">(()())</text>
+
+      <rect x="240" y="0" width="105" height="30" rx="5" fill="#313244"/>
+      <text x="292" y="20" font-family="monospace" font-size="13" fill="#a6e3a1" text-anchor="middle">(())()</text>
+
+      <rect x="60" y="40" width="105" height="30" rx="5" fill="#313244"/>
+      <text x="112" y="60" font-family="monospace" font-size="13" fill="#a6e3a1" text-anchor="middle">()(())</text>
+
+      <rect x="180" y="40" width="105" height="30" rx="5" fill="#313244"/>
+      <text x="232" y="60" font-family="monospace" font-size="13" fill="#a6e3a1" text-anchor="middle">()()()</text>
+    </g>
+  </g>
+
+  <!-- Bottom Formula -->
+  <g transform="translate(100, 235)">
+    <rect width="600" height="48" rx="8" fill="#313244"/>
+    <text x="300" y="20" font-family="'Comic Sans MS', cursive, sans-serif" font-size="12" fill="#cba6f7" text-anchor="middle">Catalan Formula: C(n) = (2n)! / ((n+1)! * n!)  ➔  C(0)=1, C(1)=1, C(2)=2, C(3)=5</text>
+    <text x="300" y="38" font-family="sans-serif" font-size="11" fill="#f9e2af" text-anchor="middle">Recursive: C(n) = sum( C(i) * C(n - 1 - i) )</text>
+  </g>
+
+  <text x="400" y="305" font-family="'Comic Sans MS', cursive, sans-serif" font-size="13" font-weight="bold" fill="#a6e3a1" text-anchor="middle">💡 Classic interview problem for recursion, dynamic programming &amp; Catalan numbers!</text>
+</svg>
+

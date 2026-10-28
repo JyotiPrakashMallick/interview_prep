@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgPal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e2e"/>
+      <stop offset="100%" stop-color="#181825"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="320" rx="16" fill="url(#bgPal)"/>
+
+  <!-- Title -->
+  <text x="400" y="38" font-family="'Comic Sans MS', cursive, sans-serif" font-size="16" font-weight="bold" fill="#f9e2af" text-anchor="middle">🪞 "Mirror, Mirror on the Wall: Am I a Palindrome?"</text>
+
+  <!-- Mirror Frame in Center -->
+  <g transform="translate(385, 60)">
+    <line x1="15" y1="10" x2="15" y2="200" stroke="#89dceb" stroke-width="4" stroke-dasharray="8 6"/>
+    <text x="15" y="225" font-family="'Comic Sans MS', cursive, sans-serif" font-size="12" font-weight="bold" fill="#89dceb" text-anchor="middle">Mirror Axis</text>
+  </g>
+
+  <!-- Left Side: Original "R A C E C A R" -->
+  <g transform="translate(60, 80)">
+    <style>
+      @keyframes walkL {
+        0%, 100% { transform: translateX(0); }
+        50% { transform: translateX(12px); }
+      }
+      .animWalkL { animation: walkL 2s ease-in-out infinite; }
+    </style>
+    <g class="animWalkL">
+      <rect width="280" height="70" rx="10" fill="#313244" stroke="#a6e3a1" stroke-width="2"/>
+      <text x="140" y="25" font-family="'Comic Sans MS', cursive, sans-serif" font-size="12" fill="#a6e3a1" text-anchor="middle">Forward Reading ➡️</text>
+      <text x="140" y="55" font-family="monospace" font-size="24" font-weight="bold" fill="#f9e2af" letter-spacing="8" text-anchor="middle">RACECAR</text>
+      <!-- Happy Face -->
+      <circle cx="25" cy="35" r="14" fill="#a6e3a1"/>
+      <circle cx="21" cy="32" r="2" fill="#11111b"/>
+      <circle cx="29" cy="32" r="2" fill="#11111b"/>
+      <path d="M 21,38 Q 25,43 29,38" stroke="#11111b" stroke-width="1.5" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Right Side: Reversed "R A C E C A R" -->
+  <g transform="translate(460, 80)">
+    <style>
+      @keyframes walkR {
+        0%, 100% { transform: translateX(0); }
+        50% { transform: translateX(-12px); }
+      }
+      .animWalkR { animation: walkR 2s ease-in-out infinite; }
+    </style>
+    <g class="animWalkR">
+      <rect width="280" height="70" rx="10" fill="#313244" stroke="#89b4fa" stroke-width="2"/>
+      <text x="140" y="25" font-family="'Comic Sans MS', cursive, sans-serif" font-size="12" fill="#89b4fa" text-anchor="middle">⬅️ Backward Reading (Reversed)</text>
+      <text x="140" y="55" font-family="monospace" font-size="24" font-weight="bold" fill="#f9e2af" letter-spacing="8" text-anchor="middle">RACECAR</text>
+      <!-- Happy Twin Face -->
+      <circle cx="255" cy="35" r="14" fill="#89b4fa"/>
+      <circle cx="251" cy="32" r="2" fill="#11111b"/>
+      <circle cx="259" cy="32" r="2" fill="#11111b"/>
+      <path d="M 251,38 Q 255,43 259,38" stroke="#11111b" stroke-width="1.5" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Comparison Box -->
+  <g transform="translate(180, 185)">
+    <rect width="440" height="65" rx="10" fill="#11111b" stroke="#f38ba8" stroke-width="2"/>
+    <text x="220" y="28" font-family="monospace" font-size="14" font-weight="bold" fill="#cdd6f4" text-anchor="middle">"RACECAR" === "RACECAR" ➔ TRUE! 🎉</text>
+    <text x="220" y="48" font-family="'Comic Sans MS', cursive, sans-serif" font-size="12" fill="#f38ba8" text-anchor="middle">Counterexample: "123" !== "321" ➔ NOT a Palindrome ❌</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="400" y="295" font-family="'Comic Sans MS', cursive, sans-serif" font-size="14" font-weight="bold" fill="#a6e3a1" text-anchor="middle">⚡ Two Pointers: Left &amp; Right meet in the middle with O(n) Time &amp; O(1) Space!</text>
+</svg>
+
