@@ -1,12 +1,29 @@
-//Function Description
-//Complete the dayOfProgrammer function in the editor below. It should return a string representing the date of the 256th day of the year given.
-    //dayOfProgrammer has the following parameter(s):
-    //year: an integer
-//Returns
-    //A single integer denoting year Y.
-
-
-//Complexity Value : 13
+/**
+ * Problem: Day of the Programmer
+ * -------------------------------------------------------------
+ * Marie invented a Time Machine to travel back to 1918. Help her find the date
+ * corresponding to the 256th day of any given year (from 1700 to 2700) in Russia.
+ * 
+ * Historical Rules in Russia:
+ * 1. Julian Calendar (1700 to 1917):
+ *    - Leap year if divisible by 4 (`year % 4 === 0`).
+ * 2. Gregorian Transition (1918):
+ *    - The day after Jan 31 was Feb 14 (Feb 14 was the 32nd day of the year).
+ * 3. Gregorian Calendar (1919 onwards):
+ *    - Leap year if divisible by 400 OR (divisible by 4 and not divisible by 100).
+ * 
+ * Target: Calculate the exact DD.MM.YYYY date for day 256.
+ * 
+ * Parameters:
+ *   @param {number} year - The target year (1700 <= year <= 2700)
+ * 
+ * Returns:
+ *   @returns {string} - Formatted date string "dd.mm.yyyy"
+ * 
+ * Complexity:
+ *   - Time Complexity: O(1) (iterates over at most 12 months)
+ *   - Space Complexity: O(1)
+ */
 function dayOfProgrammer(year) {
     let isLeapYear = false;
     let day = 0;
@@ -15,7 +32,6 @@ function dayOfProgrammer(year) {
     if (year === 1918) {
         day = 26;
         month = 9;
-
     } else if (
         (year < 1918 && year % 4 === 0) ||
         (year > 1918 && ((year % 400 === 0) || (year % 4 === 0 && year % 100 !== 0)))
@@ -35,4 +51,3 @@ function dayOfProgrammer(year) {
 
     return `${day.toString().padStart(2, '0')}.${month.toString().padStart(2, '0')}.${year}`;
 }
-console.log(dayOfProgrammer(1918));
