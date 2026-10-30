@@ -577,12 +577,12 @@ Famous example: $142857 \times 2 = 285714$.
 #### 🌲 Decision Flowchart
 ```mermaid
 flowchart TD
-    Start([Search Space: num from 100000 to 999999]) --> Init["result = [ ]<br/>num = 100000"]
-    Init --> Loop{"num <= 999999?"}
-    Loop -->|No| Finish([Return result array])
+    Start(["Search Space: num 100000 to 999999"]) --> Init["result = []<br/>num = 100000"]
+    Init --> Loop{"num &lt;= 999999?"}
+    Loop -->|No| Finish(["Return result array"])
     Loop -->|Yes| Double["doubled = num * 2"]
-    Double --> SortDigits["digits1 = num.toString().split('').sort().join('')<br/>digits2 = doubled.toString().split('').sort().join('')"]
-    SortDigits --> Match{"digits1 === digits2?"}
+    Double --> SortDigits["Sort digits of num and doubled"]
+    SortDigits --> Match{"digits match?"}
     Match -->|Yes| SaveMatch["result.push(num)"] --> NextNum["num++"] --> Loop
     Match -->|No| NextNum
 ```
