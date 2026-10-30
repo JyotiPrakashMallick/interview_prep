@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgCount" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e2e"/>
+      <stop offset="100%" stop-color="#11111b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="320" rx="16" fill="url(#bgCount)"/>
+
+  <!-- Title -->
+  <text x="400" y="38" font-family="'Comic Sans MS', cursive, sans-serif" font-size="16" font-weight="bold" fill="#f9e2af" text-anchor="middle">🍌 "The Fruit Stand Counter: Tally Characters into a Hash Map!"</text>
+
+  <!-- Left: String Conveyor -->
+  <g transform="translate(60, 70)">
+    <rect width="280" height="150" rx="10" fill="#313244" stroke="#89b4fa" stroke-width="2"/>
+    <text x="140" y="28" font-family="'Comic Sans MS', cursive, sans-serif" font-size="13" font-weight="bold" fill="#89b4fa" text-anchor="middle">Input String Stream: "banana"</text>
+
+    <!-- Animated reading cursor -->
+    <style>
+      @keyframes letterPulse {
+        0%, 100% { transform: translateY(0) scale(1); }
+        50% { transform: translateY(-8px) scale(1.1); fill: #f9e2af; }
+      }
+      .animLetterA { animation: letterPulse 1.5s ease-in-out infinite; transform-origin: center; }
+      .animLetterB { animation: letterPulse 1.5s ease-in-out infinite 0.2s; transform-origin: center; }
+      .animLetterN { animation: letterPulse 1.5s ease-in-out infinite 0.4s; transform-origin: center; }
+    </style>
+
+    <g transform="translate(25, 55)">
+      <!-- b a n a n a -->
+      <rect x="0" y="0" width="35" height="40" rx="6" fill="#181825"/>
+      <text class="animLetterB" x="17" y="27" font-family="monospace" font-size="20" font-weight="bold" fill="#fab387" text-anchor="middle">b</text>
+
+      <rect x="40" y="0" width="35" height="40" rx="6" fill="#181825"/>
+      <text class="animLetterA" x="57" y="27" font-family="monospace" font-size="20" font-weight="bold" fill="#a6e3a1" text-anchor="middle">a</text>
+
+      <rect x="80" y="0" width="35" height="40" rx="6" fill="#181825"/>
+      <text class="animLetterN" x="97" y="27" font-family="monospace" font-size="20" font-weight="bold" fill="#89b4fa" text-anchor="middle">n</text>
+
+      <rect x="120" y="0" width="35" height="40" rx="6" fill="#181825"/>
+      <text class="animLetterA" x="137" y="27" font-family="monospace" font-size="20" font-weight="bold" fill="#a6e3a1" text-anchor="middle">a</text>
+
+      <rect x="160" y="0" width="35" height="40" rx="6" fill="#181825"/>
+      <text class="animLetterN" x="177" y="27" font-family="monospace" font-size="20" font-weight="bold" fill="#89b4fa" text-anchor="middle">n</text>
+
+      <rect x="200" y="0" width="35" height="40" rx="6" fill="#181825"/>
+      <text class="animLetterA" x="217" y="27" font-family="monospace" font-size="20" font-weight="bold" fill="#a6e3a1" text-anchor="middle">a</text>
+    </g>
+
+    <text x="140" y="130" font-family="sans-serif" font-size="11" fill="#cdd6f4" text-anchor="middle">Single Pass: i = 0 to str.length - 1</text>
+  </g>
+
+  <!-- Animated Funnel / Hash Function -->
+  <g transform="translate(360, 110)">
+    <style>
+      @keyframes flowMap {
+        0% { transform: translateX(0); opacity: 0.3; }
+        50% { transform: translateX(15px); opacity: 1; }
+        100% { transform: translateX(30px); opacity: 0.3; }
+      }
+      .animArrow { animation: flowMap 1.5s infinite; }
+    </style>
+    <path class="animArrow" d="M 0,20 L 40,20 M 30,10 L 40,20 L 30,30" stroke="#f9e2af" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="20" y="50" font-family="monospace" font-size="11" font-weight="bold" fill="#f9e2af" text-anchor="middle">map[ch]++</text>
+  </g>
+
+  <!-- Right: Frequency Map Table -->
+  <g transform="translate(450, 70)">
+    <rect width="290" height="150" rx="10" fill="#181825" stroke="#a6e3a1" stroke-width="2"/>
+    <text x="145" y="28" font-family="'Comic Sans MS', cursive, sans-serif" font-size="13" font-weight="bold" fill="#a6e3a1" text-anchor="middle">📊 Character Map Object { }</text>
+
+    <!-- Table Rows -->
+    <g transform="translate(30, 45)">
+      <!-- row b -->
+      <rect x="0" y="0" width="70" height="26" rx="4" fill="#313244"/>
+      <text x="35" y="18" font-family="monospace" font-size="14" font-weight="bold" fill="#fab387" text-anchor="middle">'b'</text>
+      <rect x="80" y="0" width="150" height="26" rx="4" fill="#313244"/>
+      <text x="155" y="18" font-family="monospace" font-size="14" font-weight="bold" fill="#f9e2af" text-anchor="middle">1 occurrence</text>
+
+      <!-- row a -->
+      <rect x="0" y="32" width="70" height="26" rx="4" fill="#313244"/>
+      <text x="35" y="50" font-family="monospace" font-size="14" font-weight="bold" fill="#a6e3a1" text-anchor="middle">'a'</text>
+      <rect x="80" y="32" width="150" height="26" rx="4" fill="#a6e3a1"/>
+      <text x="155" y="50" font-family="monospace" font-size="14" font-weight="bold" fill="#11111b" text-anchor="middle">3 occurrences 🏆</text>
+
+      <!-- row n -->
+      <rect x="0" y="64" width="70" height="26" rx="4" fill="#313244"/>
+      <text x="35" y="82" font-family="monospace" font-size="14" font-weight="bold" fill="#89b4fa" text-anchor="middle">'n'</text>
+      <rect x="80" y="64" width="150" height="26" rx="4" fill="#313244"/>
+      <text x="155" y="82" font-family="monospace" font-size="14" font-weight="bold" fill="#f9e2af" text-anchor="middle">2 occurrences</text>
+    </g>
+  </g>
+
+  <!-- Pro-Tip Box / Footer -->
+  <text x="400" y="260" font-family="monospace" font-size="13" fill="#cdd6f4" text-anchor="middle">result[char] = (result[char] || 0) + 1;</text>
+  <text x="400" y="295" font-family="'Comic Sans MS', cursive, sans-serif" font-size="14" font-weight="bold" fill="#a6e3a1" text-anchor="middle">⚡ Linear Time: O(n) | Space: O(u) where u is unique characters (u ≤ 26 for English)</text>
+</svg>
+

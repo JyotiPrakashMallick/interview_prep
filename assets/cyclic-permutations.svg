@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgPerm" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181825"/>
+      <stop offset="100%" stop-color="#1e1e2e"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="320" rx="16" fill="url(#bgPerm)"/>
+
+  <!-- Title -->
+  <text x="400" y="38" font-family="'Comic Sans MS', cursive, sans-serif" font-size="16" font-weight="bold" fill="#f9e2af" text-anchor="middle">🔮 "Cyclic Number Magic: 142857 × 2 = 285714 (Same Digits Jumbled!)"</text>
+
+  <!-- Left: Original Number 142857 -->
+  <g transform="translate(60, 70)">
+    <rect width="280" height="150" rx="10" fill="#313244" stroke="#89b4fa" stroke-width="2"/>
+    <text x="140" y="28" font-family="'Comic Sans MS', cursive, sans-serif" font-size="13" font-weight="bold" fill="#89b4fa" text-anchor="middle">Original Number N</text>
+
+    <!-- Digits [1, 4, 2, 8, 5, 7] -->
+    <g transform="translate(20, 45)">
+      <rect x="0" y="0" width="35" height="35" rx="5" fill="#1e1e2e"/>
+      <text x="17" y="24" font-family="monospace" font-size="18" font-weight="bold" fill="#f9e2af" text-anchor="middle">1</text>
+      <rect x="40" y="0" width="35" height="35" rx="5" fill="#1e1e2e"/>
+      <text x="57" y="24" font-family="monospace" font-size="18" font-weight="bold" fill="#f9e2af" text-anchor="middle">4</text>
+      <rect x="80" y="0" width="35" height="35" rx="5" fill="#1e1e2e"/>
+      <text x="97" y="24" font-family="monospace" font-size="18" font-weight="bold" fill="#f9e2af" text-anchor="middle">2</text>
+      <rect x="120" y="0" width="35" height="35" rx="5" fill="#1e1e2e"/>
+      <text x="137" y="24" font-family="monospace" font-size="18" font-weight="bold" fill="#f9e2af" text-anchor="middle">8</text>
+      <rect x="160" y="0" width="35" height="35" rx="5" fill="#1e1e2e"/>
+      <text x="177" y="24" font-family="monospace" font-size="18" font-weight="bold" fill="#f9e2af" text-anchor="middle">5</text>
+      <rect x="200" y="0" width="35" height="35" rx="5" fill="#1e1e2e"/>
+      <text x="217" y="24" font-family="monospace" font-size="18" font-weight="bold" fill="#f9e2af" text-anchor="middle">7</text>
+    </g>
+
+    <!-- Sorted banner -->
+    <rect x="20" y="95" width="240" height="35" rx="6" fill="#181825"/>
+    <text x="140" y="117" font-family="monospace" font-size="12" fill="#a6adc8" text-anchor="middle">Sorted: "1, 2, 4, 5, 7, 8"</text>
+  </g>
+
+  <!-- Multiplication Mascot in Center -->
+  <g transform="translate(360, 95)">
+    <style>
+      @keyframes spinStar {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      .starAnim { animation: spinStar 8s linear infinite; transform-origin: 40px 40px; }
+    </style>
+    <g class="starAnim">
+      <circle cx="40" cy="40" r="28" fill="#fab387"/>
+      <text x="40" y="47" font-family="'Comic Sans MS', cursive, sans-serif" font-size="20" font-weight="bold" fill="#11111b" text-anchor="middle">× 2</text>
+    </g>
+    <text x="40" y="90" font-family="'Comic Sans MS', cursive, sans-serif" font-size="11" font-weight="bold" fill="#f9e2af" text-anchor="middle">Doubled</text>
+  </g>
+
+  <!-- Right: Doubled Number 285714 -->
+  <g transform="translate(460, 70)">
+    <rect width="280" height="150" rx="10" fill="#313244" stroke="#a6e3a1" stroke-width="2"/>
+    <text x="140" y="28" font-family="'Comic Sans MS', cursive, sans-serif" font-size="13" font-weight="bold" fill="#a6e3a1" text-anchor="middle">Doubled Number (2 × N)</text>
+
+    <!-- Digits [2, 8, 5, 7, 1, 4] -->
+    <g transform="translate(20, 45)">
+      <rect x="0" y="0" width="35" height="35" rx="5" fill="#1e1e2e"/>
+      <text x="17" y="24" font-family="monospace" font-size="18" font-weight="bold" fill="#a6e3a1" text-anchor="middle">2</text>
+      <rect x="40" y="0" width="35" height="35" rx="5" fill="#1e1e2e"/>
+      <text x="57" y="24" font-family="monospace" font-size="18" font-weight="bold" fill="#a6e3a1" text-anchor="middle">8</text>
+      <rect x="80" y="0" width="35" height="35" rx="5" fill="#1e1e2e"/>
+      <text x="97" y="24" font-family="monospace" font-size="18" font-weight="bold" fill="#a6e3a1" text-anchor="middle">5</text>
+      <rect x="120" y="0" width="35" height="35" rx="5" fill="#1e1e2e"/>
+      <text x="137" y="24" font-family="monospace" font-size="18" font-weight="bold" fill="#a6e3a1" text-anchor="middle">7</text>
+      <rect x="160" y="0" width="35" height="35" rx="5" fill="#1e1e2e"/>
+      <text x="177" y="24" font-family="monospace" font-size="18" font-weight="bold" fill="#a6e3a1" text-anchor="middle">1</text>
+      <rect x="200" y="0" width="35" height="35" rx="5" fill="#1e1e2e"/>
+      <text x="217" y="24" font-family="monospace" font-size="18" font-weight="bold" fill="#a6e3a1" text-anchor="middle">4</text>
+    </g>
+
+    <!-- Sorted banner -->
+    <rect x="20" y="95" width="240" height="35" rx="6" fill="#181825"/>
+    <text x="140" y="117" font-family="monospace" font-size="12" fill="#a6e3a1" text-anchor="middle">Sorted: "1, 2, 4, 5, 7, 8" ✅ MATCH!</text>
+  </g>
+
+  <!-- Bottom Verification Formula -->
+  <text x="400" y="260" font-family="monospace" font-size="13" fill="#cdd6f4" text-anchor="middle">digits(num).sort() === digits(2 * num).sort()</text>
+  <text x="400" y="295" font-family="'Comic Sans MS', cursive, sans-serif" font-size="14" font-weight="bold" fill="#f9e2af" text-anchor="middle">⚡ Time: O(N · D log D) for N numbers of D digits | Space: O(D) auxiliary per test</text>
+</svg>
+
