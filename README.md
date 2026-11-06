@@ -613,7 +613,7 @@ Given step count $n$ and the sequence of steps string `path`, count and return t
 
 #### 🎨 Graphical Cartoon Animation
 <p align="center">
-  <img src="assets/counting-valleys.svg" alt="Counting Valleys Cartoon Animation" width="100%" />
+  <img src="./assets/counting-valleys.svg" alt="Counting Valleys Cartoon Animation" width="100%" />
 </p>
 
 #### 🌲 Decision Flowchart
@@ -653,7 +653,7 @@ Standard 64-bit integer formats (`long long` in C/C++, `Number.MAX_SAFE_INTEGER`
 
 #### 🎨 Graphical Cartoon Animation
 <p align="center">
-  <img src="assets/extra-long-factorials.svg" alt="Extra Long Factorials Cartoon Animation" width="100%" />
+  <img src="./assets/extra-long-factorials.svg" alt="Extra Long Factorials Cartoon Animation" width="100%" />
 </p>
 
 #### 🌲 Decision Flowchart
