@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e2e"/>
+      <stop offset="50%" stop-color="#181825"/>
+      <stop offset="100%" stop-color="#11111b"/>
+    </linearGradient>
+    <linearGradient id="waterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#89dceb" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#1e66f5" stop-opacity="0.5"/>
+    </linearGradient>
+    <filter id="glowGreen" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#a6e3a1" flood-opacity="0.7"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="840" height="380" rx="16" fill="url(#skyGrad)"/>
+
+  <!-- Top Funny Title -->
+  <text x="420" y="34" font-family="'Comic Sans MS', cursive, sans-serif" font-size="16" font-weight="bold" fill="#f9e2af" text-anchor="middle">🥾 "The Valley Detector: Stepping UP to Sea Level Counts a Valley!"</text>
+
+  <!-- Sea Level Line & Label -->
+  <g transform="translate(40, 150)">
+    <!-- Sub-surface / Valley Water Shading -->
+    <rect x="0" y="0" width="760" height="150" fill="url(#waterGrad)"/>
+    
+    <!-- Sea Level Dashed Axis -->
+    <line x1="0" y1="0" x2="760" y2="0" stroke="#89dceb" stroke-width="3" stroke-dasharray="8 6"/>
+    <rect x="10" y="-14" width="125" height="24" rx="6" fill="#181825" stroke="#89dceb" stroke-width="1.5"/>
+    <text x="72" y="3" font-family="monospace" font-size="12" font-weight="bold" fill="#89dceb" text-anchor="middle">🌊 Sea Level = 0</text>
+    <text x="740" y="-8" font-family="'Comic Sans MS', cursive, sans-serif" font-size="11" fill="#a6adc8" text-anchor="end">Altitude &gt; 0 (Mountain 🏔️)</text>
+    <text x="740" y="24" font-family="'Comic Sans MS', cursive, sans-serif" font-size="11" fill="#89dceb" text-anchor="end">Altitude &lt; 0 (Valley 🏊)</text>
+  </g>
+
+  <!-- Terrain Path: U D D D U D U U -->
+  <!-- 
+    Step 0: (60, 150)
+    Step 1 'U': (140, 95)  alt = +1
+    Step 2 'D': (220, 150) alt = 0
+    Step 3 'D': (300, 205) alt = -1 (Entering Valley!)
+    Step 4 'D': (380, 260) alt = -2 (Valley floor)
+    Step 5 'U': (460, 205) alt = -1
+    Step 6 'D': (540, 260) alt = -2
+    Step 7 'U': (620, 205) alt = -1
+    Step 8 'U': (700, 150) alt = 0  <-- VALLEY COMPLETED!
+  -->
+  <g>
+    <!-- Mountain Region Fill (Altitude > 0) -->
+    <polygon points="60,150 140,95 220,150" fill="#a6e3a1" fill-opacity="0.15"/>
+    
+    <!-- Valley Region Fill (Altitude < 0) -->
+    <polygon points="220,150 300,205 380,260 460,205 540,260 620,205 700,150" fill="#f38ba8" fill-opacity="0.2"/>
+
+    <!-- Path Lines -->
+    <!-- Uphill 1 (Mountain) -->
+    <line x1="60" y1="150" x2="140" y2="95" stroke="#a6e3a1" stroke-width="4" stroke-linecap="round"/>
+    <!-- Downhill 2 -->
+    <line x1="140" y1="95" x2="220" y2="150" stroke="#f9e2af" stroke-width="4" stroke-linecap="round"/>
+    <!-- Downhill 3 (Entering valley) -->
+    <line x1="220" y1="150" x2="300" y2="205" stroke="#f38ba8" stroke-width="4" stroke-linecap="round"/>
+    <!-- Downhill 4 -->
+    <line x1="300" y1="205" x2="380" y2="260" stroke="#f38ba8" stroke-width="4" stroke-linecap="round"/>
+    <!-- Uphill 5 -->
+    <line x1="380" y1="260" x2="460" y2="205" stroke="#fab387" stroke-width="4" stroke-linecap="round"/>
+    <!-- Downhill 6 -->
+    <line x1="460" y1="205" x2="540" y2="260" stroke="#f38ba8" stroke-width="4" stroke-linecap="round"/>
+    <!-- Uphill 7 -->
+    <line x1="540" y1="260" x2="620" y2="205" stroke="#fab387" stroke-width="4" stroke-linecap="round"/>
+    <!-- Uphill 8 (Exiting valley - WINNER STEP!) -->
+    <line x1="620" y1="205" x2="700" y2="150" stroke="#a6e3a1" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Mountain Label -->
+    <text x="140" y="80" font-family="'Comic Sans MS', cursive, sans-serif" font-size="12" font-weight="bold" fill="#a6e3a1" text-anchor="middle">🏔️ Mountain (alt = +1)</text>
+
+    <!-- Valley Label & Bracket -->
+    <rect x="330" y="275" width="260" height="26" rx="6" fill="#181825" stroke="#f38ba8" stroke-width="1.5"/>
+    <text x="460" y="293" font-family="'Comic Sans MS', cursive, sans-serif" font-size="12" font-weight="bold" fill="#f38ba8" text-anchor="middle">🏊 1 Complete Valley Traversed</text>
+
+    <!-- Step tags -->
+    <text x="100" y="115" font-family="monospace" font-size="12" fill="#a6e3a1" font-weight="bold">U</text>
+    <text x="180" y="115" font-family="monospace" font-size="12" fill="#f9e2af" font-weight="bold">D</text>
+    <text x="260" y="170" font-family="monospace" font-size="12" fill="#f38ba8" font-weight="bold">D</text>
+    <text x="340" y="225" font-family="monospace" font-size="12" fill="#f38ba8" font-weight="bold">D</text>
+    <text x="420" y="225" font-family="monospace" font-size="12" fill="#fab387" font-weight="bold">U</text>
+    <text x="500" y="225" font-family="monospace" font-size="12" fill="#f38ba8" font-weight="bold">D</text>
+    <text x="580" y="225" font-family="monospace" font-size="12" fill="#fab387" font-weight="bold">U</text>
+    <text x="660" y="170" font-family="monospace" font-size="14" fill="#a6e3a1" font-weight="bold">U 🔥</text>
+  </g>
+
+  <!-- Animated Hiker Climbing Out At (700, 150) -->
+  <g transform="translate(680, 95)">
+    <style>
+      @keyframes hikerClimb {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-12px) rotate(8deg); }
+      }
+      .animHiker { animation: hikerClimb 1.2s ease-in-out infinite; }
+    </style>
+    <g class="animHiker">
+      <!-- Backpack -->
+      <rect x="0" y="14" width="12" height="18" rx="3" fill="#fab387"/>
+      <!-- Hiker Head / Hat -->
+      <circle cx="22" cy="10" r="9" fill="#f5c2e7"/>
+      <ellipse cx="22" cy="5" rx="14" ry="3" fill="#f9e2af"/>
+      <!-- Eyes & Smile -->
+      <circle cx="24" cy="9" r="1.5" fill="#11111b"/>
+      <path d="M 23,13 Q 26,16 28,13" stroke="#11111b" stroke-width="1.2" fill="none"/>
+      <!-- Body & Hiking Stick -->
+      <line x1="20" y1="19" x2="20" y2="38" stroke="#89b4fa" stroke-width="4" stroke-linecap="round"/>
+      <line x1="30" y1="12" x2="35" y2="45" stroke="#cdd6f4" stroke-width="2.5" stroke-linecap="round"/>
+      <!-- Legs moving -->
+      <line x1="20" y1="38" x2="12" y2="52" stroke="#89b4fa" stroke-width="3"/>
+      <line x1="20" y1="38" x2="28" y2="52" stroke="#89b4fa" stroke-width="3"/>
+    </g>
+
+    <!-- Trigger Callout Box -->
+    <rect x="-140" y="-35" width="220" height="42" rx="8" fill="#a6e3a1" filter="url(#glowGreen)"/>
+    <polygon points="-30,7 -20,7 -25,14" fill="#a6e3a1"/>
+    <text x="-30" y="-18" font-family="'Comic Sans MS', cursive, sans-serif" font-size="12" font-weight="bold" fill="#11111b" text-anchor="middle">Step 'U' &amp; Altitude == 0</text>
+    <text x="-30" y="-3" font-family="monospace" font-size="12" font-weight="bold" fill="#11111b" text-anchor="middle">valleys++ (Valley #1 Exited! 🏆)</text>
+  </g>
+
+  <!-- Bottom Explanatory Banner -->
+  <g transform="translate(60, 320)">
+    <rect width="720" height="46" rx="10" fill="#181825" stroke="#45475a"/>
+    <text x="360" y="20" font-family="monospace" font-size="12" fill="#cdd6f4" text-anchor="middle">Rule: if (step === 'U' &amp;&amp; ++altitude === 0) valleys++;</text>
+    <text x="360" y="38" font-family="'Comic Sans MS', cursive, sans-serif" font-size="12" font-weight="bold" fill="#a6e3a1" text-anchor="middle">⚡ Single Pass O(n) Time | O(1) Space — Mountains don't trigger count because altitude &gt; 0!</text>
+  </g>
+</svg>

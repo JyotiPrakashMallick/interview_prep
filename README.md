@@ -33,6 +33,8 @@ Welcome to the **Coding Interview Preparation** guide! This repository is carefu
 | 14 | [Reverse Array / String](#14-reverse-array-or-string) | In-Place Two Pointers / Iteration | $\mathcal{O}(n)$ | $\mathcal{O}(1)$ | 🔄 🤸 📦 | [`reverseString.js`](Javascript/reverseString.js) |
 | 15 | [Character Frequency Count](#15-character-frequency-count) | Hash Map / Occurrence Counting | $\mathcal{O}(n)$ | $\mathcal{O}(u)$ | 🍌 📊 🔤 | [`chharCount.js`](Javascript/chharCount.js) |
 | 16 | [Cyclic Permutation Digits](#16-cyclic-permutation-of-digits-number-doubling) | Number Theory / Anagram Sorting | $\mathcal{O}(N \cdot D \log D)$ | $\mathcal{O}(D)$ | 🔢 ⚡ 🔀 | [`question.js`](Javascript/question.js) & [`sixDigit.js`](Javascript/sixDigit.js) |
+| 17 | [Counting Valleys](#17-counting-valleys) | Path Traversal / Sea-Level Tracking | $\mathcal{O}(n)$ | $\mathcal{O}(1)$ | 🥾 🌊 🏔️ | [`countingValleys.js`](Javascript/countingValleys.js) |
+| 18 | [Extra Long Factorials](#18-extra-long-factorials) | Arbitrary-Precision Math / BigInt | $\mathcal{O}(n^2)$ | $\mathcal{O}(n \log n)$ | 💥 🦸 🔢 | [`extraLongFactorials.js`](Javascript/extraLongFactorials.js) |
 
 ---
 
@@ -595,6 +597,96 @@ flowchart TD
   $$S(D) = \mathcal{O}(D) = \mathcal{O}(1)$$
   *Explanation*: Digits array uses at most 6 characters per comparison iteration.
 - **Source Code**: [`question.js`](Javascript/question.js) & [`sixDigit.js`](Javascript/sixDigit.js)
+
+---
+
+### 17. Counting Valleys
+
+#### 📋 Problem Statement
+An avid hiker tracks every single step of a hike as either `'U'` (uphill) or `'D'` (downhill).
+The hike begins and concludes at sea level ($\text{altitude} = 0$), with each step causing a $+1$ or $-1$ change in vertical elevation.
+
+- **Mountain**: A sequence of consecutive steps strictly above sea level ($\text{altitude} > 0$), beginning with a step up from sea level and ending with a step down to sea level.
+- **Valley**: A sequence of consecutive steps strictly below sea level ($\text{altitude} < 0$), beginning with a step down from sea level and ending with a step up to sea level.
+
+Given step count $n$ and the sequence of steps string `path`, count and return the total number of valleys traversed.
+
+#### 🎨 Graphical Cartoon Animation
+<p align="center">
+  <img src="assets/counting-valleys.svg" alt="Counting Valleys Cartoon Animation" width="100%" />
+</p>
+
+#### 🌲 Decision Flowchart
+```mermaid
+flowchart TD
+    Start(["Input: steps n, path string"]) --> Init["altitude = 0<br/>valleys = 0<br/>i = 0"]
+    Init --> CheckLoop{"i &lt; steps?"}
+    CheckLoop -->|No| Finish(["Return valleys"])
+    CheckLoop -->|Yes| StepCheck{"path[i] === 'U'?"}
+    StepCheck -->|Yes: Step Up| Climb["altitude++"]
+    Climb --> CheckSeaLevel{"altitude === 0?"}
+    CheckSeaLevel -->|Yes: Stepped up out of valley| CountValley["valleys++ 🏆"] --> NextStep["i++"] --> CheckLoop
+    CheckSeaLevel -->|No: Inside mountain or climbing| NextStep
+    StepCheck -->|No: Step Down| Descend["altitude--"] --> NextStep
+```
+
+#### 📐 Complexity Formulas
+- **Time Complexity**:
+  $$T(n) = \mathcal{O}(n)$$
+  *Explanation*: Evaluates each step in the path string exactly once in a single linear pass of length $n$.
+- **Space Complexity**:
+  $$S(n) = \mathcal{O}(1)$$
+  *Explanation*: Requires only two scalar integer counters (`altitude` and `valleys`), with zero dynamic heap allocations.
+- **Source Code**: [`countingValleys.js`](Javascript/countingValleys.js)
+
+---
+
+### 18. Extra Long Factorials
+
+#### 📋 Problem Statement
+The factorial of an integer $n$, written $n!$, is defined as:
+$$n! = n \times (n - 1) \times (n - 2) \times \dots \times 3 \times 2 \times 1$$
+Calculate and print the exact factorial of a given integer $n$ ($1 \le n \le 100$).
+
+**The Core Challenge**:
+Standard 64-bit integer formats (`long long` in C/C++, `Number.MAX_SAFE_INTEGER` in JavaScript = $2^{53} - 1 \approx 9 \times 10^{15}$) overflow around $n \ge 19$. For $n = 25$, $25!$ has 26 digits ($15,511,210,043,330,985,984,000,000$). For $n = 100$, $100!$ has **158 digits**! Arbitrary-precision numbers must be used.
+
+#### 🎨 Graphical Cartoon Animation
+<p align="center">
+  <img src="assets/extra-long-factorials.svg" alt="Extra Long Factorials Cartoon Animation" width="100%" />
+</p>
+
+#### 🌲 Decision Flowchart
+```mermaid
+flowchart TD
+    Start(["Input: Integer n (1 to 100)"]) --> ChooseEngine{"Environment allows native BigInt?"}
+    ChooseEngine -->|Yes: Modern JS| BigIntPath["result = BigInt(1)<br/>i = 2"]
+    BigIntPath --> BigIntLoop{"i &lt;= n?"}
+    BigIntLoop -->|Yes| MultiplyBig["result *= BigInt(i)<br/>i++"] --> BigIntLoop
+    BigIntLoop -->|No| OutputBig(["print result.toString()"])
+
+    ChooseEngine -->|No: Manual Grade-School Multiplication| ArrayPath["digits = [1]<br/>multiplier = 2"]
+    ArrayPath --> MultLoop{"multiplier &lt;= n?"}
+    MultLoop -->|Yes| InnerInit["carry = 0<br/>idx = 0"]
+    InnerInit --> DigitLoop{"idx &lt; digits.length?"}
+    DigitLoop -->|Yes| StepProd["prod = digits[idx] * multiplier + carry<br/>digits[idx] = prod % 10<br/>carry = floor(prod / 10)<br/>idx++"] --> DigitLoop
+    DigitLoop -->|No| FlushCarry{"carry &gt; 0?"}
+    FlushCarry -->|Yes| AppendCarry["digits.push(carry % 10)<br/>carry = floor(carry / 10)"] --> FlushCarry
+    FlushCarry -->|No| NextMult["multiplier++"] --> MultLoop
+    MultLoop -->|No| OutputArray(["print digits.reverse().join('')"])
+```
+
+#### 📐 Complexity Formulas
+- **Number of Digits in $n!$**:
+  $$D(n) \approx \log_{10}(n!) = \sum_{i=1}^n \log_{10}(i) = \mathcal{O}(n \log n)$$
+  *Example*: $100! \approx 9.33 \times 10^{157}$, yielding 158 digits.
+- **Time Complexity**:
+  $$T(n) = \sum_{k=2}^n \mathcal{O}(\text{digits in } (k-1)!) = \sum_{k=2}^n \mathcal{O}(k \log k) = \mathcal{O}(n^2 \log n) \approx \mathcal{O}(n^2)$$
+  *Explanation*: Multiplying an array of size $k \log k$ digits by a scalar integer $k$ takes $\mathcal{O}(k \log k)$ operations.
+- **Space Complexity**:
+  $$S(n) = \mathcal{O}(n \log n)$$
+  *Explanation*: Requires memory proportional to the length of the final digits string / array (158 digits for $n = 100$).
+- **Source Code**: [`extraLongFactorials.js`](Javascript/extraLongFactorials.js)
 
 ---
 
