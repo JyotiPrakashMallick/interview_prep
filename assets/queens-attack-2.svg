@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 420" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgQueen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181825"/>
+      <stop offset="50%" stop-color="#1e1e2e"/>
+      <stop offset="100%" stop-color="#11111b"/>
+    </linearGradient>
+    <filter id="glowGreenQueen" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#a6e3a1" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <rect width="840" height="420" rx="16" fill="url(#bgQueen)"/>
+
+  <!-- Title -->
+  <text x="420" y="34" font-family="'Comic Sans MS', cursive, sans-serif" font-size="16" font-weight="bold" fill="#f9e2af" text-anchor="middle">👑 "Queen's Attack II: 8 Directional Rays vs Obstacle Laser Trimming!"</text>
+
+  <!-- Left: Stylized Chessboard Grid 8x8 -->
+  <g transform="translate(60, 60)">
+    <!-- Board Border -->
+    <rect x="-10" y="-10" width="280" height="280" rx="8" fill="#11111b" stroke="#fab387" stroke-width="3"/>
+
+    <!-- 8x8 Chessboard Squares (each 32.5 x 32.5) -->
+    <!-- Rows: r=8 (top, y=0) down to r=1 (bottom, y=227.5) -->
+    <!-- Col: c=1 (x=0) to c=8 (x=227.5) -->
+    <!-- Queen at (r=4, c=4) -> row index 4 from top (y = 4 * 32.5 = 130), col index 3 (x = 3 * 32.5 = 97.5) -->
+
+    <!-- Ambient Ray Highlights in all 8 directions from (4,4) -->
+    <!-- Vertical Column c=4 (x=97.5) -->
+    <rect x="97.5" y="0" width="32.5" height="260" fill="#a6e3a1" fill-opacity="0.3"/>
+    <!-- Horizontal Row r=4 (y=130) -->
+    <rect x="0" y="130" width="260" height="32.5" fill="#a6e3a1" fill-opacity="0.3"/>
+
+    <!-- Green attack circles in all 8 directions -->
+    <!-- North -->
+    <circle cx="113.75" cy="16.25" r="10" fill="none" stroke="#a6e3a1" stroke-width="3"/>
+    <circle cx="113.75" cy="48.75" r="10" fill="none" stroke="#a6e3a1" stroke-width="3"/>
+    <circle cx="113.75" cy="81.25" r="10" fill="none" stroke="#a6e3a1" stroke-width="3"/>
+    <circle cx="113.75" cy="113.75" r="10" fill="none" stroke="#a6e3a1" stroke-width="3"/>
+    <!-- South -->
+    <circle cx="113.75" cy="178.75" r="10" fill="none" stroke="#a6e3a1" stroke-width="3"/>
+    <circle cx="113.75" cy="211.25" r="10" fill="none" stroke="#a6e3a1" stroke-width="3"/>
+    <circle cx="113.75" cy="243.75" r="10" fill="none" stroke="#a6e3a1" stroke-width="3"/>
+    <!-- West -->
+    <circle cx="16.25" cy="146.25" r="10" fill="none" stroke="#a6e3a1" stroke-width="3"/>
+    <circle cx="48.75" cy="146.25" r="10" fill="none" stroke="#a6e3a1" stroke-width="3"/>
+    <circle cx="81.25" cy="146.25" r="10" fill="none" stroke="#a6e3a1" stroke-width="3"/>
+    <!-- East -->
+    <circle cx="146.25" cy="146.25" r="10" fill="none" stroke="#a6e3a1" stroke-width="3"/>
+    <circle cx="178.75" cy="146.25" r="10" fill="none" stroke="#a6e3a1" stroke-width="3"/>
+    <circle cx="211.25" cy="146.25" r="10" fill="none" stroke="#a6e3a1" stroke-width="3"/>
+    <circle cx="243.75" cy="146.25" r="10" fill="none" stroke="#a6e3a1" stroke-width="3"/>
+
+    <!-- Diagonals -->
+    <!-- NW -->
+    <circle cx="81.25" cy="113.75" r="10" fill="none" stroke="#a6e3a1" stroke-width="3"/>
+    <circle cx="48.75" cy="81.25" r="10" fill="none" stroke="#a6e3a1" stroke-width="3"/>
+    <circle cx="16.25" cy="48.75" r="10" fill="none" stroke="#a6e3a1" stroke-width="3"/>
+    <!-- NE -->
+    <circle cx="146.25" cy="113.75" r="10" fill="none" stroke="#a6e3a1" stroke-width="3"/>
+    <circle cx="178.75" cy="81.25" r="10" fill="none" stroke="#a6e3a1" stroke-width="3"/>
+    <circle cx="211.25" cy="48.75" r="10" fill="none" stroke="#a6e3a1" stroke-width="3"/>
+    <circle cx="243.75" cy="16.25" r="10" fill="none" stroke="#a6e3a1" stroke-width="3"/>
+    <!-- SW -->
+    <circle cx="81.25" cy="178.75" r="10" fill="none" stroke="#a6e3a1" stroke-width="3"/>
+    <circle cx="48.75" cy="211.25" r="10" fill="none" stroke="#a6e3a1" stroke-width="3"/>
+    <circle cx="16.25" cy="243.75" r="10" fill="none" stroke="#a6e3a1" stroke-width="3"/>
+    <!-- SE -->
+    <circle cx="146.25" cy="178.75" r="10" fill="none" stroke="#a6e3a1" stroke-width="3"/>
+    <circle cx="178.75" cy="211.25" r="10" fill="none" stroke="#a6e3a1" stroke-width="3"/>
+    <circle cx="211.25" cy="243.75" r="10" fill="none" stroke="#a6e3a1" stroke-width="3"/>
+
+    <!-- Obstacle Rock at (7, 4) in North ray -->
+    <rect x="98.75" y="33.75" width="30" height="30" rx="6" fill="#f38ba8"/>
+    <text x="113.75" y="54" font-family="'Comic Sans MS', cursive, sans-serif" font-size="16" fill="#11111b" font-weight="bold" text-anchor="middle">🪨</text>
+
+    <!-- Animated Queen in Center (4,4) -->
+    <style>
+      @keyframes queenPulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.12); }
+      }
+      .animQueen { animation: queenPulse 1.5s infinite; transform-origin: 113.75px 146.25px; }
+    </style>
+    <g class="animQueen">
+      <rect x="99" y="131.5" width="29.5" height="29.5" rx="5" fill="#f9e2af" filter="url(#glowGreenQueen)"/>
+      <text x="113.75" y="153" font-size="22" text-anchor="middle">♛</text>
+    </g>
+
+    <!-- Blocked X on (8, 4) -->
+    <text x="113.75" y="24" font-family="monospace" font-size="22" font-weight="bold" fill="#f38ba8" text-anchor="middle">❌</text>
+    <text x="113.75" y="280" font-family="'Comic Sans MS', cursive, sans-serif" font-size="11" fill="#f9e2af" text-anchor="middle">Obstacle blocks path behind it!</text>
+  </g>
+
+  <!-- Right: 8 Directions Ray-Casting Math Card -->
+  <g transform="translate(370, 60)">
+    <rect width="425" height="260" rx="12" fill="#11111b" stroke="#a6e3a1" stroke-width="2"/>
+    <text x="212" y="26" font-family="'Comic Sans MS', cursive, sans-serif" font-size="13" font-weight="bold" fill="#a6e3a1" text-anchor="middle">⚡ O(k) Math Ray-Casting (No 2D Grid Needed!)</text>
+
+    <!-- 8 Directions Box Table -->
+    <g transform="translate(20, 42)">
+      <!-- North & South -->
+      <rect x="0" y="0" width="185" height="36" rx="5" fill="#313244"/>
+      <text x="10" y="22" font-family="monospace" font-size="11" fill="#cdd6f4">North = n - r_q</text>
+      <rect x="200" y="0" width="185" height="36" rx="5" fill="#313244"/>
+      <text x="210" y="22" font-family="monospace" font-size="11" fill="#cdd6f4">South = r_q - 1</text>
+
+      <!-- East & West -->
+      <rect x="0" y="44" width="185" height="36" rx="5" fill="#313244"/>
+      <text x="10" y="66" font-family="monospace" font-size="11" fill="#cdd6f4">East  = n - c_q</text>
+      <rect x="200" y="44" width="185" height="36" rx="5" fill="#313244"/>
+      <text x="210" y="66" font-family="monospace" font-size="11" fill="#cdd6f4">West  = c_q - 1</text>
+
+      <!-- 4 Diagonals -->
+      <rect x="0" y="88" width="185" height="36" rx="5" fill="#313244"/>
+      <text x="10" y="110" font-family="monospace" font-size="11" fill="#fab387">NE = min(North, East)</text>
+      <rect x="200" y="88" width="185" height="36" rx="5" fill="#313244"/>
+      <text x="210" y="110" font-family="monospace" font-size="11" fill="#fab387">NW = min(North, West)</text>
+
+      <rect x="0" y="132" width="185" height="36" rx="5" fill="#313244"/>
+      <text x="10" y="154" font-family="monospace" font-size="11" fill="#fab387">SE = min(South, East)</text>
+      <rect x="200" y="132" width="185" height="36" rx="5" fill="#313244"/>
+      <text x="210" y="154" font-family="monospace" font-size="11" fill="#fab387">SW = min(South, West)</text>
+    </g>
+
+    <!-- Laser Trimming Rule -->
+    <rect x="20" y="215" width="385" height="32" rx="6" fill="#181825" stroke="#f38ba8"/>
+    <text x="212" y="235" font-family="monospace" font-size="11" font-weight="bold" fill="#f9e2af" text-anchor="middle">Obstacle trim: direction = min(direction, dist - 1)</text>
+  </g>
+
+  <!-- Bottom Complexity Banner -->
+  <g transform="translate(60, 340)">
+    <rect width="735" height="60" rx="10" fill="#181825" stroke="#45475a"/>
+    <text x="367" y="24" font-family="'Comic Sans MS', cursive, sans-serif" font-size="13" font-weight="bold" fill="#f9e2af" text-anchor="middle">💡 Avoid O(n²) 2D Board Simulation! For n = 100,000, creating an array takes 10 GB memory!</text>
+    <text x="367" y="46" font-family="sans-serif" font-size="12" font-weight="bold" fill="#a6e3a1" text-anchor="middle">⚡ Pure O(k) Time (k obstacles pass) | O(1) Auxiliary Space (8 integer counters)</text>
+  </g>
+</svg>

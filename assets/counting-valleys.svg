@@ -20,7 +20,7 @@
   <!-- Top Funny Title -->
   <text x="420" y="34" font-family="'Comic Sans MS', cursive, sans-serif" font-size="16" font-weight="bold" fill="#f9e2af" text-anchor="middle">🥾 "The Valley Detector: Stepping UP to Sea Level Counts a Valley!"</text>
 
-  <!-- Sea Level Line & Label -->
+  <!-- Sea Level Line &amp; Label -->
   <g transform="translate(40, 150)">
     <!-- Sub-surface / Valley Water Shading -->
     <rect x="0" y="0" width="760" height="150" fill="url(#waterGrad)"/>
@@ -34,17 +34,6 @@
   </g>
 
   <!-- Terrain Path: U D D D U D U U -->
-  <!-- 
-    Step 0: (60, 150)
-    Step 1 'U': (140, 95)  alt = +1
-    Step 2 'D': (220, 150) alt = 0
-    Step 3 'D': (300, 205) alt = -1 (Entering Valley!)
-    Step 4 'D': (380, 260) alt = -2 (Valley floor)
-    Step 5 'U': (460, 205) alt = -1
-    Step 6 'D': (540, 260) alt = -2
-    Step 7 'U': (620, 205) alt = -1
-    Step 8 'U': (700, 150) alt = 0  <-- VALLEY COMPLETED!
-  -->
   <g>
     <!-- Mountain Region Fill (Altitude > 0) -->
     <polygon points="60,150 140,95 220,150" fill="#a6e3a1" fill-opacity="0.15"/>
@@ -73,7 +62,7 @@
     <!-- Mountain Label -->
     <text x="140" y="80" font-family="'Comic Sans MS', cursive, sans-serif" font-size="12" font-weight="bold" fill="#a6e3a1" text-anchor="middle">🏔️ Mountain (alt = +1)</text>
 
-    <!-- Valley Label & Bracket -->
+    <!-- Valley Label &amp; Bracket -->
     <rect x="330" y="275" width="260" height="26" rx="6" fill="#181825" stroke="#f38ba8" stroke-width="1.5"/>
     <text x="460" y="293" font-family="'Comic Sans MS', cursive, sans-serif" font-size="12" font-weight="bold" fill="#f38ba8" text-anchor="middle">🏊 1 Complete Valley Traversed</text>
 
@@ -103,10 +92,10 @@
       <!-- Hiker Head / Hat -->
       <circle cx="22" cy="10" r="9" fill="#f5c2e7"/>
       <ellipse cx="22" cy="5" rx="14" ry="3" fill="#f9e2af"/>
-      <!-- Eyes & Smile -->
+      <!-- Eyes &amp; Smile -->
       <circle cx="24" cy="9" r="1.5" fill="#11111b"/>
       <path d="M 23,13 Q 26,16 28,13" stroke="#11111b" stroke-width="1.2" fill="none"/>
-      <!-- Body & Hiking Stick -->
+      <!-- Body &amp; Hiking Stick -->
       <line x1="20" y1="19" x2="20" y2="38" stroke="#89b4fa" stroke-width="4" stroke-linecap="round"/>
       <line x1="30" y1="12" x2="35" y2="45" stroke="#cdd6f4" stroke-width="2.5" stroke-linecap="round"/>
       <!-- Legs moving -->

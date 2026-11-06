@@ -35,6 +35,9 @@ Welcome to the **Coding Interview Preparation** guide! This repository is carefu
 | 16 | [Cyclic Permutation Digits](#16-cyclic-permutation-of-digits-number-doubling) | Number Theory / Anagram Sorting | $\mathcal{O}(N \cdot D \log D)$ | $\mathcal{O}(D)$ | 🔢 ⚡ 🔀 | [`question.js`](Javascript/question.js) & [`sixDigit.js`](Javascript/sixDigit.js) |
 | 17 | [Counting Valleys](#17-counting-valleys) | Path Traversal / Sea-Level Tracking | $\mathcal{O}(n)$ | $\mathcal{O}(1)$ | 🥾 🌊 🏔️ | [`countingValleys.js`](Javascript/countingValleys.js) |
 | 18 | [Extra Long Factorials](#18-extra-long-factorials) | Arbitrary-Precision Math / BigInt | $\mathcal{O}(n^2)$ | $\mathcal{O}(n \log n)$ | 💥 🦸 🔢 | [`extraLongFactorials.js`](Javascript/extraLongFactorials.js) |
+| 19 | [Non-Divisible Subset](#19-non-divisible-subset) | Remainder Bucketing / Greedy Choice | $\mathcal{O}(n + k)$ | $\mathcal{O}(k)$ | ⚔️ 🥊 🛡️ | [`nonDivisibleSubset.js`](Javascript/nonDivisibleSubset.js) |
+| 20 | [Queen's Attack II](#20-queens-attack-ii) | 8-Direction Ray-Casting / Distance Trimming | $\mathcal{O}(k)$ | $\mathcal{O}(1)$ | 👑 ♟️ 🏹 | [`queensAttack.js`](Javascript/queensAttack.js) |
+| 21 | [Taum and B'day](#21-taum-and-bday) | Math / Cost Arbitrage & BigInt | $\mathcal{O}(1)$ | $\mathcal{O}(1)$ | 🎁 🪄 🤍 | [`taumBday.js`](Javascript/taumBday.js) |
 
 ---
 
@@ -687,6 +690,156 @@ flowchart TD
   $$S(n) = \mathcal{O}(n \log n)$$
   *Explanation*: Requires memory proportional to the length of the final digits string / array (158 digits for $n = 100$).
 - **Source Code**: [`extraLongFactorials.js`](Javascript/extraLongFactorials.js)
+
+---
+
+### 19. Non-Divisible Subset
+
+#### 📋 Problem Statement
+Given a set of distinct integers $S$ and an integer $k$, find and print the size of a **maximal subset** $S' \subseteq S$ such that the sum of any two numbers in $S'$ is **not evenly divisible** by $k$:
+$$(a + b) \not\equiv 0 \pmod k \quad \forall a, b \in S', \, a \neq b$$
+
+#### 🎨 Graphical Cartoon Animation
+<p align="center">
+  <img src="./assets/non-divisible-subset.svg" alt="Non-Divisible Subset Cartoon Animation" width="100%" />
+</p>
+
+#### 🌲 Decision Flowchart
+```mermaid
+flowchart TD
+    Start(["Input: Array S, Divisor k"]) --> CountRem["Initialize remainder array:<br/>counts = new Array(k).fill(0)<br/>Tally each num % k"]
+    CountRem --> InitSize["maxSize = 0"]
+    InitSize --> RemZero{"counts[0] &gt; 0?"}
+    RemZero -->|Yes: At most 1 element permitted| AddZero["maxSize += 1"] --> LoopInit["r = 1<br/>halfK = floor(k / 2)"]
+    RemZero -->|No| LoopInit
+    LoopInit --> LoopCheck{"r &lt;= halfK?"}
+    LoopCheck -->|No| Finish(["Return maxSize"])
+    LoopCheck -->|Yes| CompCheck{"r === k - r?"}
+    CompCheck -->|Yes: Even k midpoint| EvenMid{"counts[r] &gt; 0?"}
+    EvenMid -->|Yes: At most 1 element permitted| AddMid["maxSize += 1"] --> NextR["r++"] --> LoopCheck
+    EvenMid -->|No| NextR
+    CompCheck -->|No: Greedily pick the larger bucket| PickMax["maxSize += Math.max(counts[r], counts[k - r])"] --> NextR
+```
+
+#### 📐 Complexity Formulas
+- **Mathematical Invariant**:
+  $$(a + b) \equiv 0 \pmod k \iff ((a \bmod k) + (b \bmod k)) \equiv 0 \pmod k$$
+  Therefore, numbers with remainder $r$ conflict exclusively with numbers having remainder $(k - r)$.
+- **Greedy Selection Formula**:
+  $$\text{Subset Size} = \min(1, \text{count}[0]) + \sum_{r=1}^{\lfloor k/2 \rfloor} \begin{cases} \min(1, \text{count}[r]) & \text{if } r = k - r \\ \max(\text{count}[r], \text{count}[k - r]) & \text{if } r \neq k - r \end{cases}$$
+- **Time Complexity**:
+  $$T(n, k) = \mathcal{O}(n + k)$$
+  *Explanation*: A single linear pass through $n$ elements counts remainders, followed by $\lfloor k / 2 \rfloor$ greedy comparisons. Since $k \le 100$, this executes in sub-millisecond time.
+- **Space Complexity**:
+  $$S(k) = \mathcal{O}(k)$$
+  *Explanation*: A fixed remainder frequency array of size $k \le 100$.
+- **Source Code**: [`nonDivisibleSubset.js`](Javascript/nonDivisibleSubset.js)
+
+---
+
+### 20. Queen's Attack II
+
+#### 📋 Problem Statement
+A queen is positioned on an $n \times n$ chessboard at square $(r_q, c_q)$. The board rows and columns are 1-indexed. Given $k$ obstacles located at coordinates $[r_o, c_o]$, calculate the total number of squares the queen can attack in a single move across all 8 cardinal and diagonal directions.
+
+The queen can move any number of unobstructed squares in:
+1. **Vertical**: North $(r+1, c)$, South $(r-1, c)$
+2. **Horizontal**: East $(r, c+1)$, West $(r, c-1)$
+3. **Diagonals**: North-East, North-West, South-East, South-West
+
+An obstacle completely blocks the queen from attacking that square and any square situated behind it along that ray.
+
+#### 🎨 Graphical Cartoon Animation
+<p align="center">
+  <img src="./assets/queens-attack-2.svg" alt="Queen's Attack II Cartoon Animation" width="100%" />
+</p>
+
+#### 🌲 Decision Flowchart
+```mermaid
+flowchart TD
+    Start(["Input: board n, queen (r_q, c_q), obstacles"]) --> InitRays["Initialize 8 distance bounds to edges:<br/>north = n - r_q, south = r_q - 1<br/>east = n - c_q, west = c_q - 1<br/>ne = min(n, e), nw = min(n, w)<br/>se = min(s, e), sw = min(s, w)"]
+    InitRays --> ObstacleLoop{"For each obstacle (r_o, c_o)"}
+    ObstacleLoop --> RayCheck{"Does obstacle lie on one of the 8 lines of sight?"}
+    RayCheck -->|Vertical: dc === 0| TrimVert["dr &gt; 0: north = min(north, dr - 1)<br/>dr &lt; 0: south = min(south, -dr - 1)"] --> NextObs["Next Obstacle"]
+    RayCheck -->|Horizontal: dr === 0| TrimHoriz["dc &gt; 0: east = min(east, dc - 1)<br/>dc &lt; 0: west = min(west, -dc - 1)"] --> NextObs
+    RayCheck -->|Diagonal: abs(dr) === abs(dc)| TrimDiag["Prune NE, NW, SE, or SW to abs(dr) - 1"] --> NextObs
+    RayCheck -->|Not in line of sight| NextObs
+    NextObs --> MoreObs{"More obstacles?"}
+    MoreObs -->|Yes| ObstacleLoop
+    MoreObs -->|No| SumResult(["Return north + south + east + west + ne + nw + se + sw"])
+```
+
+#### 📐 Complexity Formulas
+- **Ray-Casting Invariant**:
+  Instead of simulating grid cells ($\mathcal{O}(n)$ per direction which fails when $n = 100,000$), we initialize maximum ray reach from queen's coordinates:
+  $$\begin{aligned}
+  \text{North} &= n - r_q, & \text{South} &= r_q - 1 \\
+  \text{East} &= n - c_q, & \text{West} &= c_q - 1 \\
+  \text{NE} &= \min(\text{North}, \text{East}), & \text{NW} &= \min(\text{North}, \text{West}) \\
+  \text{SE} &= \min(\text{South}, \text{East}), & \text{SW} &= \min(\text{South}, \text{West})
+  \end{aligned}$$
+- **Obstacle Trimming**:
+  For an obstacle at $(r_o, c_o)$, if it intersects a direction ray, update:
+  $$\text{reach} = \min(\text{reach}, \, \text{distance} - 1)$$
+- **Time Complexity**:
+  $$T(k) = \mathcal{O}(k)$$
+  *Explanation*: A single pass over $k$ obstacles. Completely independent of the chessboard size $n$! Handles $n = 100,000$ in $\sim 5 \text{ ms}$.
+- **Space Complexity**:
+  $$S = \mathcal{O}(1)$$
+  *Explanation*: Requires only 8 primitive directional integers.
+- **Source Code**: [`queensAttack.js`](Javascript/queensAttack.js)
+
+---
+
+### 21. Taum and B'day
+
+#### 📋 Problem Statement
+Taum needs to purchase $b$ black gifts and $w$ white gifts for Diksha's birthday.
+- Cost of buying a black gift directly = $bc$
+- Cost of buying a white gift directly = $wc$
+- Cost of converting a black gift to a white gift (or vice versa) = $z$
+
+Determine the minimum total cost to obtain all required gifts.
+
+#### 🎨 Graphical Cartoon Animation
+<p align="center">
+  <img src="./assets/taum-bday.svg" alt="Taum and Bday Cartoon Animation" width="100%" />
+</p>
+
+#### 🌲 Decision Flowchart
+```mermaid
+flowchart TD
+    Start(["Input: b, w, bc, wc, z"]) --> ConvertBigInt["Cast all inputs to BigInt:<br/>B, W, BC, WC, Z"]
+    ConvertBigInt --> BestBlack{"BC &lt; WC + Z?"}
+    BestBlack -->|Yes: Direct cheaper| PickDirectB["effectiveBC = BC"]
+    BestBlack -->|No: Convert cheaper| PickConvertB["effectiveBC = WC + Z"]
+    PickDirectB --> BestWhite{"WC &lt; BC + Z?"}
+    PickConvertB --> BestWhite
+    BestWhite -->|Yes: Direct cheaper| PickDirectW["effectiveWC = WC"]
+    BestWhite -->|No: Convert cheaper| PickConvertW["effectiveWC = BC + Z"]
+    PickDirectW --> CalcTotal["totalCost = (B * effectiveBC) + (W * effectiveWC)"]
+    PickConvertW --> CalcTotal
+    CalcTotal --> Output(["Return totalCost"])
+```
+
+#### 📐 Complexity Formulas
+- **Cost Arbitrage Formula**:
+  $$\begin{aligned}
+  \text{cost}_{\text{black}} &= \min(bc, \, wc + z) \\
+  \text{cost}_{\text{white}} &= \min(wc, \, bc + z) \\
+  \text{Total Cost} &= b \times \text{cost}_{\text{black}} + w \times \text{cost}_{\text{white}}
+  \end{aligned}$$
+- **Integer Overflow Considerations**:
+  Since $b, w, bc, wc, z \le 10^9$, the maximum possible total cost is:
+  $$\text{Max Cost} = 10^9 \times 10^9 + 10^9 \times 10^9 = 2 \times 10^{18}$$
+  Standard 64-bit IEEE 754 floating-point (`Number.MAX_SAFE_INTEGER` $\approx 9 \times 10^{15}$) will lose precision. Using `BigInt` guarantees exact integer calculations.
+- **Time Complexity**:
+  $$T = \mathcal{O}(1)$$
+  *Explanation*: A constant number of comparisons, additions, and multiplications.
+- **Space Complexity**:
+  $$S = \mathcal{O}(1)$$
+  *Explanation*: Fixed number of primitive `BigInt` variables on the stack.
+- **Source Code**: [`taumBday.js`](Javascript/taumBday.js)
 
 ---
 
