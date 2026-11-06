@@ -41,6 +41,7 @@ Click on any problem name below to open its dedicated documentation page with ca
 | 19 | **Non-Divisible Subset** | Remainder Bucketing / Greedy Choice | $\mathcal{O}(n + k)$ | $\mathcal{O}(k)$ | ⚔️ 🥊 🛡️ | [📖 View Guide](docs/19-non-divisible-subset.md) | [`nonDivisibleSubset.js`](Javascript/nonDivisibleSubset.js) |
 | 20 | **Queen's Attack II** | 8-Direction Ray-Casting / Distance Trimming | $\mathcal{O}(k)$ | $\mathcal{O}(1)$ | 👑 ♟️ 🏹 | [📖 View Guide](docs/20-queens-attack-2.md) | [`queensAttack.js`](Javascript/queensAttack.js) |
 | 21 | **Taum and B'day** | Math / Cost Arbitrage & BigInt | $\mathcal{O}(1)$ | $\mathcal{O}(1)$ | 🎁 🪄 🤍 | [📖 View Guide](docs/21-taum-and-bday.md) | [`taumBday.js`](Javascript/taumBday.js) |
+| 22 | **Modified Kaprekar Numbers** | Number Theory / Digit Splitting | $\mathcal{O}((q-p) \cdot d)$ | $\mathcal{O}(k)$ | ✂️ 🔢 ➕ | [📖 View Guide](docs/22-kaprekar-numbers.md) | [`kaprekarNumbers.js`](Javascript/kaprekarNumbers.js) |
 
 ---
 
