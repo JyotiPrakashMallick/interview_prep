@@ -42,6 +42,8 @@ Click on any problem name below to open its dedicated documentation page with ca
 | 20 | **Queen's Attack II** | 8-Direction Ray-Casting / Distance Trimming | $\mathcal{O}(k)$ | $\mathcal{O}(1)$ | 👑 ♟️ 🏹 | [📖 View Guide](docs/20-queens-attack-2.md) | [`queensAttack.js`](Javascript/queensAttack.js) |
 | 21 | **Taum and B'day** | Math / Cost Arbitrage & BigInt | $\mathcal{O}(1)$ | $\mathcal{O}(1)$ | 🎁 🪄 🤍 | [📖 View Guide](docs/21-taum-and-bday.md) | [`taumBday.js`](Javascript/taumBday.js) |
 | 22 | **Modified Kaprekar Numbers** | Number Theory / Digit Splitting | $\mathcal{O}((q-p) \cdot d)$ | $\mathcal{O}(k)$ | ✂️ 🔢 ➕ | [📖 View Guide](docs/22-kaprekar-numbers.md) | [`kaprekarNumbers.js`](Javascript/kaprekarNumbers.js) |
+| 23 | **Beautiful Triplets** | Hash Map / Frequency Counting | $\mathcal{O}(n)$ | $\mathcal{O}(n)$ | 💎 🦘 🔢 | [📖 View Guide](docs/23-beautiful-triplets.md) | [`beautifulTriplets.js`](Javascript/beautifulTriplets.js) |
+| 24 | **Minimum Distances** | Hash Map / Last-Seen Index | $\mathcal{O}(n)$ | $\mathcal{O}(n)$ | 📏 👯 🔍 | [📖 View Guide](docs/24-minimum-distances.md) | [`minimumDistances.js`](Javascript/minimumDistances.js) |
 
 ---
 
