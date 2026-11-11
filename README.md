@@ -44,6 +44,9 @@ Click on any problem name below to open its dedicated documentation page with ca
 | 22 | **Modified Kaprekar Numbers** | Number Theory / Digit Splitting | $\mathcal{O}((q-p) \cdot d)$ | $\mathcal{O}(k)$ | ✂️ 🔢 ➕ | [📖 View Guide](docs/22-kaprekar-numbers.md) | [`kaprekarNumbers.js`](Javascript/kaprekarNumbers.js) |
 | 23 | **Beautiful Triplets** | Hash Map / Frequency Counting | $\mathcal{O}(n)$ | $\mathcal{O}(n)$ | 💎 🦘 🔢 | [📖 View Guide](docs/23-beautiful-triplets.md) | [`beautifulTriplets.js`](Javascript/beautifulTriplets.js) |
 | 24 | **Minimum Distances** | Hash Map / Last-Seen Index | $\mathcal{O}(n)$ | $\mathcal{O}(n)$ | 📏 👯 🔍 | [📖 View Guide](docs/24-minimum-distances.md) | [`minimumDistances.js`](Javascript/minimumDistances.js) |
+| 25 | **Halloween Sale** | Simulation / Clamped Arithmetic Sequence | $\mathcal{O}(s / m)$ | $\mathcal{O}(1)$ | 🎃 🎮 💰 | [📖 View Guide](docs/25-halloween-sale.md) | [`halloweenSale.js`](Javascript/halloweenSale.js) |
+| 26 | **The Time in Words** | String Building / Lookup Table | $\mathcal{O}(1)$ | $\mathcal{O}(1)$ | 🕔 🔤 🗣️ | [📖 View Guide](docs/26-time-in-words.md) | [`timeInWords.js`](Javascript/timeInWords.js) |
+| 27 | **Chocolate Feast** | Simulation / Wrapper Exchange | $\mathcal{O}(\log_m(n/c))$ | $\mathcal{O}(1)$ | 🍫 🔁 🎁 | [📖 View Guide](docs/27-chocolate-feast.md) | [`chocolateFeast.js`](Javascript/chocolateFeast.js) |
 
 ---
 
