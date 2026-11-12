@@ -48,6 +48,8 @@ Click on any problem name below to open its dedicated documentation page with ca
 | 26 | **The Time in Words** | String Building / Lookup Table | $\mathcal{O}(1)$ | $\mathcal{O}(1)$ | 🕔 🔤 🗣️ | [📖 View Guide](docs/26-time-in-words.md) | [`timeInWords.js`](Javascript/timeInWords.js) |
 | 27 | **Chocolate Feast** | Simulation / Wrapper Exchange | $\mathcal{O}(\log_m(n/c))$ | $\mathcal{O}(1)$ | 🍫 🔁 🎁 | [📖 View Guide](docs/27-chocolate-feast.md) | [`chocolateFeast.js`](Javascript/chocolateFeast.js) |
 | 28 | **Service Lane** | Array / Range Minimum | $\mathcal{O}(t \cdot L)$ | $\mathcal{O}(t)$ | 🚗 🛣️ 📉 | [📖 View Guide](docs/28-service-lane.md) | [`serviceLane.js`](Javascript/serviceLane.js) |
+| 29 | **Lisa's Workbook** | Simulation / Page Range Check | $\mathcal{O}(\sum \lceil a_i / k \rceil)$ | $\mathcal{O}(1)$ | 📒 📄 ⭐ | [📖 View Guide](docs/29-lisas-workbook.md) | [`lisasWorkbook.js`](Javascript/lisasWorkbook.js) |
+| 30 | **Flatland Space Stations** | Sorting / Gap Midpoints | $\mathcal{O}(m \log m)$ | $\mathcal{O}(1)$ | 🚀 🏙️ 📏 | [📖 View Guide](docs/30-flatland-space-stations.md) | [`flatlandSpaceStations.js`](Javascript/flatlandSpaceStations.js) |
 
 ---
 
