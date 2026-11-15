@@ -50,6 +50,7 @@ Click on any problem name below to open its dedicated documentation page with ca
 | 28 | **Service Lane** | Array / Range Minimum | $\mathcal{O}(t \cdot L)$ | $\mathcal{O}(t)$ | 🚗 🛣️ 📉 | [📖 View Guide](docs/28-service-lane.md) | [`serviceLane.js`](Javascript/serviceLane.js) |
 | 29 | **Lisa's Workbook** | Simulation / Page Range Check | $\mathcal{O}(\sum \lceil a_i / k \rceil)$ | $\mathcal{O}(1)$ | 📒 📄 ⭐ | [📖 View Guide](docs/29-lisas-workbook.md) | [`lisasWorkbook.js`](Javascript/lisasWorkbook.js) |
 | 30 | **Flatland Space Stations** | Sorting / Gap Midpoints | $\mathcal{O}(m \log m)$ | $\mathcal{O}(1)$ | 🚀 🏙️ 📏 | [📖 View Guide](docs/30-flatland-space-stations.md) | [`flatlandSpaceStations.js`](Javascript/flatlandSpaceStations.js) |
+| 31 | **Fair Rations** | Greedy / Parity Propagation | $\mathcal{O}(N)$ | $\mathcal{O}(1)$ | 🍞 👑 ⚖️ | [📖 View Guide](docs/31-fair-rations.md) | [`fairRations.js`](Javascript/fairRations.js) |
 
 ---
 

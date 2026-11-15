@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgFR" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181825"/>
+      <stop offset="50%" stop-color="#1e1e2e"/>
+      <stop offset="100%" stop-color="#11111b"/>
+    </linearGradient>
+    <filter id="glowFR" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#a6e3a1" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <style>
+    /* three states: start, after step 1, after step 2 */
+    @keyframes st0 { 0%, 30% { opacity: 1; } 33%, 100% { opacity: 0; } }
+    @keyframes st1 { 0%, 33% { opacity: 0; } 36%, 63% { opacity: 1; } 66%, 100% { opacity: 0; } }
+    @keyframes st2 { 0%, 66% { opacity: 0; } 69%, 97% { opacity: 1; } 100% { opacity: 0; } }
+    @keyframes drop1 { 0%, 36% { transform: translateY(-30px); opacity: 0; } 42% { opacity: 1; } 50%, 63% { transform: translateY(0); opacity: 1; } 66%, 100% { opacity: 0; } }
+    @keyframes drop2 { 0%, 69% { transform: translateY(-30px); opacity: 0; } 75% { opacity: 1; } 83%, 97% { transform: translateY(0); opacity: 1; } 100% { opacity: 0; } }
+    @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+    .s0 { animation: st0 9s ease-in-out infinite; }
+    .s1 { animation: st1 9s ease-in-out infinite; }
+    .s2 { animation: st2 9s ease-in-out infinite; }
+    .d1 { animation: drop1 9s ease-out infinite; }
+    .d2 { animation: drop2 9s ease-out infinite; }
+    .mascot { animation: bounce 1.2s ease-in-out infinite; }
+  </style>
+
+  <rect width="840" height="400" rx="16" fill="url(#bgFR)"/>
+
+  <!-- Title -->
+  <text x="420" y="34" font-family="'Comic Sans MS', cursive, sans-serif" font-size="16" font-weight="bold" fill="#f9e2af" text-anchor="middle">🍞 "Fair Rations: Bread Comes in Pairs!"</text>
+
+  <!-- Mascot (the ruler) -->
+  <g class="mascot" transform="translate(30, 60)">
+    <circle cx="35" cy="35" r="30" fill="#cba6f7"/>
+    <text x="35" y="12" font-size="20" text-anchor="middle">👑</text>
+    <circle cx="25" cy="34" r="4" fill="#11111b"/>
+    <circle cx="45" cy="34" r="4" fill="#11111b"/>
+    <path d="M 22 46 Q 35 56 48 46" stroke="#11111b" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <text x="35" y="85" font-family="'Comic Sans MS', cursive, sans-serif" font-size="11" fill="#cdd6f4" text-anchor="middle">"Odd? Pass it on!"</text>
+  </g>
+
+  <text x="490" y="70" font-family="monospace" font-size="13" font-weight="bold" fill="#89b4fa" text-anchor="middle">B = [4, 5, 6, 7] ➔ fix each odd person with the one behind them</text>
+
+  <!-- People: x = 260, 400, 540, 680 -->
+  <g font-family="'Comic Sans MS', cursive, sans-serif" text-anchor="middle">
+    <text x="260" y="140" font-size="34">🧑</text>
+    <text x="400" y="140" font-size="34">🧑</text>
+    <text x="540" y="140" font-size="34">🧑</text>
+    <text x="680" y="140" font-size="34">🧑</text>
+    <text x="260" y="270" font-family="monospace" font-size="12" fill="#6c7086">i = 0</text>
+    <text x="400" y="270" font-family="monospace" font-size="12" fill="#6c7086">i = 1</text>
+    <text x="540" y="270" font-family="monospace" font-size="12" fill="#6c7086">i = 2</text>
+    <text x="680" y="270" font-family="monospace" font-size="12" fill="#6c7086">i = 3</text>
+  </g>
+
+  <!-- Count boxes: green = even, red = odd -->
+  <g font-family="monospace" font-weight="bold" text-anchor="middle" font-size="22">
+    <!-- State 0: [4, 5, 6, 7] -->
+    <g class="s0">
+      <rect x="225" y="185" width="70" height="50" rx="8" fill="#313244" stroke="#a6e3a1" stroke-width="3"/><text x="260" y="218" fill="#a6e3a1">4</text>
+      <rect x="365" y="185" width="70" height="50" rx="8" fill="#313244" stroke="#f38ba8" stroke-width="3"/><text x="400" y="218" fill="#f38ba8">5</text>
+      <rect x="505" y="185" width="70" height="50" rx="8" fill="#313244" stroke="#a6e3a1" stroke-width="3"/><text x="540" y="218" fill="#a6e3a1">6</text>
+      <rect x="645" y="185" width="70" height="50" rx="8" fill="#313244" stroke="#f38ba8" stroke-width="3"/><text x="680" y="218" fill="#f38ba8">7</text>
+      <text x="480" y="320" font-family="'Comic Sans MS', cursive, sans-serif" font-size="15" fill="#cdd6f4">i = 0 is even ➔ skip. i = 1 is odd ➔ needs a pair!</text>
+    </g>
+    <!-- State 1: [4, 6, 7, 7] -->
+    <g class="s1">
+      <rect x="225" y="185" width="70" height="50" rx="8" fill="#313244" stroke="#a6e3a1" stroke-width="3"/><text x="260" y="218" fill="#a6e3a1">4</text>
+      <rect x="365" y="185" width="70" height="50" rx="8" fill="#313244" stroke="#a6e3a1" stroke-width="3"/><text x="400" y="218" fill="#a6e3a1">6</text>
+      <rect x="505" y="185" width="70" height="50" rx="8" fill="#313244" stroke="#f38ba8" stroke-width="3"/><text x="540" y="218" fill="#f38ba8">7</text>
+      <rect x="645" y="185" width="70" height="50" rx="8" fill="#313244" stroke="#f38ba8" stroke-width="3"/><text x="680" y="218" fill="#f38ba8">7</text>
+      <text x="480" y="320" font-family="'Comic Sans MS', cursive, sans-serif" font-size="15" fill="#fab387">Give 🍞 to i = 1 and i = 2 ➔ 2 loaves (i = 2 flips to odd)</text>
+    </g>
+    <!-- State 2: [4, 6, 8, 8] -->
+    <g class="s2">
+      <rect x="225" y="185" width="70" height="50" rx="8" fill="#313244" stroke="#a6e3a1" stroke-width="3"/><text x="260" y="218" fill="#a6e3a1">4</text>
+      <rect x="365" y="185" width="70" height="50" rx="8" fill="#313244" stroke="#a6e3a1" stroke-width="3"/><text x="400" y="218" fill="#a6e3a1">6</text>
+      <rect x="505" y="185" width="70" height="50" rx="8" fill="#313244" stroke="#a6e3a1" stroke-width="3"/><text x="540" y="218" fill="#a6e3a1">8</text>
+      <rect x="645" y="185" width="70" height="50" rx="8" fill="#313244" stroke="#a6e3a1" stroke-width="3"/><text x="680" y="218" fill="#a6e3a1">8</text>
+      <text x="480" y="320" font-family="'Comic Sans MS', cursive, sans-serif" font-size="15" fill="#a6e3a1" filter="url(#glowFR)">Give 🍞 to i = 2 and i = 3 ➔ all even! Total = 4 loaves</text>
+    </g>
+  </g>
+
+  <!-- Falling bread -->
+  <g class="d1" font-size="22" text-anchor="middle"><text x="400" y="175">🍞</text><text x="540" y="175">🍞</text></g>
+  <g class="d2" font-size="22" text-anchor="middle"><text x="540" y="175">🍞</text><text x="680" y="175">🍞</text></g>
+
+  <!-- Footer -->
+  <text x="420" y="382" font-family="'Comic Sans MS', cursive, sans-serif" font-size="12" font-weight="bold" fill="#a6e3a1" text-anchor="middle">⚡ Odd? Give to i and i+1 (+2) │ Last person odd ➔ "NO" (odd total) │ O(N) Time, O(1) Space</text>
+</svg>
