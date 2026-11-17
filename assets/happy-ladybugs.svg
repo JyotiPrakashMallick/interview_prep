@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgLadybug" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181825"/>
+      <stop offset="50%" stop-color="#1e1e2e"/>
+      <stop offset="100%" stop-color="#11111b"/>
+    </linearGradient>
+    <filter id="glowHappy" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#a6e3a1" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <rect width="840" height="400" rx="16" fill="url(#bgLadybug)"/>
+
+  <!-- Title -->
+  <text x="420" y="34" font-family="'Comic Sans MS', cursive, sans-serif" font-size="16" font-weight="bold" fill="#f9e2af" text-anchor="middle">🐞 "Happy Ladybugs: The Empty Cell Permutation Magic!"</text>
+
+  <!-- Left: Rearrangement Example with Empty Cell -->
+  <g transform="translate(50, 65)">
+    <rect width="360" height="240" rx="12" fill="#181825" stroke="#a6e3a1" stroke-width="2"/>
+    <text x="180" y="26" font-family="'Comic Sans MS', cursive, sans-serif" font-size="13" font-weight="bold" fill="#a6e3a1" text-anchor="middle">✨ Case 1: Empty Cell '_' Exists</text>
+
+    <!-- Initial messy board: Y Y R _ B _ B R -->
+    <text x="25" y="58" font-family="'Comic Sans MS', cursive, sans-serif" font-size="11" fill="#cdd6f4">Initial Board (Unhappy solitary B and R):</text>
+    <g transform="translate(25, 70)">
+      <rect x="0" y="0" width="34" height="34" rx="6" fill="#f9e2af"/>
+      <text x="17" y="22" font-family="monospace" font-size="14" font-weight="bold" fill="#11111b" text-anchor="middle">Y</text>
+      <rect x="38" y="0" width="34" height="34" rx="6" fill="#f9e2af"/>
+      <text x="55" y="22" font-family="monospace" font-size="14" font-weight="bold" fill="#11111b" text-anchor="middle">Y</text>
+      <rect x="76" y="0" width="34" height="34" rx="6" fill="#f38ba8"/>
+      <text x="93" y="22" font-family="monospace" font-size="14" font-weight="bold" fill="#11111b" text-anchor="middle">R</text>
+      <rect x="114" y="0" width="34" height="34" rx="6" fill="#313244"/>
+      <text x="131" y="22" font-family="monospace" font-size="14" font-weight="bold" fill="#a6adc8" text-anchor="middle">_</text>
+      <rect x="152" y="0" width="34" height="34" rx="6" fill="#89b4fa"/>
+      <text x="169" y="22" font-family="monospace" font-size="14" font-weight="bold" fill="#11111b" text-anchor="middle">B</text>
+      <rect x="190" y="0" width="34" height="34" rx="6" fill="#313244"/>
+      <text x="207" y="22" font-family="monospace" font-size="14" font-weight="bold" fill="#a6adc8" text-anchor="middle">_</text>
+      <rect x="228" y="0" width="34" height="34" rx="6" fill="#89b4fa"/>
+      <text x="245" y="22" font-family="monospace" font-size="14" font-weight="bold" fill="#11111b" text-anchor="middle">B</text>
+      <rect x="266" y="0" width="34" height="34" rx="6" fill="#f38ba8"/>
+      <text x="283" y="22" font-family="monospace" font-size="14" font-weight="bold" fill="#11111b" text-anchor="middle">R</text>
+    </g>
+
+    <!-- Rearranged Happy Board: Y Y R R B B _ _ -->
+    <text x="25" y="135" font-family="'Comic Sans MS', cursive, sans-serif" font-size="11" fill="#a6e3a1">After Flights into Empty Space (All Happy!):</text>
+    <g transform="translate(25, 147)" filter="url(#glowHappy)">
+      <rect x="0" y="0" width="34" height="34" rx="6" fill="#f9e2af"/>
+      <text x="17" y="22" font-family="monospace" font-size="14" font-weight="bold" fill="#11111b" text-anchor="middle">Y</text>
+      <rect x="38" y="0" width="34" height="34" rx="6" fill="#f9e2af"/>
+      <text x="55" y="22" font-family="monospace" font-size="14" font-weight="bold" fill="#11111b" text-anchor="middle">Y</text>
+      <rect x="76" y="0" width="34" height="34" rx="6" fill="#f38ba8"/>
+      <text x="93" y="22" font-family="monospace" font-size="14" font-weight="bold" fill="#11111b" text-anchor="middle">R</text>
+      <rect x="114" y="0" width="34" height="34" rx="6" fill="#f38ba8"/>
+      <text x="131" y="22" font-family="monospace" font-size="14" font-weight="bold" fill="#11111b" text-anchor="middle">R</text>
+      <rect x="152" y="0" width="34" height="34" rx="6" fill="#89b4fa"/>
+      <text x="169" y="22" font-family="monospace" font-size="14" font-weight="bold" fill="#11111b" text-anchor="middle">B</text>
+      <rect x="190" y="0" width="34" height="34" rx="6" fill="#89b4fa"/>
+      <text x="207" y="22" font-family="monospace" font-size="14" font-weight="bold" fill="#11111b" text-anchor="middle">B</text>
+      <rect x="228" y="0" width="34" height="34" rx="6" fill="#313244"/>
+      <text x="245" y="22" font-family="monospace" font-size="14" font-weight="bold" fill="#a6adc8" text-anchor="middle">_</text>
+      <rect x="266" y="0" width="34" height="34" rx="6" fill="#313244"/>
+      <text x="283" y="22" font-family="monospace" font-size="14" font-weight="bold" fill="#a6adc8" text-anchor="middle">_</text>
+    </g>
+
+    <text x="180" y="215" font-family="'Comic Sans MS', cursive, sans-serif" font-size="11" fill="#f9e2af" text-anchor="middle">With '_' and all counts &gt;= 2: Always "YES"! 🏆</text>
+  </g>
+
+  <!-- Right: The 2 Disqualifying / Static Rules -->
+  <g transform="translate(435, 65)">
+    <rect width="355" height="240" rx="12" fill="#11111b" stroke="#f38ba8" stroke-width="2"/>
+    <text x="177" y="26" font-family="'Comic Sans MS', cursive, sans-serif" font-size="13" font-weight="bold" fill="#f38ba8" text-anchor="middle">⚠️ The 2 Critical Failure Checks</text>
+
+    <!-- Condition A: Count === 1 -->
+    <g transform="translate(20, 45)">
+      <rect width="315" height="70" rx="8" fill="#313244"/>
+      <text x="15" y="22" font-family="'Comic Sans MS', cursive, sans-serif" font-size="12" font-weight="bold" fill="#f38ba8">1. The Lonely Ladybug (Count === 1):</text>
+      <text x="15" y="42" font-family="sans-serif" font-size="11" fill="#cdd6f4">If any color appears only once (e.g. "X_Y__X"):</text>
+      <text x="15" y="60" font-family="monospace" font-size="11" font-weight="bold" fill="#eba0ac">Y has no partner anywhere ➔ Impossible ➔ "NO"</text>
+    </g>
+
+    <!-- Condition B: No empty space -->
+    <g transform="translate(20, 130)">
+      <rect width="315" height="85" rx="8" fill="#313244"/>
+      <text x="15" y="22" font-family="'Comic Sans MS', cursive, sans-serif" font-size="12" font-weight="bold" fill="#fab387">2. No Empty Space (No '_'):</text>
+      <text x="15" y="42" font-family="sans-serif" font-size="11" fill="#cdd6f4">Zero empty cells means NO MOVES can be made!</text>
+      <text x="15" y="60" font-family="sans-serif" font-size="11" fill="#cdd6f4">Must ALREADY be happy: b[i] === b[i-1] || b[i+1]</text>
+      <text x="15" y="77" font-family="monospace" font-size="11" font-weight="bold" fill="#a6e3a1">"AABBCC" ➔ YES  |  "AABBC" ➔ NO</text>
+    </g>
+  </g>
+
+  <!-- Bottom Strategy Banner -->
+  <g transform="translate(50, 320)">
+    <rect width="740" height="56" rx="10" fill="#181825" stroke="#45475a"/>
+    <text x="370" y="24" font-family="monospace" font-size="12" fill="#f9e2af" text-anchor="middle">Summary: (1) Any count == 1 ? "NO" (2) Has '_' ? "YES" (3) Already grouped ? "YES" : "NO"</text>
+    <text x="370" y="44" font-family="'Comic Sans MS', cursive, sans-serif" font-size="12" font-weight="bold" fill="#a6e3a1" text-anchor="middle">⚡ Pure O(n) Single Linear Pass | O(1) Auxiliary Space (26 letters)</text>
+  </g>
+</svg>

@@ -53,6 +53,9 @@ Click on any problem name below to open its dedicated documentation page with ca
 | 31 | **Fair Rations** | Greedy / Parity Propagation | $\mathcal{O}(N)$ | $\mathcal{O}(1)$ | 🍞 👑 ⚖️ | [📖 View Guide](docs/31-fair-rations.md) | [`fairRations.js`](Javascript/fairRations.js) |
 | 32 | **Cavity Map** | 2D Matrix / 4-Neighbor Comparison | $\mathcal{O}(n^2)$ | $\mathcal{O}(n^2)$ | 🕳️ 🗺️ ❌ | [📖 View Guide](docs/32-cavity-map.md) | [`cavityMap.js`](Javascript/cavityMap.js) |
 | 33 | **Manasa and Stones** | Combinatorics / Closed-Form Sum | $\mathcal{O}(n)$ | $\mathcal{O}(n)$ | 🪨 💎 🌲 | [📖 View Guide](docs/33-manasa-and-stones.md) | [`manasaAndStones.js`](Javascript/manasaAndStones.js) |
+| 34 | **The Grid Search** | 2D Sliding Window / Substring Matching | $\mathcal{O}(R \cdot C)$ avg | $\mathcal{O}(1)$ | 🔎 🗺️ 🎯 | [📖 View Guide](docs/34-the-grid-search.md) | [`gridSearch.js`](Javascript/gridSearch.js) |
+| 35 | **Happy Ladybugs** | Frequency Map / Permutation Invariant | $\mathcal{O}(n)$ | $\mathcal{O}(1)$ | 🐞 🔀 🏁 | [📖 View Guide](docs/35-happy-ladybugs.md) | [`happyLadybugs.js`](Javascript/happyLadybugs.js) |
+| 36 | **Strange Counter** | Geometric Progression / Cycle Doubling | $\mathcal{O}(\log t)$ | $\mathcal{O}(1)$ | ⏱️ 📉 🚀 | [📖 View Guide](docs/36-strange-counter.md) | [`strangeCounter.js`](Javascript/strangeCounter.js) |
 
 ---
 

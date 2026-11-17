@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGridSearch" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181825"/>
+      <stop offset="50%" stop-color="#1e1e2e"/>
+      <stop offset="100%" stop-color="#11111b"/>
+    </linearGradient>
+    <filter id="glowPatternMatch" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#a6e3a1" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <rect width="840" height="400" rx="16" fill="url(#bgGridSearch)"/>
+
+  <!-- Title -->
+  <text x="420" y="34" font-family="'Comic Sans MS', cursive, sans-serif" font-size="16" font-weight="bold" fill="#f9e2af" text-anchor="middle">🔎 "The Grid Search: 2D Sub-Grid Pattern Stencil Matcher!"</text>
+
+  <!-- Left: Big 2D Grid with Highlighted Sub-Grid -->
+  <g transform="translate(50, 65)">
+    <rect width="360" height="240" rx="12" fill="#181825" stroke="#89b4fa" stroke-width="2"/>
+    <text x="180" y="26" font-family="'Comic Sans MS', cursive, sans-serif" font-size="13" font-weight="bold" fill="#89b4fa" text-anchor="middle">🗺️ Search Grid G (5 × 10)</text>
+
+    <!-- Grid text rows -->
+    <g transform="translate(25, 45)">
+      <!-- Row 0: 1234567890 -->
+      <text x="15" y="22" font-family="monospace" font-size="15" fill="#6c7086" letter-spacing="8">1234567890</text>
+
+      <!-- Row 1: 09 876543 21 -->
+      <rect x="52" y="10" width="170" height="88" rx="8" fill="#a6e3a1" fill-opacity="0.15" stroke="#a6e3a1" stroke-width="2.5" filter="url(#glowPatternMatch)"/>
+      <text x="15" y="52" font-family="monospace" font-size="15" fill="#6c7086" letter-spacing="8">09</text>
+      <text x="59" y="52" font-family="monospace" font-size="15" font-weight="bold" fill="#a6e3a1" letter-spacing="8">876543</text>
+      <text x="232" y="52" font-family="monospace" font-size="15" fill="#6c7086" letter-spacing="8">21</text>
+
+      <!-- Row 2: 11 111111 11 -->
+      <text x="15" y="82" font-family="monospace" font-size="15" fill="#6c7086" letter-spacing="8">11</text>
+      <text x="59" y="82" font-family="monospace" font-size="15" font-weight="bold" fill="#a6e3a1" letter-spacing="8">111111</text>
+      <text x="232" y="82" font-family="monospace" font-size="15" fill="#6c7086" letter-spacing="8">11</text>
+
+      <!-- Row 3: 11 111111 11 -->
+      <text x="15" y="112" font-family="monospace" font-size="15" fill="#6c7086" letter-spacing="8">11</text>
+      <text x="59" y="112" font-family="monospace" font-size="15" font-weight="bold" fill="#a6e3a1" letter-spacing="8">111111</text>
+      <text x="232" y="112" font-family="monospace" font-size="15" fill="#6c7086" letter-spacing="8">11</text>
+
+      <!-- Row 4: 2222222222 -->
+      <text x="15" y="142" font-family="monospace" font-size="15" fill="#6c7086" letter-spacing="8">2222222222</text>
+    </g>
+
+    <text x="180" y="215" font-family="'Comic Sans MS', cursive, sans-serif" font-size="11" fill="#a6e3a1" text-anchor="middle">Found at Row 1, Col 2! ✨</text>
+  </g>
+
+  <!-- Middle: Animated Sliding Stencil Indicator -->
+  <g transform="translate(425, 125)">
+    <style>
+      @keyframes slideSearch {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(18px); }
+      }
+      .animMagnifier { animation: slideSearch 2s ease-in-out infinite; }
+    </style>
+    <g class="animMagnifier">
+      <circle cx="20" cy="20" r="18" fill="none" stroke="#f9e2af" stroke-width="4"/>
+      <line x1="33" y1="33" x2="48" y2="48" stroke="#f9e2af" stroke-width="4" stroke-linecap="round"/>
+      <text x="20" y="25" font-family="monospace" font-size="14" font-weight="bold" fill="#f9e2af" text-anchor="middle">P</text>
+    </g>
+    <text x="20" y="75" font-family="'Comic Sans MS', cursive, sans-serif" font-size="11" font-weight="bold" fill="#fab387" text-anchor="middle">Matches</text>
+    <text x="20" y="90" font-family="'Comic Sans MS', cursive, sans-serif" font-size="11" font-weight="bold" fill="#fab387" text-anchor="middle">Exactly?</text>
+  </g>
+
+  <!-- Right: Pattern Card & Verification Steps -->
+  <g transform="translate(485, 65)">
+    <rect width="305" height="240" rx="12" fill="#11111b" stroke="#a6e3a1" stroke-width="2"/>
+    <text x="152" y="26" font-family="'Comic Sans MS', cursive, sans-serif" font-size="13" font-weight="bold" fill="#a6e3a1" text-anchor="middle">📋 Target Pattern P (3 × 6)</text>
+
+    <!-- Pattern Box -->
+    <g transform="translate(45, 45)">
+      <rect width="215" height="80" rx="8" fill="#313244" stroke="#a6e3a1" stroke-width="2"/>
+      <text x="15" y="26" font-family="monospace" font-size="14" font-weight="bold" fill="#a6e3a1" letter-spacing="6">876543</text>
+      <text x="15" y="48" font-family="monospace" font-size="14" font-weight="bold" fill="#a6e3a1" letter-spacing="6">111111</text>
+      <text x="15" y="70" font-family="monospace" font-size="14" font-weight="bold" fill="#a6e3a1" letter-spacing="6">111111</text>
+    </g>
+
+    <!-- Strategy steps -->
+    <g transform="translate(20, 140)">
+      <rect width="265" height="75" rx="6" fill="#181825" stroke="#45475a"/>
+      <text x="12" y="20" font-family="sans-serif" font-size="11" fill="#f9e2af">1. Locate P[0] in G[i] with indexOf()</text>
+      <text x="12" y="40" font-family="sans-serif" font-size="11" fill="#cdd6f4">2. Check remaining r-1 rows slice()</text>
+      <text x="12" y="60" font-family="sans-serif" font-size="11" font-weight="bold" fill="#a6e3a1">3. All match ➔ Return "YES" 🏆</text>
+    </g>
+  </g>
+
+  <!-- Bottom Explanatory Banner -->
+  <g transform="translate(50, 320)">
+    <rect width="740" height="56" rx="10" fill="#181825" stroke="#45475a"/>
+    <text x="370" y="24" font-family="monospace" font-size="12" fill="#f9e2af" text-anchor="middle">Condition: G[i + k].slice(col, col + c) === P[k] for all 0 &lt;= k &lt; r</text>
+    <text x="370" y="44" font-family="'Comic Sans MS', cursive, sans-serif" font-size="12" font-weight="bold" fill="#a6e3a1" text-anchor="middle">⚡ Fast String Matching | Time: O((R-r) · (C-c) · r) | Space: O(1) Auxiliary</text>
+  </g>
+</svg>

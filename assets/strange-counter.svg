@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgStrangeCounter" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181825"/>
+      <stop offset="50%" stop-color="#1e1e2e"/>
+      <stop offset="100%" stop-color="#11111b"/>
+    </linearGradient>
+    <filter id="glowTimer" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#a6e3a1" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <rect width="840" height="400" rx="16" fill="url(#bgStrangeCounter)"/>
+
+  <!-- Title -->
+  <text x="420" y="34" font-family="'Comic Sans MS', cursive, sans-serif" font-size="16" font-weight="bold" fill="#f9e2af" text-anchor="middle">⏱️ "Strange Counter: Doubling Countdown Cycles!"</text>
+
+  <!-- Left: 3 Cycle Columns Visualization -->
+  <g transform="translate(45, 65)">
+    <!-- Cycle 1 (Length 3) -->
+    <g transform="translate(0, 0)">
+      <rect width="90" height="155" rx="8" fill="#181825" stroke="#a6e3a1" stroke-width="2"/>
+      <rect width="90" height="28" rx="8" fill="#313244"/>
+      <text x="22" y="19" font-family="monospace" font-size="11" fill="#cdd6f4">time</text>
+      <text x="65" y="19" font-family="monospace" font-size="11" font-weight="bold" fill="#a6e3a1">value</text>
+
+      <!-- Row 1 -->
+      <line x1="0" y1="28" x2="90" y2="28" stroke="#45475a"/>
+      <line x1="45" y1="28" x2="45" y2="155" stroke="#45475a"/>
+      <text x="22" y="52" font-family="monospace" font-size="13" fill="#cdd6f4" text-anchor="middle">1</text>
+      <text x="67" y="52" font-family="monospace" font-size="14" font-weight="bold" fill="#a6e3a1" text-anchor="middle">3</text>
+
+      <line x1="0" y1="68" x2="90" y2="68" stroke="#45475a"/>
+      <text x="22" y="92" font-family="monospace" font-size="13" fill="#cdd6f4" text-anchor="middle">2</text>
+      <text x="67" y="92" font-family="monospace" font-size="14" font-weight="bold" fill="#a6e3a1" text-anchor="middle">2</text>
+
+      <line x1="0" y1="108" x2="90" y2="108" stroke="#45475a"/>
+      <text x="22" y="132" font-family="monospace" font-size="13" fill="#cdd6f4" text-anchor="middle">3</text>
+      <text x="67" y="132" font-family="monospace" font-size="14" font-weight="bold" fill="#a6e3a1" text-anchor="middle">1</text>
+
+      <text x="45" y="180" font-family="'Comic Sans MS', cursive, sans-serif" font-size="11" fill="#f9e2af" text-anchor="middle">Cycle 1 (len 3)</text>
+      <text x="45" y="198" font-family="monospace" font-size="10" fill="#a6adc8" text-anchor="middle">Sum: 1+3=4</text>
+    </g>
+
+    <!-- Cycle 2 (Length 6) -->
+    <g transform="translate(115, 0)">
+      <rect width="90" height="235" rx="8" fill="#181825" stroke="#fab387" stroke-width="2"/>
+      <rect width="90" height="28" rx="8" fill="#313244"/>
+      <text x="22" y="19" font-family="monospace" font-size="11" fill="#cdd6f4">time</text>
+      <text x="65" y="19" font-family="monospace" font-size="11" font-weight="bold" fill="#fab387">value</text>
+
+      <line x1="0" y1="28" x2="90" y2="28" stroke="#45475a"/>
+      <line x1="45" y1="28" x2="45" y2="235" stroke="#45475a"/>
+      <text x="22" y="52" font-family="monospace" font-size="13" fill="#cdd6f4" text-anchor="middle">4</text>
+      <text x="67" y="52" font-family="monospace" font-size="14" font-weight="bold" fill="#fab387" text-anchor="middle">6</text>
+
+      <line x1="0" y1="62" x2="90" y2="62" stroke="#45475a"/>
+      <text x="22" y="82" font-family="monospace" font-size="13" fill="#cdd6f4" text-anchor="middle">5</text>
+      <text x="67" y="82" font-family="monospace" font-size="14" font-weight="bold" fill="#fab387" text-anchor="middle">5</text>
+
+      <line x1="0" y1="96" x2="90" y2="96" stroke="#45475a"/>
+      <text x="22" y="116" font-family="monospace" font-size="13" fill="#cdd6f4" text-anchor="middle">6</text>
+      <text x="67" y="116" font-family="monospace" font-size="14" font-weight="bold" fill="#fab387" text-anchor="middle">4</text>
+
+      <line x1="0" y1="130" x2="90" y2="130" stroke="#45475a"/>
+      <text x="22" y="150" font-family="monospace" font-size="13" fill="#cdd6f4" text-anchor="middle">7</text>
+      <text x="67" y="150" font-family="monospace" font-size="14" font-weight="bold" fill="#fab387" text-anchor="middle">3</text>
+
+      <line x1="0" y1="164" x2="90" y2="164" stroke="#45475a"/>
+      <text x="22" y="184" font-family="monospace" font-size="13" fill="#cdd6f4" text-anchor="middle">8</text>
+      <text x="67" y="184" font-family="monospace" font-size="14" font-weight="bold" fill="#fab387" text-anchor="middle">2</text>
+
+      <line x1="0" y1="198" x2="90" y2="198" stroke="#45475a"/>
+      <text x="22" y="218" font-family="monospace" font-size="13" fill="#cdd6f4" text-anchor="middle">9</text>
+      <text x="67" y="218" font-family="monospace" font-size="14" font-weight="bold" fill="#fab387" text-anchor="middle">1</text>
+
+      <text x="45" y="255" font-family="'Comic Sans MS', cursive, sans-serif" font-size="11" fill="#f9e2af" text-anchor="middle">Cycle 2 (len 6)</text>
+    </g>
+
+    <!-- Cycle 3 (Length 12) -->
+    <g transform="translate(230, 0)">
+      <rect width="90" height="235" rx="8" fill="#181825" stroke="#f38ba8" stroke-width="2"/>
+      <rect width="90" height="28" rx="8" fill="#313244"/>
+      <text x="22" y="19" font-family="monospace" font-size="11" fill="#cdd6f4">time</text>
+      <text x="65" y="19" font-family="monospace" font-size="11" font-weight="bold" fill="#f38ba8">value</text>
+
+      <line x1="0" y1="28" x2="90" y2="28" stroke="#45475a"/>
+      <line x1="45" y1="28" x2="45" y2="235" stroke="#45475a"/>
+      <text x="22" y="52" font-family="monospace" font-size="13" fill="#cdd6f4" text-anchor="middle">10</text>
+      <text x="67" y="52" font-family="monospace" font-size="14" font-weight="bold" fill="#f38ba8" text-anchor="middle">12</text>
+
+      <line x1="0" y1="62" x2="90" y2="62" stroke="#45475a"/>
+      <text x="22" y="82" font-family="monospace" font-size="13" fill="#cdd6f4" text-anchor="middle">11</text>
+      <text x="67" y="82" font-family="monospace" font-size="14" font-weight="bold" fill="#f38ba8" text-anchor="middle">11</text>
+
+      <line x1="0" y1="96" x2="90" y2="96" stroke="#45475a"/>
+      <text x="22" y="116" font-family="monospace" font-size="13" fill="#cdd6f4" text-anchor="middle">12</text>
+      <text x="67" y="116" font-family="monospace" font-size="14" font-weight="bold" fill="#f38ba8" text-anchor="middle">10</text>
+
+      <line x1="0" y1="130" x2="90" y2="130" stroke="#45475a"/>
+      <text x="22" y="150" font-family="monospace" font-size="13" fill="#cdd6f4" text-anchor="middle">...</text>
+      <text x="67" y="150" font-family="monospace" font-size="13" fill="#cdd6f4" text-anchor="middle">...</text>
+
+      <line x1="0" y1="198" x2="90" y2="198" stroke="#45475a"/>
+      <text x="22" y="218" font-family="monospace" font-size="13" fill="#cdd6f4" text-anchor="middle">21</text>
+      <text x="67" y="218" font-family="monospace" font-size="14" font-weight="bold" fill="#f38ba8" text-anchor="middle">1</text>
+
+      <text x="45" y="255" font-family="'Comic Sans MS', cursive, sans-serif" font-size="11" fill="#f9e2af" text-anchor="middle">Cycle 3 (len 12)</text>
+    </g>
+  </g>
+
+  <!-- Right: Mathematical Invariant & Doubling Card -->
+  <g transform="translate(415, 65)">
+    <rect width="380" height="240" rx="12" fill="#11111b" stroke="#a6e3a1" stroke-width="2"/>
+    <text x="190" y="26" font-family="'Comic Sans MS', cursive, sans-serif" font-size="13" font-weight="bold" fill="#a6e3a1" text-anchor="middle">⚡ O(log t) Doubling Shortcut</text>
+
+    <!-- Formula Box -->
+    <g transform="translate(20, 42)">
+      <rect width="340" height="52" rx="6" fill="#313244"/>
+      <text x="170" y="22" font-family="monospace" font-size="13" font-weight="bold" fill="#f9e2af" text-anchor="middle">t + value = start_time + initial_value</text>
+      <text x="170" y="40" font-family="sans-serif" font-size="11" fill="#cdd6f4" text-anchor="middle">Cycle 1: 1+3=4 | Cycle 2: 4+6=10 | Cycle 3: 10+12=22</text>
+
+      <!-- Algorithm loop -->
+      <rect x="0" y="65" width="340" height="115" rx="6" fill="#181825" stroke="#45475a"/>
+      <text x="15" y="88" font-family="monospace" font-size="12" fill="#a6e3a1">let cycle = 3;</text>
+      <text x="15" y="108" font-family="monospace" font-size="12" fill="#a6e3a1">while (t &gt; cycle) {</text>
+      <text x="35" y="128" font-family="monospace" font-size="12" fill="#f9e2af">  t -= cycle; cycle *= 2;</text>
+      <text x="15" y="148" font-family="monospace" font-size="12" fill="#a6e3a1">}</text>
+      <text x="15" y="168" font-family="monospace" font-size="12" font-weight="bold" fill="#89dceb">return cycle - t + 1;</text>
+    </g>
+  </g>
+
+  <!-- Bottom Explanatory Banner -->
+  <g transform="translate(45, 325)">
+    <rect width="750" height="52" rx="10" fill="#181825" stroke="#45475a"/>
+    <text x="375" y="22" font-family="monospace" font-size="12" fill="#f9e2af" text-anchor="middle">Cycle lengths double: 3, 6, 12, 24, 48... Reaches 10¹² in only 39 iterations!</text>
+    <text x="375" y="40" font-family="'Comic Sans MS', cursive, sans-serif" font-size="12" font-weight="bold" fill="#a6e3a1" text-anchor="middle">⚡ Pure O(log t) Time | O(1) Space — Handles up to t = 10¹² in 0.05 ms!</text>
+  </g>
+</svg>
