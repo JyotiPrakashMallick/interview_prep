@@ -51,6 +51,8 @@ Click on any problem name below to open its dedicated documentation page with ca
 | 29 | **Lisa's Workbook** | Simulation / Page Range Check | $\mathcal{O}(\sum \lceil a_i / k \rceil)$ | $\mathcal{O}(1)$ | 📒 📄 ⭐ | [📖 View Guide](docs/29-lisas-workbook.md) | [`lisasWorkbook.js`](Javascript/lisasWorkbook.js) |
 | 30 | **Flatland Space Stations** | Sorting / Gap Midpoints | $\mathcal{O}(m \log m)$ | $\mathcal{O}(1)$ | 🚀 🏙️ 📏 | [📖 View Guide](docs/30-flatland-space-stations.md) | [`flatlandSpaceStations.js`](Javascript/flatlandSpaceStations.js) |
 | 31 | **Fair Rations** | Greedy / Parity Propagation | $\mathcal{O}(N)$ | $\mathcal{O}(1)$ | 🍞 👑 ⚖️ | [📖 View Guide](docs/31-fair-rations.md) | [`fairRations.js`](Javascript/fairRations.js) |
+| 32 | **Cavity Map** | 2D Matrix / 4-Neighbor Comparison | $\mathcal{O}(n^2)$ | $\mathcal{O}(n^2)$ | 🕳️ 🗺️ ❌ | [📖 View Guide](docs/32-cavity-map.md) | [`cavityMap.js`](Javascript/cavityMap.js) |
+| 33 | **Manasa and Stones** | Combinatorics / Closed-Form Sum | $\mathcal{O}(n)$ | $\mathcal{O}(n)$ | 🪨 💎 🌲 | [📖 View Guide](docs/33-manasa-and-stones.md) | [`manasaAndStones.js`](Javascript/manasaAndStones.js) |
 
 ---
 

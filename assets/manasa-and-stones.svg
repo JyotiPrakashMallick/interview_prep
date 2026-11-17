@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgStones" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181825"/>
+      <stop offset="50%" stop-color="#1e1e2e"/>
+      <stop offset="100%" stop-color="#11111b"/>
+    </linearGradient>
+    <filter id="glowTreasure" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#f9e2af" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <rect width="840" height="380" rx="16" fill="url(#bgStones)"/>
+
+  <!-- Title -->
+  <text x="420" y="34" font-family="'Comic Sans MS', cursive, sans-serif" font-size="16" font-weight="bold" fill="#f9e2af" text-anchor="middle">🪨 "Manasa and Stones: Step Combinations to the Final Treasure!"</text>
+
+  <!-- Left: Stone Branching Tree / Decision Path -->
+  <g transform="translate(60, 65)">
+    <rect width="360" height="230" rx="12" fill="#181825" stroke="#89b4fa" stroke-width="2"/>
+    <text x="180" y="26" font-family="'Comic Sans MS', cursive, sans-serif" font-size="13" font-weight="bold" fill="#89b4fa" text-anchor="middle">🌲 Step Branching (n = 3, a = 2, b = 3)</text>
+
+    <!-- Starting Stone 0 -->
+    <g transform="translate(30, 95)">
+      <circle cx="20" cy="20" r="18" fill="#313244" stroke="#cdd6f4" stroke-width="2"/>
+      <text x="20" y="26" font-family="monospace" font-size="16" font-weight="bold" fill="#f9e2af" text-anchor="middle">0</text>
+      <text x="20" y="48" font-family="'Comic Sans MS', cursive, sans-serif" font-size="10" fill="#a6adc8" text-anchor="middle">Start</text>
+    </g>
+
+    <!-- Step 1 Branches: +a (2) or +b (3) -->
+    <!-- Line to Stone 2 -->
+    <line x1="68" y1="105" x2="130" y2="75" stroke="#a6e3a1" stroke-width="2.5"/>
+    <text x="95" y="82" font-family="monospace" font-size="11" fill="#a6e3a1" font-weight="bold">+2</text>
+    <!-- Stone 2 -->
+    <circle cx="145" cy="70" r="15" fill="#313244" stroke="#a6e3a1" stroke-width="1.5"/>
+    <text x="145" y="75" font-family="monospace" font-size="13" fill="#cdd6f4" text-anchor="middle">2</text>
+
+    <!-- Line to Stone 3 -->
+    <line x1="68" y1="125" x2="130" y2="155" stroke="#fab387" stroke-width="2.5"/>
+    <text x="95" y="152" font-family="monospace" font-size="11" fill="#fab387" font-weight="bold">+3</text>
+    <!-- Stone 3 -->
+    <circle cx="145" cy="160" r="15" fill="#313244" stroke="#fab387" stroke-width="1.5"/>
+    <text x="145" y="165" font-family="monospace" font-size="13" fill="#cdd6f4" text-anchor="middle">3</text>
+
+    <!-- Step 2 Branches to Final Stones -->
+    <!-- From 2: +2 -> 4, +3 -> 5 -->
+    <line x1="160" y1="65" x2="230" y2="45" stroke="#a6e3a1" stroke-width="2"/>
+    <circle cx="245" cy="40" r="16" fill="#1e1e2e" stroke="#a6e3a1" stroke-width="2"/>
+    <text x="245" y="46" font-family="monospace" font-size="14" font-weight="bold" fill="#a6e3a1" text-anchor="middle">4</text>
+
+    <line x1="160" y1="75" x2="230" y2="105" stroke="#fab387" stroke-width="2"/>
+    <!-- Merging point at 5: From 3: +2 -> 5 -->
+    <line x1="160" y1="155" x2="230" y2="115" stroke="#a6e3a1" stroke-width="2"/>
+    <circle cx="245" cy="110" r="16" fill="#1e1e2e" stroke="#fab387" stroke-width="2"/>
+    <text x="245" y="116" font-family="monospace" font-size="14" font-weight="bold" fill="#fab387" text-anchor="middle">5</text>
+    <text x="300" y="115" font-family="'Comic Sans MS', cursive, sans-serif" font-size="10" fill="#f9e2af">Shared!</text>
+
+    <!-- From 3: +3 -> 6 -->
+    <line x1="160" y1="165" x2="230" y2="185" stroke="#fab387" stroke-width="2"/>
+    <circle cx="245" cy="190" r="16" fill="#1e1e2e" stroke="#f38ba8" stroke-width="2"/>
+    <text x="245" y="196" font-family="monospace" font-size="14" font-weight="bold" fill="#f38ba8" text-anchor="middle">6</text>
+
+    <!-- Treasure label -->
+    <text x="180" y="220" font-family="'Comic Sans MS', cursive, sans-serif" font-size="11" fill="#f9e2af" text-anchor="middle">Final Treasure Outcomes: [4, 5, 6] 💎</text>
+  </g>
+
+  <!-- Right: Mathematical Shortcut Card -->
+  <g transform="translate(450, 65)">
+    <rect width="330" height="230" rx="12" fill="#11111b" stroke="#a6e3a1" stroke-width="2"/>
+    <text x="165" y="26" font-family="'Comic Sans MS', cursive, sans-serif" font-size="13" font-weight="bold" fill="#a6e3a1" text-anchor="middle">⚡ O(n) Combinatorics Formula</text>
+
+    <!-- Formula Box -->
+    <g transform="translate(20, 42)">
+      <rect x="0" y="0" width="290" height="42" rx="6" fill="#313244"/>
+      <text x="145" y="26" font-family="monospace" font-size="13" font-weight="bold" fill="#f9e2af" text-anchor="middle">val = (n - 1 - i) * a + i * b</text>
+
+      <text x="145" y="65" font-family="'Comic Sans MS', cursive, sans-serif" font-size="11" fill="#cdd6f4" text-anchor="middle">Where i = 0, 1, 2, ..., (n - 1)</text>
+
+      <!-- Checklist details -->
+      <rect x="0" y="80" width="290" height="95" rx="6" fill="#181825" stroke="#45475a"/>
+      <text x="15" y="102" font-family="sans-serif" font-size="11" fill="#a6e3a1">1. Steps = n - 1 total jumps</text>
+      <text x="15" y="124" font-family="sans-serif" font-size="11" fill="#a6e3a1">2. Order does NOT matter! (2+3 == 3+2)</text>
+      <text x="15" y="146" font-family="sans-serif" font-size="11" fill="#fab387">3. If a === b: return [(n - 1) * a]</text>
+      <text x="15" y="165" font-family="sans-serif" font-size="11" fill="#89dceb">4. Natural ascending order if a &lt; b</text>
+    </g>
+  </g>
+
+  <!-- Bottom Complexity Banner -->
+  <g transform="translate(60, 310)">
+    <rect width="720" height="52" rx="10" fill="#181825" stroke="#45475a"/>
+    <text x="360" y="22" font-family="monospace" font-size="12" fill="#f9e2af" text-anchor="middle">Avoid 2^(n-1) recursion! The closed form takes O(n) iterations and O(n) space!</text>
+    <text x="360" y="40" font-family="'Comic Sans MS', cursive, sans-serif" font-size="12" font-weight="bold" fill="#a6e3a1" text-anchor="middle">⚡ Pure O(n) Linear Time | O(n) Space for output list</text>
+  </g>
+</svg>
