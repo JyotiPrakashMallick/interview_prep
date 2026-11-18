@@ -56,6 +56,9 @@ Click on any problem name below to open its dedicated documentation page with ca
 | 34 | **The Grid Search** | 2D Sliding Window / Substring Matching | $\mathcal{O}(R \cdot C)$ avg | $\mathcal{O}(1)$ | 🔎 🗺️ 🎯 | [📖 View Guide](docs/34-the-grid-search.md) | [`gridSearch.js`](Javascript/gridSearch.js) |
 | 35 | **Happy Ladybugs** | Frequency Map / Permutation Invariant | $\mathcal{O}(n)$ | $\mathcal{O}(1)$ | 🐞 🔀 🏁 | [📖 View Guide](docs/35-happy-ladybugs.md) | [`happyLadybugs.js`](Javascript/happyLadybugs.js) |
 | 36 | **Strange Counter** | Geometric Progression / Cycle Doubling | $\mathcal{O}(\log t)$ | $\mathcal{O}(1)$ | ⏱️ 📉 🚀 | [📖 View Guide](docs/36-strange-counter.md) | [`strangeCounter.js`](Javascript/strangeCounter.js) |
+| 37 | **Organizing Containers of Balls** | Invariant Matching / Multiset Sorting | $\mathcal{O}(n^2)$ | $\mathcal{O}(n)$ | ⚖️ 📦 🔮 | [📖 View Guide](docs/37-organizing-containers-of-balls.md) | [`organizingContainers.js`](Javascript/organizingContainers.js) |
+| 38 | **Encryption** | Grid Transposition / Math Simulation | $\mathcal{O}(L)$ | $\mathcal{O}(L)$ | 🔐 📐 🔠 | [📖 View Guide](docs/38-encryption.md) | [`encryption.js`](Javascript/encryption.js) |
+| 39 | **Bigger is Greater** | Next Lexicographical Permutation / Narayana Pandita | $\mathcal{O}(n)$ | $\mathcal{O}(n)$ | 🔤 🔀 🔝 | [📖 View Guide](docs/39-bigger-is-greater.md) | [`biggerIsGreater.js`](Javascript/biggerIsGreater.js) |
 
 ---
 
