@@ -59,6 +59,8 @@ Click on any problem name below to open its dedicated documentation page with ca
 | 37 | **Organizing Containers of Balls** | Invariant Matching / Multiset Sorting | $\mathcal{O}(n^2)$ | $\mathcal{O}(n)$ | ⚖️ 📦 🔮 | [📖 View Guide](docs/37-organizing-containers-of-balls.md) | [`organizingContainers.js`](Javascript/organizingContainers.js) |
 | 38 | **Encryption** | Grid Transposition / Math Simulation | $\mathcal{O}(L)$ | $\mathcal{O}(L)$ | 🔐 📐 🔠 | [📖 View Guide](docs/38-encryption.md) | [`encryption.js`](Javascript/encryption.js) |
 | 39 | **Bigger is Greater** | Next Lexicographical Permutation / Narayana Pandita | $\mathcal{O}(n)$ | $\mathcal{O}(n)$ | 🔤 🔀 🔝 | [📖 View Guide](docs/39-bigger-is-greater.md) | [`biggerIsGreater.js`](Javascript/biggerIsGreater.js) |
+| 40 | **3D Surface Area** | 2D Grid Geometry / Exposed Face Analysis | $\mathcal{O}(H \cdot W)$ | $\mathcal{O}(1)$ | 🧊 🧱 📐 | [📖 View Guide](docs/40-3d-surface-area.md) | [`surfaceArea.js`](Javascript/surfaceArea.js) |
+| 41 | **Absolute Permutation** | Number Theory / Block Swapping Invariant | $\mathcal{O}(n)$ | $\mathcal{O}(n)$ | 🔀 🔢 ⚖️ | [📖 View Guide](docs/41-absolute-permutation.md) | [`absolutePermutation.js`](Javascript/absolutePermutation.js) |
 
 ---
 
