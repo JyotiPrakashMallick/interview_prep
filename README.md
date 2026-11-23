@@ -61,6 +61,8 @@ Click on any problem name below to open its dedicated documentation page with ca
 | 39 | **Bigger is Greater** | Next Lexicographical Permutation / Narayana Pandita | $\mathcal{O}(n)$ | $\mathcal{O}(n)$ | 🔤 🔀 🔝 | [📖 View Guide](docs/39-bigger-is-greater.md) | [`biggerIsGreater.js`](Javascript/biggerIsGreater.js) |
 | 40 | **3D Surface Area** | 2D Grid Geometry / Exposed Face Analysis | $\mathcal{O}(H \cdot W)$ | $\mathcal{O}(1)$ | 🧊 🧱 📐 | [📖 View Guide](docs/40-3d-surface-area.md) | [`surfaceArea.js`](Javascript/surfaceArea.js) |
 | 41 | **Absolute Permutation** | Number Theory / Block Swapping Invariant | $\mathcal{O}(n)$ | $\mathcal{O}(n)$ | 🔀 🔢 ⚖️ | [📖 View Guide](docs/41-absolute-permutation.md) | [`absolutePermutation.js`](Javascript/absolutePermutation.js) |
+| 42 | **The Bomberman Game** | Grid Simulation / Period-4 Modulo Reduction | $\mathcal{O}(R \cdot C)$ | $\mathcal{O}(R \cdot C)$ | 💣 💥 🔄 | [📖 View Guide](docs/42-the-bomberman-game.md) | [`bomberMan.js`](Javascript/bomberMan.js) |
+| 43 | **Ema's Supercomputer** | Geometric Enumeration / Disjoint Set Pairs | $\mathcal{O}(P^2)$ | $\mathcal{O}(P)$ | ➕ 🔬 ✖️ | [📖 View Guide](docs/43-two-pluses.md) | [`twoPluses.js`](Javascript/twoPluses.js) |
 
 ---
 

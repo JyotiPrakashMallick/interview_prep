@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 460" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d" />
+      <stop offset="100%" stop-color="#181e36" />
+    </linearGradient>
+
+    <!-- Card Gradient -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#151d30" />
+      <stop offset="100%" stop-color="#222e4a" />
+    </linearGradient>
+
+    <!-- Bomb Gradients -->
+    <radialGradient id="bombGlow" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#fb7185" />
+      <stop offset="60%" stop-color="#e11d48" />
+      <stop offset="100%" stop-color="#881337" />
+    </radialGradient>
+
+    <radialGradient id="blastGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="50%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#dc2626" />
+    </radialGradient>
+
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="5" stdDeviation="5" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <style>
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 22px; font-weight: 800; fill: #f8fafc; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; fill: #94a3b8; }
+    .card-title { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 700; fill: #38bdf8; }
+    .label { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; fill: #cbd5e1; font-weight: 600; }
+    .mono { font-family: 'Courier New', monospace; font-size: 13px; fill: #facc15; font-weight: bold; }
+    .state-tag { font-family: system-ui, sans-serif; font-size: 11px; font-weight: 800; fill: #ffffff; text-anchor: middle; dominant-baseline: central; }
+
+    /* Animated explosion blast */
+    @keyframes pulseBlast {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.15); opacity: 1; filter: drop-shadow(0 0 10px #f97316); }
+    }
+    .blast-anim { animation: pulseBlast 2.5s infinite ease-in-out; transform-origin: 195px 145px; }
+  </style>
+
+  <!-- Background -->
+  <rect width="920" height="460" rx="16" fill="url(#bgGrad)" />
+
+  <!-- Header Section -->
+  <g transform="translate(40, 42)">
+    <circle cx="16" cy="0" r="14" fill="#f43f5e" opacity="0.25" />
+    <text x="16" y="5" text-anchor="middle" fill="#fb7185" font-size="16" font-weight="900">&#x1F4A3;</text>
+    <text x="40" y="5" class="title">The Bomberman Game: Cycle &amp; Detonation States</text>
+    <text x="40" y="25" class="subtitle">Full Grid at Even Seconds &#x2022; Period-4 Modulo Oscillations for Odd Seconds (N &#x2265; 3)</text>
+  </g>
+
+  <!-- Left Card: The 4-Second Lifecycle -->
+  <g transform="translate(40, 95)" filter="url(#shadow)">
+    <rect width="425" height="325" rx="12" fill="url(#cardGrad)" stroke="#475569" stroke-width="1.5" />
+    <text x="24" y="32" class="card-title">1. TIME EVOLUTION &amp; CYCLE STATES</text>
+    <text x="24" y="52" class="subtitle">4 Periodic States for N &gt; 1</text>
+
+    <!-- State list -->
+    <g transform="translate(24, 75)">
+      <!-- t = 1 -->
+      <g transform="translate(0, 0)">
+        <rect width="70" height="32" rx="6" fill="#1e293b" stroke="#38bdf8" />
+        <text x="35" y="16" class="state-tag" fill="#38bdf8">t = 1</text>
+        <text x="85" y="20" class="label">Initial configuration preserved</text>
+      </g>
+
+      <!-- t % 2 == 0 -->
+      <g transform="translate(0, 48)">
+        <rect width="70" height="32" rx="6" fill="#1e293b" stroke="#e11d48" />
+        <text x="35" y="16" class="state-tag" fill="#f43f5e">t % 2 = 0</text>
+        <text x="85" y="20" class="mono" fill="#fb7185">FULL GRID ('O' everywhere)</text>
+      </g>
+
+      <!-- t % 4 == 3 -->
+      <g transform="translate(0, 96)">
+        <rect width="70" height="32" rx="6" fill="#1e293b" stroke="#f59e0b" />
+        <text x="35" y="16" class="state-tag" fill="#facc15">t % 4 = 3</text>
+        <text x="85" y="20" class="label">First Detonation (t=0 bombs explode)</text>
+      </g>
+
+      <!-- t % 4 == 1 -->
+      <g transform="translate(0, 144)">
+        <rect width="70" height="32" rx="6" fill="#1e293b" stroke="#10b981" />
+        <text x="35" y="16" class="state-tag" fill="#34d399">t % 4 = 1</text>
+        <text x="85" y="20" class="label">Second Detonation (t=2 bombs explode)</text>
+      </g>
+    </g>
+
+    <g transform="translate(24, 260)">
+      <rect width="377" height="45" rx="6" fill="#0f172a" stroke="#334155" />
+      <text x="14" y="27" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">&#x2139; Simulating N up to 10&#x2079; directly is TLE &#x2192; Reduce via Modulo 4!</text>
+    </g>
+  </g>
+
+  <!-- Right Card: Detonation Pattern & Clearing Logic -->
+  <g transform="translate(485, 95)" filter="url(#shadow)">
+    <rect width="395" height="325" rx="12" fill="url(#cardGrad)" stroke="#475569" stroke-width="1.5" />
+    <text x="24" y="32" class="card-title">2. DETONATION &amp; CROSS-PATTERN CLEAR</text>
+    <text x="24" y="52" class="subtitle">Bomb clears center + 4 cardinal neighbors (no chain reactions)</text>
+
+    <!-- Visual 3x3 Blast Cross -->
+    <g transform="translate(115, 80)">
+      <!-- Center Blast -->
+      <g class="blast-anim">
+        <circle cx="80" cy="65" r="24" fill="url(#blastGlow)" />
+        <text x="80" y="65" text-anchor="middle" font-size="18">&#x1F4A5;</text>
+      </g>
+
+      <!-- North Cleared -->
+      <rect x="62" y="10" width="36" height="30" rx="4" fill="#0f172a" stroke="#f43f5e" stroke-dasharray="3 2" />
+      <text x="80" y="28" font-family="'Courier New', monospace" font-size="14" fill="#ef4444" text-anchor="middle">.</text>
+
+      <!-- South Cleared -->
+      <rect x="62" y="90" width="36" height="30" rx="4" fill="#0f172a" stroke="#f43f5e" stroke-dasharray="3 2" />
+      <text x="80" y="108" font-family="'Courier New', monospace" font-size="14" fill="#ef4444" text-anchor="middle">.</text>
+
+      <!-- West Cleared -->
+      <rect x="22" y="50" width="36" height="30" rx="4" fill="#0f172a" stroke="#f43f5e" stroke-dasharray="3 2" />
+      <text x="40" y="68" font-family="'Courier New', monospace" font-size="14" fill="#ef4444" text-anchor="middle">.</text>
+
+      <!-- East Cleared -->
+      <rect x="102" y="50" width="36" height="30" rx="4" fill="#0f172a" stroke="#f43f5e" stroke-dasharray="3 2" />
+      <text x="120" y="68" font-family="'Courier New', monospace" font-size="14" fill="#ef4444" text-anchor="middle">.</text>
+
+      <!-- Corner Surviving Bombs -->
+      <circle cx="40" cy="25" r="14" fill="url(#bombGlow)" />
+      <text x="40" y="25" class="state-tag">O</text>
+
+      <circle cx="120" cy="25" r="14" fill="url(#bombGlow)" />
+      <text x="120" y="25" class="state-tag">O</text>
+
+      <circle cx="40" cy="105" r="14" fill="url(#bombGlow)" />
+      <text x="40" y="105" class="state-tag">O</text>
+
+      <circle cx="120" cy="105" r="14" fill="url(#bombGlow)" />
+      <text x="120" y="105" class="state-tag">O</text>
+    </g>
+
+    <!-- Formula breakdown -->
+    <g transform="translate(24, 240)">
+      <rect width="347" height="65" rx="8" fill="#0f172a" stroke="#334155" />
+      <text x="14" y="22" class="label" fill="#facc15">Algorithm Efficiency:</text>
+      <text x="14" y="42" class="mono">Simulate at most 2 detonations!</text>
+      <text x="14" y="56" class="label" fill="#94a3b8">Complexity: O(R &#xD7; C) time, O(R &#xD7; C) space</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 460" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1120" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+
+    <!-- Card Gradient -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#161e31" />
+      <stop offset="100%" stop-color="#24304f" />
+    </linearGradient>
+
+    <!-- Plus Fill Gradients -->
+    <linearGradient id="bluePlus" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60a5fa" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+
+    <linearGradient id="greenPlus" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+
+    <linearGradient id="invalidPlus" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fb923c" />
+      <stop offset="100%" stop-color="#ea580c" />
+    </linearGradient>
+
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="5" stdDeviation="5" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <style>
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 22px; font-weight: 800; fill: #f8fafc; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; fill: #94a3b8; }
+    .card-title { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 700; fill: #38bdf8; }
+    .label { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; fill: #cbd5e1; font-weight: 600; }
+    .mono { font-family: 'Courier New', monospace; font-size: 13px; fill: #facc15; font-weight: bold; }
+    .status-ok { font-family: system-ui, sans-serif; font-size: 11px; font-weight: 800; fill: #34d399; }
+    .status-bad { font-family: system-ui, sans-serif; font-size: 11px; font-weight: 800; fill: #f87171; }
+
+    /* Animated Non-overlapping Expansion */
+    @keyframes pulseValid {
+      0%, 100% { transform: scale(1); opacity: 0.95; }
+      50% { transform: scale(1.04); opacity: 1; filter: drop-shadow(0 0 8px rgba(96, 165, 250, 0.6)); }
+    }
+    .pulse-plus { animation: pulseValid 3s infinite ease-in-out; transform-origin: center; }
+  </style>
+
+  <!-- Canvas Background -->
+  <rect width="920" height="460" rx="16" fill="url(#bgGrad)" />
+
+  <!-- Header Section -->
+  <g transform="translate(40, 42)">
+    <circle cx="16" cy="0" r="14" fill="#38bdf8" opacity="0.25" />
+    <text x="16" y="5" text-anchor="middle" fill="#38bdf8" font-size="16" font-weight="900">&#x271A;</text>
+    <text x="40" y="5" class="title">Ema's Supercomputer: Two Largest Valid Pluses</text>
+    <text x="40" y="25" class="subtitle">Symmetric Odd Pluses (Area = 4r + 1) &#x2022; Maximize Product (Area&#x2081; &#xD7; Area&#x2082;) without Overlap</text>
+  </g>
+
+  <!-- Left Card: Valid vs Invalid Anatomy -->
+  <g transform="translate(40, 95)" filter="url(#shadow)">
+    <rect width="425" height="325" rx="12" fill="url(#cardGrad)" stroke="#475569" stroke-width="1.5" />
+    <text x="24" y="32" class="card-title">1. PLUS ANATOMY: VALID vs INVALID</text>
+    <text x="24" y="52" class="subtitle">Valid pluses have equal horizontal &amp; vertical odd arms</text>
+
+    <!-- Valid Examples -->
+    <g transform="translate(24, 75)">
+      <!-- r = 0 (1 cell, area = 1) -->
+      <g transform="translate(10, 15)">
+        <rect x="0" y="0" width="24" height="24" rx="3" fill="url(#bluePlus)" stroke="#1d4ed8" />
+        <text x="12" y="36" text-anchor="middle" class="mono">r=0</text>
+        <text x="12" y="50" text-anchor="middle" class="status-ok">A = 1</text>
+      </g>
+
+      <!-- r = 1 (area = 5) -->
+      <g transform="translate(80, 0)">
+        <rect x="24" y="0" width="24" height="24" rx="3" fill="url(#bluePlus)" stroke="#1d4ed8" />
+        <rect x="0" y="24" width="24" height="24" rx="3" fill="url(#bluePlus)" stroke="#1d4ed8" />
+        <rect x="24" y="24" width="24" height="24" rx="3" fill="url(#bluePlus)" stroke="#1d4ed8" />
+        <rect x="48" y="24" width="24" height="24" rx="3" fill="url(#bluePlus)" stroke="#1d4ed8" />
+        <rect x="24" y="48" width="24" height="24" rx="3" fill="url(#bluePlus)" stroke="#1d4ed8" />
+        <text x="36" y="86" text-anchor="middle" class="mono">r=1</text>
+        <text x="36" y="100" text-anchor="middle" class="status-ok">A = 5</text>
+      </g>
+
+      <!-- r = 2 (area = 9) -->
+      <g transform="translate(190, -12)">
+        <rect x="36" y="0" width="18" height="18" rx="2" fill="url(#bluePlus)" stroke="#1d4ed8" />
+        <rect x="36" y="18" width="18" height="18" rx="2" fill="url(#bluePlus)" stroke="#1d4ed8" />
+        <rect x="0" y="36" width="18" height="18" rx="2" fill="url(#bluePlus)" stroke="#1d4ed8" />
+        <rect x="18" y="36" width="18" height="18" rx="2" fill="url(#bluePlus)" stroke="#1d4ed8" />
+        <rect x="36" y="36" width="18" height="18" rx="2" fill="url(#bluePlus)" stroke="#1d4ed8" />
+        <rect x="54" y="36" width="18" height="18" rx="2" fill="url(#bluePlus)" stroke="#1d4ed8" />
+        <rect x="72" y="36" width="18" height="18" rx="2" fill="url(#bluePlus)" stroke="#1d4ed8" />
+        <rect x="36" y="54" width="18" height="18" rx="2" fill="url(#bluePlus)" stroke="#1d4ed8" />
+        <rect x="36" y="72" width="18" height="18" rx="2" fill="url(#bluePlus)" stroke="#1d4ed8" />
+        <text x="45" y="102" text-anchor="middle" class="mono">r=2</text>
+        <text x="45" y="116" text-anchor="middle" class="status-ok">A = 9</text>
+      </g>
+    </g>
+
+    <!-- Invalid Orange Examples -->
+    <g transform="translate(24, 215)">
+      <rect width="377" height="85" rx="8" fill="#0f172a" stroke="#ea580c" stroke-width="1.2" />
+      <text x="14" y="20" class="status-bad">&#x2718; Invalid Asymmetric Pluses:</text>
+      <!-- Asymmetric Crosses -->
+      <g transform="translate(25, 28)">
+        <rect x="15" y="0" width="15" height="15" rx="2" fill="url(#invalidPlus)" />
+        <rect x="0" y="15" width="45" height="15" rx="2" fill="url(#invalidPlus)" />
+        <rect x="15" y="30" width="15" height="25" rx="2" fill="url(#invalidPlus)" />
+      </g>
+      <text x="95" y="42" class="label" fill="#cbd5e1">Arms must have identical length r</text>
+      <text x="95" y="58" class="label" fill="#94a3b8">Center must be the exact midpoint</text>
+    </g>
+  </g>
+
+  <!-- Right Card: Non-Overlapping Pair Product -->
+  <g transform="translate(485, 95)" filter="url(#shadow)">
+    <rect width="395" height="325" rx="12" fill="url(#cardGrad)" stroke="#475569" stroke-width="1.5" />
+    <text x="24" y="32" class="card-title">2. MAX PRODUCT SEARCH: O(P&#xB2;)</text>
+    <text x="24" y="52" class="subtitle">Check all pairs (p&#x2081;, p&#x2082;) &#x2014; Ensure p&#x2081;.cells &#x2229; p&#x2082;.cells = &#x2205;</text>
+
+    <!-- Visual 6x6 Grid with 2 Pluses -->
+    <g transform="translate(50, 75)">
+      <!-- Plus 1: Area = 5 (Blue) at (1, 1) -->
+      <g class="pulse-plus">
+        <rect x="25" y="5" width="20" height="20" rx="3" fill="url(#bluePlus)" />
+        <rect x="5" y="25" width="20" height="20" rx="3" fill="url(#bluePlus)" />
+        <rect x="25" y="25" width="20" height="20" rx="3" fill="url(#bluePlus)" />
+        <rect x="45" y="25" width="20" height="20" rx="3" fill="url(#bluePlus)" />
+        <rect x="25" y="45" width="20" height="20" rx="3" fill="url(#bluePlus)" />
+      </g>
+      <text x="35" y="80" text-anchor="middle" class="mono" fill="#60a5fa">Area&#x2081; = 5</text>
+
+      <!-- Plus 2: Area = 5 (Green) at (4, 4) -->
+      <g class="pulse-plus" transform="translate(110, 50)">
+        <rect x="25" y="5" width="20" height="20" rx="3" fill="url(#greenPlus)" />
+        <rect x="5" y="25" width="20" height="20" rx="3" fill="url(#greenPlus)" />
+        <rect x="25" y="25" width="20" height="20" rx="3" fill="url(#greenPlus)" />
+        <rect x="45" y="25" width="20" height="20" rx="3" fill="url(#greenPlus)" />
+        <rect x="25" y="45" width="20" height="20" rx="3" fill="url(#greenPlus)" />
+        <text x="35" y="80" text-anchor="middle" class="mono" fill="#34d399">Area&#x2082; = 5</text>
+      </g>
+    </g>
+
+    <!-- Calculation Callout -->
+    <g transform="translate(24, 240)">
+      <rect width="347" height="65" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5" />
+      <text x="14" y="22" class="label" fill="#94a3b8">Product Calculation:</text>
+      <text x="14" y="45" class="mono" font-size="16">Max Product = 5 &#xD7; 5 = 25</text>
+    </g>
+  </g>
+</svg>
