@@ -63,6 +63,9 @@ Click on any problem name below to open its dedicated documentation page with ca
 | 41 | **Absolute Permutation** | Number Theory / Block Swapping Invariant | $\mathcal{O}(n)$ | $\mathcal{O}(n)$ | 🔀 🔢 ⚖️ | [📖 View Guide](docs/41-absolute-permutation.md) | [`absolutePermutation.js`](Javascript/absolutePermutation.js) |
 | 42 | **The Bomberman Game** | Grid Simulation / Period-4 Modulo Reduction | $\mathcal{O}(R \cdot C)$ | $\mathcal{O}(R \cdot C)$ | 💣 💥 🔄 | [📖 View Guide](docs/42-the-bomberman-game.md) | [`bomberMan.js`](Javascript/bomberMan.js) |
 | 43 | **Ema's Supercomputer** | Geometric Enumeration / Disjoint Set Pairs | $\mathcal{O}(P^2)$ | $\mathcal{O}(P)$ | ➕ 🔬 ✖️ | [📖 View Guide](docs/43-two-pluses.md) | [`twoPluses.js`](Javascript/twoPluses.js) |
+| 44 | **Larry's Array** | Group Theory / Permutation Inversion Parity | $\mathcal{O}(n^2)$ | $\mathcal{O}(1)$ | 🔁 🔢 ⚖️ | [📖 View Guide](docs/44-larrys-array.md) | [`larrysArray.js`](Javascript/larrysArray.js) |
+| 45 | **Almost Sorted** | Array Comparison / Discrepancy Window | $\mathcal{O}(n \log n)$ | $\mathcal{O}(n)$ | 🔀 🔄 🎯 | [📖 View Guide](docs/45-almost-sorted.md) | [`almostSorted.js`](Javascript/almostSorted.js) |
+| 46 | **Matrix Layer Rotation** | Concentric Ring Decomposition / Modulo Cycle | $\mathcal{O}(m \cdot n)$ | $\mathcal{O}(m \cdot n)$ | 🔄 🔲 📐 | [📖 View Guide](docs/46-matrix-rotation.md) | [`matrixRotation.js`](Javascript/matrixRotation.js) |
 
 ---
 

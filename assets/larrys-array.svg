@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 460" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1120" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+
+    <!-- Card Gradient -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#161e31" />
+      <stop offset="100%" stop-color="#24304f" />
+    </linearGradient>
+
+    <!-- Cycle Gradient -->
+    <linearGradient id="rotGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="5" stdDeviation="5" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <style>
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 22px; font-weight: 800; fill: #f8fafc; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; fill: #94a3b8; }
+    .card-title { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 700; fill: #38bdf8; }
+    .label { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; fill: #cbd5e1; font-weight: 600; }
+    .mono { font-family: 'Courier New', monospace; font-size: 13px; fill: #facc15; font-weight: bold; }
+    .node-text { font-family: system-ui, sans-serif; font-size: 16px; font-weight: 900; fill: #ffffff; text-anchor: middle; dominant-baseline: central; }
+    .badge-ok { font-family: system-ui, sans-serif; font-size: 12px; font-weight: 800; fill: #34d399; }
+    .badge-bad { font-family: system-ui, sans-serif; font-size: 12px; font-weight: 800; fill: #f87171; }
+
+    /* Animated 3-Cycle Rotation */
+    @keyframes spinCycle {
+      0% { transform: rotate(0deg); }
+      33.3% { transform: rotate(120deg); }
+      66.6% { transform: rotate(240deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .rotating-group { animation: spinCycle 4s infinite cubic-bezier(0.4, 0, 0.2, 1); transform-origin: 200px 150px; }
+  </style>
+
+  <!-- Canvas Background -->
+  <rect width="920" height="460" rx="16" fill="url(#bgGrad)" />
+
+  <!-- Header Section -->
+  <g transform="translate(40, 42)">
+    <circle cx="16" cy="0" r="14" fill="#38bdf8" opacity="0.25" />
+    <text x="16" y="5" text-anchor="middle" fill="#38bdf8" font-size="16" font-weight="900">&#x267B;</text>
+    <text x="40" y="5" class="title">Larry's Array: Inversion Parity &amp; 3-Cycles</text>
+    <text x="40" y="25" class="subtitle">3-Element Rotation Conserves Parity: Sortable &#x21D4; Even Total Inversions</text>
+  </g>
+
+  <!-- Left Card: 3-Element Rotation Invariant -->
+  <g transform="translate(40, 95)" filter="url(#shadow)">
+    <rect width="425" height="325" rx="12" fill="url(#cardGrad)" stroke="#475569" stroke-width="1.5" />
+    <text x="24" y="32" class="card-title">1. THE 3-CYCLE ROTATION INVARIANT</text>
+    <text x="24" y="52" class="subtitle">ABC &#x2192; BCA &#x2192; CAB preserves permutation parity</text>
+
+    <!-- Rotating Triangle Nodes -->
+    <g class="rotating-group">
+      <!-- Triangle Path -->
+      <polygon points="200,90 260,190 140,190" fill="none" stroke="url(#rotGrad)" stroke-width="2.5" stroke-dasharray="6 3" />
+
+      <!-- Node A -->
+      <circle cx="200" cy="90" r="20" fill="#2563eb" stroke="#60a5fa" stroke-width="2" />
+      <text x="200" y="90" class="node-text">A</text>
+
+      <!-- Node B -->
+      <circle cx="260" cy="190" r="20" fill="#7c3aed" stroke="#a78bfa" stroke-width="2" />
+      <text x="260" y="190" class="node-text">B</text>
+
+      <!-- Node C -->
+      <circle cx="140" cy="190" r="20" fill="#059669" stroke="#34d399" stroke-width="2" />
+      <text x="140" y="190" class="node-text">C</text>
+    </g>
+
+    <!-- Mathematical explanation box -->
+    <g transform="translate(24, 235)">
+      <rect width="377" height="68" rx="8" fill="#0f172a" stroke="#334155" />
+      <text x="14" y="22" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#38bdf8">&#x2139; Even Permutation Proof:</text>
+      <text x="14" y="40" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1">1 cycle = 2 adjacent swaps (transpositions).</text>
+      <text x="14" y="56" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">(-1) &#xD7; (-1) = +1 &#x2192; Inversions always change by &#xB1;0 or &#xB1;2!</text>
+    </g>
+  </g>
+
+  <!-- Right Card: Decision Rule & Inversion Counting -->
+  <g transform="translate(485, 95)" filter="url(#shadow)">
+    <rect width="395" height="325" rx="12" fill="url(#cardGrad)" stroke="#475569" stroke-width="1.5" />
+    <text x="24" y="32" class="card-title">2. INVERSION PARITY THEOREM</text>
+    <text x="24" y="52" class="subtitle">An inversion is a pair (i &lt; j) where A[i] &gt; A[j]</text>
+
+    <!-- Parity cases comparison -->
+    <g transform="translate(24, 75)">
+      <!-- Even case -->
+      <g transform="translate(0, 0)">
+        <rect width="347" height="68" rx="8" fill="#0f172a" stroke="#10b981" stroke-width="1.2" />
+        <text x="14" y="24" class="label" fill="#34d399">&#x2714; Inversions % 2 === 0 (Even Parity)</text>
+        <text x="14" y="44" class="mono">A = [1, 6, 5, 2, 4, 3] &#x2192; 8 inversions</text>
+        <text x="14" y="58" class="badge-ok">&#x2192; Output: YES (Sortable!)</text>
+      </g>
+
+      <!-- Odd case -->
+      <g transform="translate(0, 85)">
+        <rect width="347" height="68" rx="8" fill="#0f172a" stroke="#ef4444" stroke-width="1.2" />
+        <text x="14" y="24" class="label" fill="#f87171">&#x2718; Inversions % 2 !== 0 (Odd Parity)</text>
+        <text x="14" y="44" class="mono">A = [1, 2, 3, 5, 4] &#x2192; 1 inversion</text>
+        <text x="14" y="58" class="badge-bad">&#x2192; Output: NO (Impossible to sort)</text>
+      </g>
+    </g>
+
+    <!-- Complexity summary tag -->
+    <g transform="translate(24, 245)">
+      <rect width="347" height="55" rx="8" fill="#0f172a" stroke="#38bdf8" />
+      <text x="14" y="22" class="label" fill="#cbd5e1">Complexity for N &#x2264; 1000:</text>
+      <text x="14" y="42" class="mono">Time: O(N&#xB2;) ~ 5&#xD7;10&#x2075; ops &#x2022; Space: O(1)</text>
+    </g>
+  </g>
+</svg>

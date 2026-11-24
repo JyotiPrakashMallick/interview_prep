@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 460" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1120" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+
+    <!-- Card Gradient -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#161e31" />
+      <stop offset="100%" stop-color="#24304f" />
+    </linearGradient>
+
+    <!-- Swap Glow -->
+    <linearGradient id="swapGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+
+    <!-- Reverse Glow -->
+    <linearGradient id="revGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#7e22ce" />
+    </linearGradient>
+
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="5" stdDeviation="5" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <style>
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 22px; font-weight: 800; fill: #f8fafc; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; fill: #94a3b8; }
+    .card-title { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 700; fill: #38bdf8; }
+    .label { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; fill: #cbd5e1; font-weight: 600; }
+    .mono { font-family: 'Courier New', monospace; font-size: 13px; fill: #facc15; font-weight: bold; }
+    .node-text { font-family: system-ui, sans-serif; font-size: 15px; font-weight: 900; fill: #ffffff; text-anchor: middle; dominant-baseline: central; }
+    .idx { font-family: system-ui, sans-serif; font-size: 11px; fill: #64748b; text-anchor: middle; }
+
+    /* Animated Swap Arc */
+    @keyframes pulseSwap {
+      0%, 100% { opacity: 0.8; stroke-width: 2; }
+      50% { opacity: 1; stroke-width: 3.5; stroke: #38bdf8; }
+    }
+    .swap-anim { animation: pulseSwap 2s infinite ease-in-out; }
+
+    /* Animated Reverse Bracket */
+    @keyframes pulseRev {
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 1; filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.7)); }
+    }
+    .rev-anim { animation: pulseRev 2.5s infinite ease-in-out; }
+  </style>
+
+  <!-- Canvas Background -->
+  <rect width="920" height="460" rx="16" fill="url(#bgGrad)" />
+
+  <!-- Header Section -->
+  <g transform="translate(40, 42)">
+    <circle cx="16" cy="0" r="14" fill="#38bdf8" opacity="0.25" />
+    <text x="16" y="5" text-anchor="middle" fill="#38bdf8" font-size="16" font-weight="900">&#x21C6;</text>
+    <text x="40" y="5" class="title">Almost Sorted: Single Swap or Subsegment Reverse</text>
+    <text x="40" y="25" class="subtitle">Discrepancy Array Diff = arr &#x2260; sortedArr &#x2022; Length = 2 &#x2192; Swap &#x2022; Contiguous Inverse &#x2192; Reverse</text>
+  </g>
+
+  <!-- Left Card: The Single Swap Case -->
+  <g transform="translate(40, 95)" filter="url(#shadow)">
+    <rect width="425" height="325" rx="12" fill="url(#cardGrad)" stroke="#475569" stroke-width="1.5" />
+    <text x="24" y="32" class="card-title">CASE 1: EXACTLY 2 MISMATCHES &#x2192; SWAP</text>
+    <text x="24" y="52" class="subtitle">diffIndices.length == 2 &#x2192; swap l and r (prefer swap over reverse)</text>
+
+    <!-- Visual Array [2, 3, 5, 4] -->
+    <g transform="translate(30, 80)">
+      <!-- Indices -->
+      <text x="35" y="0" class="idx">1</text>
+      <text x="95" y="0" class="idx">2</text>
+      <text x="155" y="0" class="idx" fill="#38bdf8">3 (l)</text>
+      <text x="215" y="0" class="idx" fill="#38bdf8">4 (r)</text>
+
+      <!-- Cells -->
+      <g transform="translate(15, 12)">
+        <rect x="0" y="0" width="40" height="36" rx="6" fill="#1e293b" stroke="#334155" />
+        <text x="20" y="18" class="node-text">2</text>
+
+        <rect x="60" y="0" width="40" height="36" rx="6" fill="#1e293b" stroke="#334155" />
+        <text x="80" y="18" class="node-text">3</text>
+
+        <!-- Swap targets -->
+        <rect x="120" y="0" width="40" height="36" rx="6" fill="url(#swapGlow)" stroke="#7dd3fc" stroke-width="2" />
+        <text x="140" y="18" class="node-text">5</text>
+
+        <rect x="180" y="0" width="40" height="36" rx="6" fill="url(#swapGlow)" stroke="#7dd3fc" stroke-width="2" />
+        <text x="200" y="18" class="node-text">4</text>
+      </g>
+
+      <!-- Swap Arc -->
+      <g transform="translate(15, 60)">
+        <path class="swap-anim" d="M 140, 0 C 140, 30 200, 30 200, 0" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="4 2" />
+        <text x="170" y="32" fill="#38bdf8" font-size="11" font-weight="bold" text-anchor="middle">&#x21C4; Swap (3, 4)</text>
+      </g>
+    </g>
+
+    <!-- Verdict Box -->
+    <g transform="translate(24, 235)">
+      <rect width="377" height="68" rx="8" fill="#0f172a" stroke="#10b981" stroke-width="1.2" />
+      <text x="14" y="22" class="mono" fill="#34d399">Output: yes</text>
+      <text x="14" y="42" class="mono" fill="#38bdf8">swap 3 4</text>
+      <text x="14" y="58" class="label" fill="#94a3b8">Swapping resolves all mismatches immediately.</text>
+    </g>
+  </g>
+
+  <!-- Right Card: The Subsegment Reverse Case -->
+  <g transform="translate(485, 95)" filter="url(#shadow)">
+    <rect width="395" height="325" rx="12" fill="url(#cardGrad)" stroke="#475569" stroke-width="1.5" />
+    <text x="24" y="32" class="card-title">CASE 2: CONTIGUOUS SEGMENT &#x2192; REVERSE</text>
+    <text x="24" y="52" class="subtitle">diffIndices.length &gt; 2 &#x2192; reverse subarray arr[l...r]</text>
+
+    <!-- Visual Array [1, 5, 4, 3, 2, 6] -->
+    <g transform="translate(25, 75)">
+      <!-- Indices -->
+      <text x="20" y="0" class="idx">1</text>
+      <text x="65" y="0" class="idx" fill="#c084fc">2 (l)</text>
+      <text x="110" y="0" class="idx">3</text>
+      <text x="155" y="0" class="idx">4</text>
+      <text x="200" y="0" class="idx" fill="#c084fc">5 (r)</text>
+      <text x="245" y="0" class="idx">6</text>
+
+      <!-- Array cells -->
+      <g transform="translate(5, 12)">
+        <rect x="0" y="0" width="30" height="32" rx="4" fill="#1e293b" stroke="#334155" />
+        <text x="15" y="16" class="node-text">1</text>
+
+        <!-- Reversing block [5, 4, 3, 2] -->
+        <g class="rev-anim">
+          <rect x="45" y="0" width="30" height="32" rx="4" fill="url(#revGlow)" />
+          <text x="60" y="16" class="node-text">5</text>
+
+          <rect x="90" y="0" width="30" height="32" rx="4" fill="url(#revGlow)" />
+          <text x="105" y="16" class="node-text">4</text>
+
+          <rect x="135" y="0" width="30" height="32" rx="4" fill="url(#revGlow)" />
+          <text x="150" y="16" class="node-text">3</text>
+
+          <rect x="180" y="0" width="30" height="32" rx="4" fill="url(#revGlow)" />
+          <text x="195" y="16" class="node-text">2</text>
+        </g>
+
+        <rect x="225" y="0" width="30" height="32" rx="4" fill="#1e293b" stroke="#334155" />
+        <text x="240" y="16" class="node-text">6</text>
+      </g>
+
+      <!-- Reversal Curly Bracket / Marker -->
+      <g transform="translate(50, 56)">
+        <path d="M 0,0 L 0,8 L 82,8 L 82,14 L 82,8 L 165,8 L 165,0" fill="none" stroke="#c084fc" stroke-width="2" />
+        <text x="82" y="28" fill="#c084fc" font-size="11" font-weight="bold" text-anchor="middle">&#x27F7; Reverse [2 .. 5]</text>
+      </g>
+    </g>
+
+    <!-- Verdict Box -->
+    <g transform="translate(24, 235)">
+      <rect width="347" height="68" rx="8" fill="#0f172a" stroke="#10b981" stroke-width="1.2" />
+      <text x="14" y="22" class="mono" fill="#34d399">Output: yes</text>
+      <text x="14" y="42" class="mono" fill="#c084fc">reverse 2 5</text>
+      <text x="14" y="58" class="label" fill="#94a3b8">Descending subsegment inverted into sorted order.</text>
+    </g>
+  </g>
+</svg>
