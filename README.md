@@ -66,6 +66,10 @@ Click on any problem name below to open its dedicated documentation page with ca
 | 44 | **Larry's Array** | Group Theory / Permutation Inversion Parity | $\mathcal{O}(n^2)$ | $\mathcal{O}(1)$ | 🔁 🔢 ⚖️ | [📖 View Guide](docs/44-larrys-array.md) | [`larrysArray.js`](Javascript/larrysArray.js) |
 | 45 | **Almost Sorted** | Array Comparison / Discrepancy Window | $\mathcal{O}(n \log n)$ | $\mathcal{O}(n)$ | 🔀 🔄 🎯 | [📖 View Guide](docs/45-almost-sorted.md) | [`almostSorted.js`](Javascript/almostSorted.js) |
 | 46 | **Matrix Layer Rotation** | Concentric Ring Decomposition / Modulo Cycle | $\mathcal{O}(m \cdot n)$ | $\mathcal{O}(m \cdot n)$ | 🔄 🔲 📐 | [📖 View Guide](docs/46-matrix-rotation.md) | [`matrixRotation.js`](Javascript/matrixRotation.js) |
+| 47 | **AND Product** | Bitwise Range Reduction / Common Binary Prefix | $\mathcal{O}(\log b)$ | $\mathcal{O}(1)$ | ⚡ 🔢 💡 | [📖 View Guide](docs/47-and-product.md) | [`andProduct.js`](Javascript/andProduct.js) |
+| 48 | **Winning Lottery Ticket** | Bitmask Compression / Frequency Bucketing | $\mathcal{O}(L + 2^{2D})$ | $\mathcal{O}(2^D)$ | 🎟️ 🔟 🏆 | [📖 View Guide](docs/48-winning-lottery-ticket.md) | [`winningLotteryTicket.js`](Javascript/winningLotteryTicket.js) |
+| 49 | **Xoring Ninja** | Per-Bit Contribution / OR × 2^(n-1) | $\mathcal{O}(n)$ | $\mathcal{O}(1)$ | 🥷 ⊕ 🔢 | [📖 View Guide](docs/49-xoring-ninja.md) | [`xoringNinja.js`](Javascript/xoringNinja.js) |
+| 50 | **Cipher** | Sliding XOR Window / Prefix Decoding | $\mathcal{O}(n)$ | $\mathcal{O}(n)$ | 🔐 ⊕ 🪟 | [📖 View Guide](docs/50-cipher.md) | [`cipher.js`](Javascript/cipher.js) |
 
 ---
 

@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 460" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1120" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+
+    <!-- Card Gradient -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#161e31" />
+      <stop offset="100%" stop-color="#24304f" />
+    </linearGradient>
+
+    <!-- Mask 1 Gradient -->
+    <linearGradient id="mask1Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+
+    <!-- Mask 2 Gradient -->
+    <linearGradient id="mask2Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#7e22ce" />
+    </linearGradient>
+
+    <!-- Full Mask 1023 Gradient -->
+    <linearGradient id="winGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="5" stdDeviation="5" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <style>
+    .title { font-family: system-ui, -apple-system, sans-serif; font-size: 22px; font-weight: 800; fill: #f8fafc; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; fill: #94a3b8; }
+    .card-title { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 700; fill: #38bdf8; }
+    .label { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; fill: #cbd5e1; font-weight: 600; }
+    .mono { font-family: 'Courier New', monospace; font-size: 13px; fill: #facc15; font-weight: bold; }
+    .digit-txt { font-family: 'Courier New', monospace; font-size: 11px; font-weight: 800; fill: #ffffff; text-anchor: middle; dominant-baseline: central; }
+    .idx { font-family: system-ui, sans-serif; font-size: 10px; fill: #64748b; text-anchor: middle; }
+
+    /* Animated OR symbol */
+    @keyframes pulseOR {
+      0%, 100% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.15); opacity: 1; filter: drop-shadow(0 0 6px #38bdf8); }
+    }
+    .or-glow { animation: pulseOR 2s infinite ease-in-out; transform-origin: 215px 160px; }
+  </style>
+
+  <!-- Canvas Background -->
+  <rect width="920" height="460" rx="16" fill="url(#bgGrad)" />
+
+  <!-- Header Section -->
+  <g transform="translate(40, 42)">
+    <circle cx="16" cy="0" r="14" fill="#10b981" opacity="0.25" />
+    <text x="16" y="5" text-anchor="middle" fill="#34d399" font-size="16" font-weight="900">&#x1F39F;</text>
+    <text x="40" y="5" class="title">Winning Lottery Ticket: 10-Bit Mask Compression</text>
+    <text x="40" y="25" class="subtitle">Bitmask: Digit d sets bit (1 &lt;&lt; d) &#x2022; Winning Condition: (mask&#x2081; | mask&#x2082;) == 1023 (0x3FF)</text>
+  </g>
+
+  <!-- Left Card: Bitmask Union Visual -->
+  <g transform="translate(40, 95)" filter="url(#shadow)">
+    <rect width="435" height="325" rx="12" fill="url(#cardGrad)" stroke="#475569" stroke-width="1.5" />
+    <text x="24" y="32" class="card-title">1. BITMASK UNION FOR TWO TICKETS</text>
+    <text x="24" y="52" class="subtitle">Ticket A ("129300455") + Ticket B ("56789")</text>
+
+    <!-- 10-bit columns -->
+    <g transform="translate(25, 75)">
+      <!-- Bit labels: 9 down to 0 -->
+      <g transform="translate(80, 0)">
+        <text x="15" y="0" class="idx">9</text>
+        <text x="40" y="0" class="idx">8</text>
+        <text x="65" y="0" class="idx">7</text>
+        <text x="90" y="0" class="idx">6</text>
+        <text x="115" y="0" class="idx">5</text>
+        <text x="140" y="0" class="idx">4</text>
+        <text x="165" y="0" class="idx">3</text>
+        <text x="190" y="0" class="idx">2</text>
+        <text x="215" y="0" class="idx">1</text>
+        <text x="240" y="0" class="idx">0</text>
+      </g>
+
+      <!-- Ticket A -->
+      <g transform="translate(0, 15)">
+        <text x="0" y="16" class="label">Ticket A</text>
+        <g transform="translate(80, 2)">
+          <!-- 9:1, 8:0, 7:0, 6:0, 5:1, 4:1, 3:1, 2:1, 1:1, 0:1 -->
+          <rect x="5" width="20" height="22" rx="3" fill="url(#mask1Grad)" /><text x="15" y="11" class="digit-txt">1</text>
+          <rect x="30" width="20" height="22" rx="3" fill="#1e293b" /><text x="40" y="11" class="digit-txt" fill="#64748b">0</text>
+          <rect x="55" width="20" height="22" rx="3" fill="#1e293b" /><text x="65" y="11" class="digit-txt" fill="#64748b">0</text>
+          <rect x="80" width="20" height="22" rx="3" fill="#1e293b" /><text x="90" y="11" class="digit-txt" fill="#64748b">0</text>
+          <rect x="105" width="20" height="22" rx="3" fill="url(#mask1Grad)" /><text x="115" y="11" class="digit-txt">1</text>
+          <rect x="130" width="20" height="22" rx="3" fill="url(#mask1Grad)" /><text x="140" y="11" class="digit-txt">1</text>
+          <rect x="155" width="20" height="22" rx="3" fill="url(#mask1Grad)" /><text x="165" y="11" class="digit-txt">1</text>
+          <rect x="180" width="20" height="22" rx="3" fill="url(#mask1Grad)" /><text x="190" y="11" class="digit-txt">1</text>
+          <rect x="205" width="20" height="22" rx="3" fill="url(#mask1Grad)" /><text x="215" y="11" class="digit-txt">1</text>
+          <rect x="230" width="20" height="22" rx="3" fill="url(#mask1Grad)" /><text x="240" y="11" class="digit-txt">1</text>
+        </g>
+      </g>
+
+      <!-- OR Symbol -->
+      <g transform="translate(195, 48)" class="or-glow">
+        <text x="20" y="12" fill="#38bdf8" font-size="14" font-weight="900" text-anchor="middle">&#x2228; (BITWISE OR)</text>
+      </g>
+
+      <!-- Ticket B -->
+      <g transform="translate(0, 68)">
+        <text x="0" y="16" class="label">Ticket B</text>
+        <g transform="translate(80, 2)">
+          <!-- 9:1, 8:1, 7:1, 6:1, 5:1, 4:0, 3:0, 2:0, 1:0, 0:0 -->
+          <rect x="5" width="20" height="22" rx="3" fill="url(#mask2Grad)" /><text x="15" y="11" class="digit-txt">1</text>
+          <rect x="30" width="20" height="22" rx="3" fill="url(#mask2Grad)" /><text x="40" y="11" class="digit-txt">1</text>
+          <rect x="55" width="20" height="22" rx="3" fill="url(#mask2Grad)" /><text x="65" y="11" class="digit-txt">1</text>
+          <rect x="80" width="20" height="22" rx="3" fill="url(#mask2Grad)" /><text x="90" y="11" class="digit-txt">1</text>
+          <rect x="105" width="20" height="22" rx="3" fill="url(#mask2Grad)" /><text x="115" y="11" class="digit-txt">1</text>
+          <rect x="130" width="20" height="22" rx="3" fill="#1e293b" /><text x="140" y="11" class="digit-txt" fill="#64748b">0</text>
+          <rect x="155" width="20" height="22" rx="3" fill="#1e293b" /><text x="165" y="11" class="digit-txt" fill="#64748b">0</text>
+          <rect x="180" width="20" height="22" rx="3" fill="#1e293b" /><text x="190" y="11" class="digit-txt" fill="#64748b">0</text>
+          <rect x="205" width="20" height="22" rx="3" fill="#1e293b" /><text x="215" y="11" class="digit-txt" fill="#64748b">0</text>
+          <rect x="230" width="20" height="22" rx="3" fill="#1e293b" /><text x="240" y="11" class="digit-txt" fill="#64748b">0</text>
+        </g>
+      </g>
+
+      <line x1="0" y1="102" x2="340" y2="102" stroke="#334155" stroke-width="1.5" />
+
+      <!-- Combined Result -->
+      <g transform="translate(0, 114)">
+        <text x="0" y="16" class="label" fill="#34d399">Union</text>
+        <g transform="translate(80, 2)">
+          <rect x="5" width="20" height="22" rx="3" fill="url(#winGrad)" /><text x="15" y="11" class="digit-txt">1</text>
+          <rect x="30" width="20" height="22" rx="3" fill="url(#winGrad)" /><text x="40" y="11" class="digit-txt">1</text>
+          <rect x="55" width="20" height="22" rx="3" fill="url(#winGrad)" /><text x="65" y="11" class="digit-txt">1</text>
+          <rect x="80" width="20" height="22" rx="3" fill="url(#winGrad)" /><text x="90" y="11" class="digit-txt">1</text>
+          <rect x="105" width="20" height="22" rx="3" fill="url(#winGrad)" /><text x="115" y="11" class="digit-txt">1</text>
+          <rect x="130" width="20" height="22" rx="3" fill="url(#winGrad)" /><text x="140" y="11" class="digit-txt">1</text>
+          <rect x="155" width="20" height="22" rx="3" fill="url(#winGrad)" /><text x="165" y="11" class="digit-txt">1</text>
+          <rect x="180" width="20" height="22" rx="3" fill="url(#winGrad)" /><text x="190" y="11" class="digit-txt">1</text>
+          <rect x="205" width="20" height="22" rx="3" fill="url(#winGrad)" /><text x="215" y="11" class="digit-txt">1</text>
+          <rect x="230" width="20" height="22" rx="3" fill="url(#winGrad)" /><text x="240" y="11" class="digit-txt">1</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Verdict Box -->
+    <g transform="translate(24, 245)">
+      <rect width="387" height="55" rx="8" fill="#0f172a" stroke="#10b981" stroke-width="1.2" />
+      <text x="14" y="22" class="mono" fill="#34d399">&#x2714; (Mask A | Mask B) = 1111111111&#x2082; = 1023</text>
+      <text x="14" y="40" font-family="system-ui, sans-serif" font-size="11" fill="#cbd5e1">Contains all 10 digits [0..9] &#x2192; Winning Pair!</text>
+    </g>
+  </g>
+
+  <!-- Right Card: 1024 Mask Bucketing Strategy -->
+  <g transform="translate(495, 95)" filter="url(#shadow)">
+    <rect width="385" height="325" rx="12" fill="url(#cardGrad)" stroke="#475569" stroke-width="1.5" />
+    <text x="24" y="32" class="card-title">2. FREQUENCY BUCKETING: 2&#185;&#8304; = 1024</text>
+    <text x="24" y="52" class="subtitle">Compress N = 10&#x2076; strings into 1024 count buckets</text>
+
+    <!-- Strategy Blocks -->
+    <g transform="translate(24, 75)">
+      <rect width="337" height="65" rx="8" fill="#0f172a" stroke="#38bdf8" />
+      <text x="14" y="20" class="label" fill="#38bdf8">1. Bucket by Bitmask:</text>
+      <text x="14" y="38" class="mono">maskCounts[mask]++</text>
+      <text x="14" y="54" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Traverses chars in O(Total Length) time</text>
+    </g>
+
+    <g transform="translate(24, 150)">
+      <rect width="337" height="72" rx="8" fill="#0f172a" stroke="#a855f7" />
+      <text x="14" y="20" class="label" fill="#c084fc">2. Pair Counting in O(1024&#xB2;):</text>
+      <text x="14" y="38" class="mono">&#x2211; maskCounts[i] * maskCounts[j]</text>
+      <text x="14" y="54" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">If i == j == 1023: c * (c - 1) / 2</text>
+    </g>
+
+    <!-- Efficiency Box -->
+    <g transform="translate(24, 235)">
+      <rect width="337" height="65" rx="8" fill="#0f172a" stroke="#10b981" />
+      <text x="14" y="22" class="label" fill="#34d399">Total Iterations:</text>
+      <text x="14" y="42" class="mono">1024 &#xD7; 1025 / 2 = 524,800 pairs</text>
+      <text x="14" y="56" class="label" fill="#94a3b8">Runs in ~50 ms for N = 1,000,000 tickets!</text>
+    </g>
+  </g>
+</svg>
